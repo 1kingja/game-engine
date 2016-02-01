@@ -1,0 +1,13 @@
+*.exe
+*.pdb
+*.ilk
+*.suo
+*.sdf
+*.opendb
+*.user
+*.log
+*.obj
+*.idb
+.vs/
+*.tlog/
+Debug/Tmp
