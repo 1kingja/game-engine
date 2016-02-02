@@ -150,7 +150,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MyGlWindow.cpp" />
     <ClCompile Include="SandboxGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyGlWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
