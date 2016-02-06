@@ -34,8 +34,6 @@ void MyGlWindow::paintGL()
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-int debugCount = 0;
-
 void MyGlWindow::myUpdate()
 {
 }
