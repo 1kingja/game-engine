@@ -2,9 +2,12 @@
 #include <cassert>
 #include "MyGlWindow.h"
 
-#include <iostream>
-using std::cout;
-using std::endl;
+static float verts[] =
+{
+	+0.0f, +0.1f,
+	-0.1f, -0.1f,
+	+0.1f,-0.1f,
+};
 
 void MyGlWindow::initializeGL()
 {
@@ -13,13 +16,7 @@ void MyGlWindow::initializeGL()
 
 	glGenBuffers(1, &vertexBufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-
-	float verts[] =
-	{
-		+0.0f, +0.1f,
-		-0.1f, -0.1f,
-		+0.1f,-0.1f,
-	};
+	
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(verts),
 		verts,GL_STATIC_DRAW);
@@ -37,7 +34,8 @@ void MyGlWindow::paintGL()
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
+int debugCount = 0;
+
 void MyGlWindow::myUpdate()
 {
-	cout << "frame!" << endl;
 }
