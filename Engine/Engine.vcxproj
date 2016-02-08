@@ -13,6 +13,9 @@
   <ItemGroup>
     <ClCompile Include="TempCpp.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vector2D.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1DC1D019-941D-4226-B878-BAD7E60EB818}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

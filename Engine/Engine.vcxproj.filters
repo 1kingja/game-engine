@@ -3,4 +3,7 @@
   <ItemGroup>
     <ClCompile Include="TempCpp.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vector2D.h" />
+  </ItemGroup>
 </Project>
