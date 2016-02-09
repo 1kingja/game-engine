@@ -4,9 +4,9 @@
     <ClCompile Include="TempCpp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector2D.h" />
+    <None Include="Math\Vector2D.inl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Vector2D.inl" />
+    <ClInclude Include="Math\Vector2D.h" />
   </ItemGroup>
 </Project>
