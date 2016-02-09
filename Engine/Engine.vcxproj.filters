@@ -6,4 +6,7 @@
   <ItemGroup>
     <ClInclude Include="Vector2D.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Vector2D.inl" />
+  </ItemGroup>
 </Project>
