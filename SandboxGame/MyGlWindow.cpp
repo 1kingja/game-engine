@@ -2,6 +2,7 @@
 #include "MyGlWindow.h"
 #include <cassert>
 #include <Math\Vector2D.h>
+#include <Qt\qdebug.h>
 using Math::Vector2D;
 
 namespace 
@@ -13,7 +14,7 @@ namespace
 		Vector2D(+0.1f, -0.1f),
 	};
 	const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
-	Vector2D shipPosition(0.0f, 0.0f);
+	Vector2D shipPosition(-1.0f, -1.0f);
 }
 void MyGlWindow::initializeGL()
 {
@@ -47,10 +48,14 @@ void MyGlWindow::paintGL()
 
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 }
-
+int debugInt = 1;
 void MyGlWindow::myUpdate()
 {
-	Vector2D veclocity(0.01f, 0.01f);
+	if (debugInt++ % 20 == 0)
+		for (int i = 0; i < 10000; i++)
+			qDebug() << "Hello";
+
+	Vector2D veclocity(0.005f, 0.005f);
 	shipPosition = shipPosition + veclocity;
 	repaint();
 }
