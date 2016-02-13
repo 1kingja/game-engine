@@ -2,11 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="TempCpp.cpp" />
+    <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Vector2D.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\Vector2D.h" />
+    <ClInclude Include="Timing\Clock.h" />
   </ItemGroup>
 </Project>

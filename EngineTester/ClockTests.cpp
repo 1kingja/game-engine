@@ -1,4 +1,6 @@
 #include <gtest\gtest.h>
+#include <Timing\Clock.h>
+using Timing::Clock;
 
 TEST(Clock, Initialize)
 {
@@ -14,7 +16,8 @@ TEST(Clock, FrameTimeMeasuring)
 	sleep(1000);
 	clock.newFrame();
 	float timedTime = clock.timeElapsedLastFrame();
-	EXPECT_TRUE(0.9f < timedTime && timedTime < 1.1f);
+	EXPECT_TRUE(0.9f < timedTime);
+	EXPECT_TRUE(timedTime < 1.1f);
 	clock.newFrame();
 	sleep(500);
 	clock.newFrame();
@@ -36,6 +39,7 @@ TEST(Clock, FrameTimeMeasuring)
 		EXPECT_TRUE(elapsedSeconds < (thisTestTimeSeconds - THRESHOLD));
 	}
 
+	clock.newFrame();
 	clock.timeElapsedLastFrame();
 	EXPECT_TRUE(clock.shutdown());
 }

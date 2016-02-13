@@ -12,9 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TempCpp.cpp" />
+    <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\Vector2D.h" />
+    <ClInclude Include="Timing\Clock.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Vector2D.inl" />
