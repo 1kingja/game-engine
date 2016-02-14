@@ -4,7 +4,7 @@
 
 namespace Timing
 {
-	class Clock
+	class __declspec(dllexport) Clock
 	{
 	public:
 		bool initialize();

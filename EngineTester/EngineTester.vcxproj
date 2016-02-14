@@ -71,6 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Configuration)\Tmp</IntDir>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -93,8 +95,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>QtTestd4.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\Middleware\Qt\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>QtTestd4.lib;Engine.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\Middleware\Qt\lib;$(ProjectDir)..\Engine\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
