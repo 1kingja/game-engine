@@ -98,6 +98,10 @@
       <AdditionalDependencies>QtTestd4.lib;Engine.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\Middleware\Qt\lib;$(ProjectDir)..\Engine\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
+    <PreBuildEvent>
+      <Command>
+copy "$(ProjectDir)..\Engine\$(Configuration)\Engine.dll" "$(OutDir)"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
