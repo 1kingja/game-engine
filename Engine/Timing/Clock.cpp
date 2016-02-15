@@ -3,20 +3,25 @@ namespace Timing
 {
 	bool Clock::initialize()
 	{
-		return false;
+		bool b = QueryPerformanceFrequency;
+		if (!b)
+			return false;
+		return QueryPerformanceCounter(&timeLastFrame);
 	}
-
-	bool Clock::shutdown()
-	{
-		return false;
-	}
+	bool Clock::shutdown() { return true; }
 
 	void Clock::newFrame()
 	{
+		LARGE_INTEGER thisTime;
+		QueryPerformanceCounter(&thisTime);
+		LARGE_INTEGER delta; 
+		delta.QuadPart = thisTime.QuadPart - timeLastFrame.QuadPart;
+		deltaTime = ((float)delta.QuadPart) / timeFrequency.QuadPart;
+		timeLastFrame.QuadPart = thisTime.QuadPart;
 	}
 
 	float Clock::timeElapsedLastFrame() const
 	{
-		return -1;
+		return deltaTime;
 	}
 }
