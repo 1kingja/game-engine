@@ -1,6 +1,9 @@
 #include <gtest\gtest.h>
 #include <Timing\Clock.h>
 #include <Qt\qtest.h>
+#include <Qt\qdebug.h>
+#include <iostream>
+using std::cout;
 using Timing::Clock;
 
 TEST(Clock, Initialize)
@@ -17,7 +20,7 @@ TEST(Clock, FrameTimeMeasuring)
 	QTest::qSleep(1000);
 	clock.newFrame();
 	float timedTime = clock.timeElapsedLastFrame();			
-	EXPECT_TRUE(0.9f < timedTime);							
+	EXPECT_TRUE(0.9f < timedTime);
 	EXPECT_TRUE(timedTime < 1.1f);							
 	clock.newFrame();										
 	QTest::qSleep(500);
@@ -27,9 +30,10 @@ TEST(Clock, FrameTimeMeasuring)
 	EXPECT_TRUE(timedTime < 0.6f);
 
 	const int NUM_TESTS = 10 + rand() % 100;
-	const float THRESHOLD = 0.1f;
+	const float THRESHOLD = 0.01f;
 	for (int i = 0; i < NUM_TESTS; i++)
 	{
+		std::cout << ".";
 		int thisTestTimeMiliseconds = rand() % 10000;
 		float thisTestTimeSeconds = thisTestTimeMiliseconds / 1000.0f;
 		clock.newFrame();

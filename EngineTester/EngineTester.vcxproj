@@ -95,7 +95,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>QtTestd4.lib;Engine.lib;</AdditionalDependencies>
+      <AdditionalDependencies>QtCored4.lib;QtTestd4.lib;Engine.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\Middleware\Qt\lib;$(ProjectDir)..\Engine\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
