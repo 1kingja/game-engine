@@ -19,12 +19,12 @@ TEST(Clock, FrameTimeMeasuring)
 	EXPECT_TRUE(clock.initialize());
 	QTest::qSleep(1000);
 	clock.newFrame();
-	float timedTime = clock.timeElapsedLastFrame();			
+	float timedTime = clock.timeElapsedLastFrame();
 	EXPECT_TRUE(0.9f < timedTime);
 	EXPECT_TRUE(timedTime < 1.1f);							
 	clock.newFrame();										
 	QTest::qSleep(500);
-	clock.newFrame();										
+	clock.newFrame();					
 	timedTime = clock.timeElapsedLastFrame();				
 	EXPECT_TRUE(0.4f < timedTime);
 	EXPECT_TRUE(timedTime < 0.6f);
@@ -41,7 +41,7 @@ TEST(Clock, FrameTimeMeasuring)
 		clock.newFrame();
 		float elapsedSeconds = clock.timeElapsedLastFrame();
 		EXPECT_TRUE((thisTestTimeSeconds - THRESHOLD) < elapsedSeconds);
-		EXPECT_TRUE(elapsedSeconds < (thisTestTimeSeconds - THRESHOLD));
+		EXPECT_TRUE(elapsedSeconds < (thisTestTimeSeconds + THRESHOLD));
 	}
 
 	clock.newFrame();

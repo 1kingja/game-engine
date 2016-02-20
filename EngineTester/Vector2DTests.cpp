@@ -17,7 +17,7 @@ TEST(Vector2D, VectorAddition)
 
 	Vector2D result1 = first + second;
 	Vector2D result2 = second + first;
-	EXPECT_FLOAT_EQ(5, result1.x);
+	EXPECT_FLOAT_EQ(4, result1.x);
 	EXPECT_FLOAT_EQ(6, result1.y);
 
 	EXPECT_FLOAT_EQ(result1.x, result2.x);
