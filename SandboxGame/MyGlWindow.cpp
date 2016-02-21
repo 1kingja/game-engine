@@ -32,7 +32,7 @@ void MyGlWindow::initializeGL()
 
 	connect(&myTimer, SIGNAL(timeout()),
 		this,SLOT(myUpdate()));
-	myTimer.start(200);
+	myTimer.start(0);
 }
 
 void MyGlWindow::paintGL()
@@ -54,12 +54,13 @@ void MyGlWindow::paintGL()
 int debugInt = 1;
 void MyGlWindow::myUpdate()
 {
-	/*if (debugInt++ % 20 == 0)
-		for (int i = 0; i < 10000; i++)
-			qDebug() << "Hello";*/
+	clock.newFrame();
+	if (debugInt++ % 20 == 0)
+		for (int i = 0; i < 500; i++)
+			qDebug() << "Hello";
 
-	Vector2D veclocity(0.005f, 0.005f);
-	shipPosition = shipPosition + veclocity;
+	Vector2D veclocity(0.5f, 0.5f);
+	shipPosition = shipPosition + veclocity * clock.timeElapsedLastFrame();
 	repaint();
 }
 
