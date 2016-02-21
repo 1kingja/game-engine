@@ -8,6 +8,10 @@ int main(int argc, char* argv[])
 {
 	QApplication application(argc, argv);
 	MyGlWindow myGlWindow;
+	myGlWindow.initialize();
 	myGlWindow.show();
-	return application.exec();
+	int errorCode = application.exec();
+	if (!myGlWindow.shutdown())
+		errorCode |= 1;
+	return errorCode;
 }

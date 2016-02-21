@@ -3,7 +3,9 @@
 #include <cassert>
 #include <Math\Vector2D.h>
 #include <Qt\qdebug.h>
+#include <Timing\Clock.h>
 using Math::Vector2D;
+using Timing::Clock;
 
 namespace 
 {
@@ -15,6 +17,7 @@ namespace
 	};
 	const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
 	Vector2D shipPosition(-1.0f, -1.0f);
+	Clock clock;
 }
 void MyGlWindow::initializeGL()
 {
@@ -29,7 +32,7 @@ void MyGlWindow::initializeGL()
 
 	connect(&myTimer, SIGNAL(timeout()),
 		this,SLOT(myUpdate()));
-	myTimer.start(1);
+	myTimer.start(200);
 }
 
 void MyGlWindow::paintGL()
@@ -51,11 +54,21 @@ void MyGlWindow::paintGL()
 int debugInt = 1;
 void MyGlWindow::myUpdate()
 {
-	if (debugInt++ % 20 == 0)
+	/*if (debugInt++ % 20 == 0)
 		for (int i = 0; i < 10000; i++)
-			qDebug() << "Hello";
+			qDebug() << "Hello";*/
 
 	Vector2D veclocity(0.005f, 0.005f);
 	shipPosition = shipPosition + veclocity;
 	repaint();
+}
+
+bool MyGlWindow::initialize()
+{
+	return clock.initialize();
+}
+
+bool MyGlWindow::shutdown()
+{
+	return clock.shutdown();
 }
