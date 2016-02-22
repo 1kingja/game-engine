@@ -3,6 +3,8 @@
 #include <QtOpenGL\qglwidget>
 #include <Qt\qtimer.h>
 
+class QKeyEvent;
+
 class MyGlWindow : public QGLWidget
 {
 	Q_OBJECT
@@ -12,6 +14,7 @@ class MyGlWindow : public QGLWidget
 protected:
 	void initializeGL();
 	void paintGL();
+	void keyPressEvent(QKeyEvent*);
 private slots:
 	void myUpdate();
 
