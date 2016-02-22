@@ -56,6 +56,7 @@ void MyGlWindow::paintGL()
 void MyGlWindow::myUpdate()
 {
 	clock.newFrame();
+	checkKeyState();
 	repaint();
 }
 
@@ -69,15 +70,15 @@ bool MyGlWindow::shutdown()
 	return clock.shutdown();
 }
 
-void MyGlWindow::keyPressEvent(QKeyEvent* e)
+void MyGlWindow::checkKeyState()
 {
 	const float SPEED = 0.02f;
-	if (e->key() == Qt::Key_Up) 
+	if (GetAsyncKeyState(VK_UP)) 
 		shipPosition.y += SPEED;
-	if (e->key() == Qt::Key_Down)
+	if (GetAsyncKeyState(VK_DOWN))
 		shipPosition.y -= SPEED;
-	if (e->key() == Qt::Key_Right)
+	if (GetAsyncKeyState(VK_RIGHT))
 		shipPosition.x += SPEED;
-	if (e->key() == Qt::Key_Left)
+	if (GetAsyncKeyState(VK_LEFT))
 		shipPosition.x -= SPEED;
 }

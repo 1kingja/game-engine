@@ -14,9 +14,9 @@ class MyGlWindow : public QGLWidget
 protected:
 	void initializeGL();
 	void paintGL();
-	void keyPressEvent(QKeyEvent*);
 private slots:
 	void myUpdate();
+	void checkKeyState();
 
 public:
 	bool initialize();
