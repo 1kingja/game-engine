@@ -16,7 +16,7 @@ protected:
 	void paintGL();
 private slots:
 	void myUpdate();
-	void checkKeyState();
+	void updateVelocity();
 
 public:
 	bool initialize();

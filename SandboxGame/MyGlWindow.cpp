@@ -18,6 +18,7 @@ namespace
 	};
 	const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
 	Vector2D shipPosition;
+	Vector2D shipVelocity;
 	Clock clock;
 }
 void MyGlWindow::initializeGL()
@@ -57,7 +58,9 @@ void MyGlWindow::paintGL()
 void MyGlWindow::myUpdate()
 {
 	clock.newFrame();
-	checkKeyState();
+	updateVelocity();
+	shipPosition = shipPosition + 
+		shipVelocity * clock.timeElapsedLastFrame();
 	repaint();
 }
 
@@ -71,15 +74,15 @@ bool MyGlWindow::shutdown()
 	return clock.shutdown();
 }
 
-void MyGlWindow::checkKeyState()
+void MyGlWindow::updateVelocity()
 {
-	const float SPEED = 0.02f;
+	const float ACCELERATION = 0.3f * clock.timeElapsedLastFrame();
 	if (GetAsyncKeyState(VK_UP)) 
-		shipPosition.y += SPEED;
+		shipVelocity.y += ACCELERATION;
 	if (GetAsyncKeyState(VK_DOWN))
-		shipPosition.y -= SPEED;
+		shipVelocity.y -= ACCELERATION;
 	if (GetAsyncKeyState(VK_RIGHT))
-		shipPosition.x += SPEED;
+		shipVelocity.x += ACCELERATION;
 	if (GetAsyncKeyState(VK_LEFT))
-		shipPosition.x -= SPEED;
+		shipVelocity.x -= ACCELERATION;
 }
