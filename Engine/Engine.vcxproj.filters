@@ -10,5 +10,6 @@
   <ItemGroup>
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="Timing\Clock.h" />
+    <ClInclude Include="Math\Matrix2D.h" />
   </ItemGroup>
 </Project>

@@ -154,6 +154,7 @@ copy "$(ProjectDir)..\Engine\$(Configuration)\Engine.dll" "$(OutDir)"</Command>
   <ItemGroup>
     <ClCompile Include="..\Middleware\gtest\src\gtest-all.cc" />
     <ClCompile Include="ClockTests.cpp" />
+    <ClCompile Include="Matrix2dTests.cpp" />
     <ClCompile Include="MyMain.cpp" />
     <ClCompile Include="Vector2DTests.cpp" />
   </ItemGroup>
