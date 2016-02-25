@@ -20,6 +20,7 @@
     <ClInclude Include="Timing\Clock.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Math\Matrix2D.inl" />
     <None Include="Math\Vector2D.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

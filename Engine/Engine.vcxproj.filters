@@ -6,6 +6,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Vector2D.inl" />
+    <None Include="Math\Matrix2D.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\Vector2D.h" />
