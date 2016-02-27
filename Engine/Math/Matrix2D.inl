@@ -7,6 +7,12 @@ Matrix2D::Matrix2D(
 {
 }
 
+Matrix2D Matrix2D::rotate(float angleInRadians)
+{
+	return Matrix2D();
+}
+
+
 Vector2D operator*(
 	const Matrix2D& matrix,
 	const Vector2D& vector)

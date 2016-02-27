@@ -13,7 +13,7 @@ namespace Math
 		inline explicit Matrix2D(
 			float r0c0 = 1, float r0c1 = 0, 
 			float r1c0 = 0, float r1c1 = 1);
-
+		inline static Matrix2D rotate(float angleInRadians);
 	};
 
 	inline Vector2D operator*(
