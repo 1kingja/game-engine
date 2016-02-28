@@ -1,6 +1,7 @@
 #ifndef ENGINE_MATRIX_2D_h
 #define ENGINE_MATRIX_2D_h
 #include "Math\Vector2D.h"
+#include <cmath>
 
 namespace Math
 {
