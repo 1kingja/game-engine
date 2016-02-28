@@ -1,8 +1,5 @@
-#define _USE_MATH_DEFINES
-#include <cmath>
-#include <gtest\gtest.h>
 #include <Math\Matrix2D.h>
-#include "HelperFunctions.h"
+#include <gtest\gtest.h>
 using Math::Matrix2D;
 using Math::Vector2D;
 
@@ -24,39 +21,39 @@ TEST(Matrix2D, Rotation)
 	EXPECT_FLOAT_EQ(op.r1c0, 0);
 	EXPECT_FLOAT_EQ(op.r1c1, 1);
 
-	op = Matrix2D::rotate(M_PI);
+	op = Matrix2D::rotate(PI);
 	EXPECT_FLOAT_EQ(op.r0c0, -1);
-	EXPECT_TRUE(closeEnough(op.r0c1, 0));
-	EXPECT_TRUE(closeEnough(op.r1c0, 0));
+	EXPECT_FLOAT_EQ(op.r0c1, 0);
+	EXPECT_FLOAT_EQ(op.r1c0, 0);
 	EXPECT_FLOAT_EQ(op.r1c1, -1);
 
-	op = Matrix2D::rotate(M_PI / 2);
-	EXPECT_TRUE(closeEnough(op.r0c0, 0));
+	op = Matrix2D::rotate(PI / 2);
+	EXPECT_FLOAT_EQ(op.r0c0, 0);
 	EXPECT_FLOAT_EQ(op.r0c1, -1);
 	EXPECT_FLOAT_EQ(op.r1c0, 1);
-	EXPECT_TRUE(closeEnough(op.r1c1, 0));
+	EXPECT_FLOAT_EQ(op.r1c1, 0);
 
-	op = Matrix2D::rotate(M_PI / 4);
+	op = Matrix2D::rotate(PI / 4);
 	const float sqrt2Over2 = 0.70710678118;
 	EXPECT_FLOAT_EQ(op.r0c0, sqrt2Over2);
-	EXPECT_FLOAT_EQ(op.r0c1, -sqrt2Over2);
+	EXPECT_FLOAT_EQ(op.r0c1, sqrt2Over2);
 	EXPECT_FLOAT_EQ(op.r1c0, sqrt2Over2);
 	EXPECT_FLOAT_EQ(op.r1c1, sqrt2Over2);
 
-	op = Matrix2D::rotate(-M_PI / 4);
+	op = Matrix2D::rotate(-PI / 4);
 	EXPECT_FLOAT_EQ(op.r0c0, sqrt2Over2);
 	EXPECT_FLOAT_EQ(op.r0c1, sqrt2Over2);
 	EXPECT_FLOAT_EQ(op.r1c0, -sqrt2Over2);
 	EXPECT_FLOAT_EQ(op.r1c1, sqrt2Over2);
 
-	op = Matrix2D::rotate(M_PI / 3);
+	op = Matrix2D::rotate(PI / 3);
 	const float sqrt3Over2 = 0.86602540378;
 	EXPECT_FLOAT_EQ(op.r0c0, .5);
 	EXPECT_FLOAT_EQ(op.r0c1, -sqrt3Over2);
 	EXPECT_FLOAT_EQ(op.r1c0, sqrt3Over2);
 	EXPECT_FLOAT_EQ(op.r1c1, .5);
 
-	op = Matrix2D::rotate(-M_PI / 3);
+	op = Matrix2D::rotate(-PI / 3);
 	EXPECT_FLOAT_EQ(op.r0c0, .5);
 	EXPECT_FLOAT_EQ(op.r0c1, sqrt3Over2);
 	EXPECT_FLOAT_EQ(op.r1c0, -sqrt3Over2);

@@ -7,7 +7,4 @@
     <ClCompile Include="ClockTests.cpp" />
     <ClCompile Include="Matrix2dTests.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="HelperFunctions.h" />
-  </ItemGroup>
 </Project>
