@@ -9,9 +9,11 @@ Matrix2D::Matrix2D(
 
 Matrix2D Matrix2D::rotate(float angleInRadians)
 {
+	float cosResult = cos(angleInRadians);
+	float sinResult = sin(angleInRadians);
 	return Matrix2D
-		(cos(angleInRadians),-sin(angleInRadians),
-		sin(angleInRadians),cos(angleInRadians));
+		(cosResult, -sinResult,
+		sinResult, cosResult);
 }
 
 
