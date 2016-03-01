@@ -1,0 +1,12150 @@
+#line 1 "Delme.cpp"
+#line 1 "c:\\jamie\\game-engine\\engine\\Math\\Matrix2D.h"
+
+
+#line 1 "c:\\jamie\\game-engine\\engine\\Math\\Vector2D.h"
+
+
+
+namespace Math 
+{
+	struct Vector2D
+	{
+		float x;
+		float y;
+		explicit Vector2D(float x = 0.0f, float y = 0.0f) : x(x), y(y) {}
+		inline Vector2D& operator +=(const Vector2D& right);
+		inline Vector2D& operator -=(const Vector2D& right);
+	};
+
+	inline Vector2D operator+(const Vector2D& left, const Vector2D& right);
+	inline Vector2D operator*(float scalar, const Vector2D& vector);
+	inline Vector2D operator*(const Vector2D& vector, float scalar);
+
+#line 1 "c:\\jamie\\game-engine\\engine\\math\\Vector2D.inl"
+
+Vector2D operator+(const Vector2D& left, const Vector2D& right)
+{
+	return Vector2D(left.x + right.x, left.y + right.y);
+}
+
+Vector2D operator*(float scalar, const Vector2D& vector)
+{
+	return Vector2D(scalar * vector.x, scalar * vector.y);
+}
+
+Vector2D operator*(const Vector2D& vector, float scalar)
+{
+	return scalar * vector;
+}
+
+Vector2D& Vector2D::operator +=(const Vector2D& right)
+{
+	x += right.x;
+	y += right.y;
+	return *this;
+}
+Vector2D& Vector2D::operator -=(const Vector2D& right)
+{
+	x -= right.x;
+	y -= right.y;
+	return *this;
+}
+#line 20 "c:\\jamie\\game-engine\\engine\\Math\\Vector2D.h"
+}
+#line 22 "c:\\jamie\\game-engine\\engine\\Math\\Vector2D.h"
+#line 4 "c:\\jamie\\game-engine\\engine\\Math\\Matrix2D.h"
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+#pragma once
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#pragma once
+
+
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+
+#pragma once
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 91 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 252 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+ #line 253 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+
+#line 255 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+
+#line 257 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+#line 258 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xkeycheck.h"
+
+
+
+
+
+#line 8 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+
+
+
+
+
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+#line 24 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+    
+    
+
+#line 34 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+        
+
+
+            
+        #line 39 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+    #line 40 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 41 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma once
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 151 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+#line 155 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 194 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+#line 197 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+#line 199 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+#line 205 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+#line 209 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+#line 216 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 228 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+#line 237 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+#line 238 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma region Input Buffer SAL 1 compatibility macros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                
+
+
+
+
+                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma endregion Input Buffer SAL 1 compatibility macros
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1564 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1595 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1620 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1633 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1672 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1795 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1898 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2067 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2169 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2381 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+extern "C" {
+
+
+
+
+#line 2387 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2615 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+
+#line 2654 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2888 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+#line 2898 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+    
+    
+#line 2903 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+#line 2910 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+#line 2911 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+#line 2918 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+#line 2919 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 2931 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 2965 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+#line 2989 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma once
+
+
+extern "C" {
+#line 24 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 265 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+
+
+
+#line 269 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 352 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+
+
+}
+#line 356 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+
+#line 358 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\ConcurrencySal.h"
+#line 2991 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\sal.h"
+
+
+#line 46 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+
+
+
+
+
+
+
+#pragma once
+
+
+
+#pragma pack(push, 8)
+
+
+extern "C" {
+#line 20 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+#line 24 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+    
+    
+        typedef unsigned __int64  uintptr_t;
+    
+
+#line 32 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+#line 33 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+    
+    
+
+
+        typedef char* va_list;
+    #line 41 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+#line 42 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+    
+
+
+#line 48 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+
+
+#line 54 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+#line 58 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+    
+    
+#line 61 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 73 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+
+
+
+
+#line 81 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 93 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 105 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+    void __cdecl __va_start(va_list* , ...);
+
+    
+    
+
+
+
+    
+
+#line 116 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+} 
+#line 120 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+
+    extern "C++"
+    {
+        template <typename _Ty>
+        struct __vcrt_va_list_is_reference
+        {
+            enum : bool { __the_value = false };
+        };
+
+        template <typename _Ty>
+        struct __vcrt_va_list_is_reference<_Ty&>
+        {
+            enum : bool { __the_value = true };
+        };
+
+        template <typename _Ty>
+        struct __vcrt_va_list_is_reference<_Ty&&>
+        {
+            enum : bool { __the_value = true };
+        };
+
+        template <typename _Ty>
+        void __vcrt_va_start_verify_argument_type() throw()
+        {
+            static_assert(!__vcrt_va_list_is_reference<_Ty>::__the_value, "va_start argument must not have reference type and must not be parenthesized");
+        }
+    } 
+
+    
+
+
+
+
+
+#line 156 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vadefs.h"
+
+#pragma pack(pop)
+#line 47 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 80 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+    
+#line 88 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+#line 109 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+#line 111 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+#line 113 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+#line 115 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+        
+    #line 117 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 118 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+
+
+
+
+
+#line 127 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+        
+    #line 129 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 130 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+#line 138 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+    
+#line 140 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+#line 146 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+    
+    
+#line 149 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+    
+#line 155 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+    
+
+
+#line 167 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+#line 171 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+    
+#line 173 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+    
+#line 179 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+        
+        
+    
+
+#line 187 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 188 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+    typedef unsigned __int64 size_t;
+    typedef __int64          ptrdiff_t;
+    typedef __int64          intptr_t;
+
+
+
+
+#line 202 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+    
+#line 207 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+#line 211 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+#line 215 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+    
+        
+    
+
+#line 228 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 229 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+
+
+#line 235 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    extern "C++"
+    {
+        template <typename _CountofType, size_t _SizeOfArray>
+        char (*__countof_helper(__unaligned _CountofType (&_Array)[_SizeOfArray]))[_SizeOfArray];
+            
+        
+    }
+
+
+#line 247 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+#line 254 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+
+
+        
+
+
+
+
+    #line 265 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 266 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+#line 270 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+    
+        
+    
+
+
+#line 278 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 279 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+
+    void __cdecl __security_init_cookie(void);
+
+    
+
+
+
+        void __cdecl __security_check_cookie(  uintptr_t _StackCookie);
+        __declspec(noreturn) void __cdecl __report_gsfailure(  uintptr_t _StackCookie);
+    #line 297 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 298 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+        
+extern uintptr_t __security_cookie;
+ 
+
+    
+    
+    
+#line 306 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+} __pragma(pack(pop))
+
+#line 310 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+#line 10 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+#line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+#pragma once
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 11 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+
+
+
+
+
+    
+
+#line 25 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+#line 27 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+        
+    #line 29 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 30 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+    
+#line 36 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+#line 41 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+#line 43 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+        
+    #line 45 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 46 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 50 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    
+#line 52 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+
+#line 58 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+#line 64 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    
+#line 66 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+    
+#line 73 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+        
+    #line 91 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 92 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 96 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    
+#line 98 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 102 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    
+#line 104 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 108 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    
+#line 110 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+extern "C++"
+{
+    template<bool _Enable, typename _Ty>
+    struct _CrtEnableIf;
+
+    template<typename _Ty>
+    struct _CrtEnableIf<true, _Ty>
+    {
+        typedef _Ty _Type;
+    };
+}
+#line 131 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    typedef bool  __crt_bool;
+
+
+#line 137 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+    
+#line 149 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 161 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+#line 165 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+        
+    #line 188 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 189 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+#line 193 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+        
+    
+
+#line 200 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 201 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ void __cdecl _invalid_parameter_noinfo(void);
+ __declspec(noreturn) void __cdecl _invalid_parameter_noinfo_noreturn(void);
+
+__declspec(noreturn)
+ void __cdecl _invoke_watson(
+      wchar_t const*,
+      wchar_t const*,
+      wchar_t const*,
+            unsigned int,
+            uintptr_t);
+
+
+    
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    #line 256 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 257 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+#line 268 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+
+        
+
+
+    #line 277 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 278 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+        
+    #line 296 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 297 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+
+        
+    #line 304 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 305 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 309 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 323 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+#line 345 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 349 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+#line 354 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 355 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+
+        
+
+
+            
+        #line 365 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    #line 366 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 367 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 371 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+#line 377 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+
+        
+
+
+
+    #line 387 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 388 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+        
+    
+
+
+
+#line 397 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+    
+        
+        
+        
+    
+
+
+
+#line 407 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+    
+        
+              
+        
+
+#line 414 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+    
+
+
+
+#line 419 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+    
+        
+    
+
+
+
+#line 427 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+    
+        
+    
+
+
+
+#line 435 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 436 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+#line 440 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+typedef int                           errno_t;
+typedef unsigned short                wint_t;
+typedef unsigned short                wctype_t;
+typedef long                          __time32_t;
+typedef __int64                       __time64_t;
+
+typedef struct __crt_locale_data_public
+{
+      unsigned short const* _locale_pctype;
+      int _locale_mb_cur_max;
+               unsigned int _locale_lc_codepage;
+} __crt_locale_data_public;
+
+typedef struct __crt_locale_pointers
+{
+    struct __crt_locale_data*    locinfo;
+    struct __crt_multibyte_data* mbcinfo;
+} __crt_locale_pointers;
+
+typedef __crt_locale_pointers* _locale_t; 
+
+typedef struct _Mbstatet
+{ 
+    unsigned long _Wchar;
+    unsigned short _Byte, _State;
+} _Mbstatet;
+
+typedef _Mbstatet mbstate_t;
+
+
+
+#line 480 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+#line 484 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    
+
+
+        typedef __time64_t time_t;
+    #line 491 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 492 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+    
+#line 497 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+    typedef size_t rsize_t;
+#line 501 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 677 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 678 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1753 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+        
+        
+        
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+
+        
+
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+
+        
+
+
+
+        
+
+
+
+        
+
+
+        
+
+
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+        
+
+
+
+
+        
+
+    #line 1897 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+#line 1898 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt.h"
+
+
+
+} __pragma(pack(pop))
+
+#line 11 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+
+
+
+
+
+
+
+
+    
+
+#line 23 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+#line 25 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+        
+    #line 27 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+#line 28 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+
+    
+
+#line 33 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+        
+
+#line 36 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+            
+        #line 38 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+    #line 39 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+#line 40 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+
+    
+
+#line 45 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+        
+
+#line 48 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+            
+        #line 50 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+    #line 51 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+#line 52 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+
+    
+
+#line 57 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+
+#line 59 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+        
+
+#line 62 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+            
+        #line 64 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+    #line 65 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+#line 66 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\crtdefs.h"
+#line 9 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#pragma pack(push,8)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  
+ 
+
+
+#line 37 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+  
+ #line 41 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+  
+  
+ 
+
+
+#line 49 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+  
+ #line 53 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 74 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#line 76 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+		
+
+	
+
+
+
+
+
+
+
+		
+		
+
+
+			
+		#line 93 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	#line 94 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+#line 95 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+		
+
+
+
+
+ 
+  
+ #line 104 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+		
+
+
+			
+		#line 159 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	#line 160 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+	
+	
+
+
+
+
+		
+
+#line 170 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+			
+		#line 172 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	#line 173 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+	
+	
+
+#line 178 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#line 180 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+		
+	#line 182 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#line 184 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+	
+		#pragma detect_mismatch("_MSC_VER", "1900")
+	#line 192 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+	
+		#pragma detect_mismatch("_ITERATOR_DEBUG_LEVEL", "0")
+	#line 196 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+	
+		
+			#pragma detect_mismatch("RuntimeLibrary", "MT_StaticRelease")
+		
+
+
+
+
+
+#line 207 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	#line 208 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+#line 209 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+
+
+
+	
+		
+	
+
+#line 222 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+#line 223 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+#line 228 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+#line 233 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#line 235 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+#line 236 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+
+
+
+
+#line 246 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#line 248 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+ 
+#line 252 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 320 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+#line 326 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ 
+ 
+#line 329 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+ 
+
+ #line 334 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+
+
+
+
+
+
+#line 346 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma once
+
+
+
+
+
+
+
+
+#line 24 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+#line 41 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+
+
+#line 45 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+    
+
+    
+
+#line 50 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+#line 51 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+
+
+    
+#line 56 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+#pragma comment(lib, "libcpmt" "" "")
+
+
+
+
+
+
+#line 65 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+#line 67 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+
+#line 69 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\use_ansi.h"
+#line 348 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+#line 352 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+#line 356 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+#line 378 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+   
+  #line 380 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ #line 381 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+  
+
+#line 386 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+   
+  #line 388 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ #line 389 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+  
+
+#line 394 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+   
+  #line 396 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ #line 397 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+ 
+  
+
+
+
+
+
+#line 407 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+   
+
+
+#line 412 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+    
+   #line 414 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+  #line 416 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ #line 417 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+
+#line 421 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+  
+
+#line 426 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+   
+
+
+     
+   #line 431 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+  #line 432 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ #line 433 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  #line 464 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+ #line 465 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+		
+
+ 
+  
+  
+  
+
+
+
+
+  
+  
+  
+
+  
+
+
+
+
+
+
+
+   
+   
+   
+  #line 492 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+  
+  
+  
+  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+#line 512 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+		
+
+
+
+
+
+		
+
+
+
+
+
+
+typedef long long _Longlong;
+typedef unsigned long long _ULonglong;
+
+		
+
+
+
+
+
+
+		
+		
+
+
+
+
+
+
+ 
+namespace std {
+enum _Uninitialized
+	{	
+	_Noinit
+	};
+
+		
+
+#pragma warning(push)
+#pragma warning(disable:4412)
+class  _Lockit
+	{	
+public:
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 578 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	__thiscall _Lockit();	
+	explicit __thiscall _Lockit(int);	
+	__thiscall ~_Lockit() noexcept;	
+  #line 582 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+	static  void __cdecl _Lockit_ctor(int);
+	static  void __cdecl _Lockit_dtor(int);
+
+private:
+	static  void __cdecl _Lockit_ctor(_Lockit *);
+	static  void __cdecl _Lockit_ctor(_Lockit *, int);
+	static  void __cdecl _Lockit_dtor(_Lockit *);
+
+public:
+	 _Lockit(const _Lockit&) = delete;
+	_Lockit&  operator=(const _Lockit&) = delete;
+
+private:
+	int _Locktype;
+
+  
+
+
+
+
+
+
+
+
+
+
+
+#line 611 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	};
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+  
+
+
+
+  
+
+
+  
+ #line 697 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+class  _Init_locks
+	{	
+public:
+ 
+  
+
+
+
+
+
+
+
+
+
+
+#line 714 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	__thiscall _Init_locks();
+	__thiscall ~_Init_locks() noexcept;
+  #line 717 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+private:
+	static  void __cdecl _Init_locks_ctor(_Init_locks *);
+	static  void __cdecl _Init_locks_dtor(_Init_locks *);
+
+ 
+
+
+
+
+
+
+
+#line 731 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+	};
+
+#pragma warning(pop)
+}
+ #line 736 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+		
+
+ void __cdecl _Atexit(void (__cdecl *)(void));
+
+typedef unsigned long _Uint32t;
+
+
+
+
+ 
+ #pragma pack(pop)
+#line 753 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+#line 754 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\yvals.h"
+
+
+
+
+
+#line 6 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+
+
+
+
+
+ #line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+
+
+
+
+
+
+
+
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+#pragma warning(push)
+#pragma warning(disable:4738) 
+#pragma warning(disable:4820) 
+#line 21 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+    
+    
+    struct _exception
+    {
+        int    type;   
+        char*  name;   
+        double arg1;   
+        double arg2;   
+        double retval; 
+    };
+
+    
+    
+    
+        
+
+        struct _complex
+        {
+            double x, y; 
+        };
+
+        
+
+
+#line 49 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+    #line 50 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+#line 51 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+typedef float float_t;
+typedef double double_t;
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        extern double const _HUGE;
+    
+
+#line 72 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+#line 73 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+    
+#line 77 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void __cdecl _fperrraise(  int _Except);
+
+   short __cdecl _dclass(  double _X);
+   short __cdecl _ldclass(  long double _X);
+   short __cdecl _fdclass(  float _X);
+
+   int __cdecl _dsign(  double _X);
+   int __cdecl _ldsign(  long double _X);
+   int __cdecl _fdsign(  float _X);
+
+   int __cdecl _dpcomp(  double _X,   double _Y);
+   int __cdecl _ldpcomp(  long double _X,   long double _Y);
+   int __cdecl _fdpcomp(  float _X,   float _Y);
+
+   short __cdecl _dtest(  double* _Px);
+   short __cdecl _ldtest(  long double* _Px);
+   short __cdecl _fdtest(  float* _Px);
+
+ short __cdecl _d_int(  double* _Px,   short _Xexp);
+ short __cdecl _ld_int(  long double* _Px,   short _Xexp);
+ short __cdecl _fd_int(  float* _Px,   short _Xexp);
+
+ short __cdecl _dscale(  double* _Px,   long _Lexp);
+ short __cdecl _ldscale(  long double* _Px,   long _Lexp);
+ short __cdecl _fdscale(  float* _Px,   long _Lexp);
+
+ short __cdecl _dunscale(  short* _Pex,   double* _Px);
+ short __cdecl _ldunscale(  short* _Pex,   long double* _Px);
+ short __cdecl _fdunscale(  short* _Pex,   float* _Px);
+
+   short __cdecl _dexp(  double* _Px,   double _Y,   long _Eoff);
+   short __cdecl _ldexp(  long double* _Px,   long double _Y,   long _Eoff);
+   short __cdecl _fdexp(  float* _Px,   float _Y,   long _Eoff);
+
+   short __cdecl _dnorm(  unsigned short* _Ps);
+   short __cdecl _fdnorm(  unsigned short* _Ps);
+
+   double __cdecl _dpoly(  double _X,   double const* _Tab,   int _N);
+   long double __cdecl _ldpoly(  long double _X,   long double const* _Tab,   int _N);
+   float __cdecl _fdpoly(  float _X,   float const* _Tab,   int _N);
+
+   double __cdecl _dlog(  double _X,   int _Baseflag);
+   long double __cdecl _ldlog(  long double _X,   int _Baseflag);
+   float __cdecl _fdlog(  float _X,   int _Baseflag);
+
+   double __cdecl _dsin(  double _X,   unsigned int _Qoff);
+   long double __cdecl _ldsin(  long double _X,   unsigned int _Qoff);
+   float __cdecl _fdsin(  float _X,   unsigned int _Qoff);
+
+
+typedef union
+{   
+    unsigned short _Sh[4];
+    double _Val;
+} _double_val;
+
+
+typedef union
+{   
+    unsigned short _Sh[2];
+    float _Val;
+} _float_val;
+
+
+typedef union
+{   
+    unsigned short _Sh[4];
+    long double _Val;
+} _ldouble_val;
+
+typedef union
+{   
+    unsigned short _Word[4];
+    float _Float;
+    double _Double;
+    long double _Long_double;
+} _float_const;
+
+extern const _float_const _Denorm_C,  _Inf_C,  _Nan_C,  _Snan_C, _Hugeval_C;
+extern const _float_const _FDenorm_C, _FInf_C, _FNan_C, _FSnan_C;
+extern const _float_const _LDenorm_C, _LInf_C, _LNan_C, _LSnan_C;
+
+extern const _float_const _Eps_C,  _Rteps_C;
+extern const _float_const _FEps_C, _FRteps_C;
+extern const _float_const _LEps_C, _LRteps_C;
+
+extern const double      _Zero_C,  _Xbig_C;
+extern const float       _FZero_C, _FXbig_C;
+extern const long double _LZero_C, _LXbig_C;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extern "C++"
+{
+      inline int fpclassify(  float _X) throw()
+    {
+        return _fdtest(&_X);
+    }
+
+      inline int fpclassify(  double _X) throw()
+    {
+        return _dtest(&_X);
+    }
+
+      inline int fpclassify(  long double _X) throw()
+    {
+        return _ldtest(&_X);
+    }
+
+      inline bool signbit(  float _X) throw()
+    {
+        return _fdsign(_X) != 0;
+    }
+
+      inline bool signbit(  double _X) throw()
+    {
+        return _dsign(_X) != 0;
+    }
+
+      inline bool signbit(  long double _X) throw()
+    {
+        return _ldsign(_X) != 0;
+    }
+
+      inline int _fpcomp(  float _X,   float _Y) throw()
+    {
+        return _fdpcomp(_X, _Y);
+    }
+
+      inline int _fpcomp(  double _X,   double _Y) throw()
+    {
+        return _dpcomp(_X, _Y);
+    }
+
+      inline int _fpcomp(  long double _X,   long double _Y) throw()
+    {
+        return _ldpcomp(_X, _Y);
+    }
+
+    template <class _Trc, class _Tre> struct _Combined_type
+    {   
+        typedef float _Type;
+    };
+
+    template <> struct _Combined_type<float, double>
+    {   
+        typedef double _Type;
+    };
+
+    template <> struct _Combined_type<float, long double>
+    {   
+        typedef long double _Type;
+    };
+
+    template <class _Ty, class _T2> struct _Real_widened
+    {   
+        typedef long double _Type;
+    };
+
+    template <> struct _Real_widened<float, float>
+    {   
+        typedef float _Type;
+    };
+
+    template <> struct _Real_widened<float, double>
+    {   
+        typedef double _Type;
+    };
+
+    template <> struct _Real_widened<double, float>
+    {   
+        typedef double _Type;
+    };
+
+    template <> struct _Real_widened<double, double>
+    {   
+        typedef double _Type;
+    };
+
+    template <class _Ty> struct _Real_type
+    {   
+        typedef double _Type;   
+    };
+
+    template <> struct _Real_type<float>
+    {   
+        typedef float _Type;
+    };
+
+    template <> struct _Real_type<long double>
+    {   
+        typedef long double _Type;
+    };
+
+    template <class _T1, class _T2>
+      inline int _fpcomp(  _T1 _X,   _T2 _Y) throw()
+    {   
+        typedef typename _Combined_type<float,
+            typename _Real_widened<
+            typename _Real_type<_T1>::_Type,
+            typename _Real_type<_T2>::_Type>::_Type>::_Type _Tw;
+        return _fpcomp((_Tw)_X, (_Tw)_Y);
+    }
+
+    template <class _Ty>
+      inline bool isfinite(  _Ty _X) throw()
+    {
+        return fpclassify(_X) <= 0;
+    }
+
+    template <class _Ty>
+      inline bool isinf(  _Ty _X) throw()
+    {
+        return fpclassify(_X) == 1;
+    }
+
+    template <class _Ty>
+      inline bool isnan(  _Ty _X) throw()
+    {
+        return fpclassify(_X) == 2;
+    }
+
+    template <class _Ty>
+      inline bool isnormal(  _Ty _X) throw()
+    {
+        return fpclassify(_X) == (-1);
+    }
+
+    template <class _Ty1, class _Ty2>
+      inline bool isgreater(  _Ty1 _X,   _Ty2 _Y) throw()
+    {
+        return (_fpcomp(_X, _Y) & 4) != 0;
+    }
+
+    template <class _Ty1, class _Ty2>
+      inline bool isgreaterequal(  _Ty1 _X,   _Ty2 _Y) throw()
+    {
+        return (_fpcomp(_X, _Y) & (2 | 4)) != 0;
+    }
+
+    template <class _Ty1, class _Ty2>
+      inline bool isless(  _Ty1 _X,   _Ty2 _Y) throw()
+    {
+        return (_fpcomp(_X, _Y) & 1) != 0;
+    }
+
+    template <class _Ty1, class _Ty2>
+      inline bool islessequal(  _Ty1 _X,   _Ty2 _Y) throw()
+    {
+        return (_fpcomp(_X, _Y) & (1 | 2)) != 0;
+    }
+
+    template <class _Ty1, class _Ty2>
+      inline bool islessgreater(  _Ty1 _X,   _Ty2 _Y) throw()
+    {
+        return (_fpcomp(_X, _Y) & (1 | 4)) != 0;
+    }
+
+    template <class _Ty1, class _Ty2>
+      inline bool isunordered(  _Ty1 _X,   _Ty2 _Y) throw()
+    {
+        return _fpcomp(_X, _Y) == 0;
+    }
+}  
+#line 449 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+
+
+  int       __cdecl abs(  int _X);
+  long      __cdecl labs(  long _X);
+  long long __cdecl llabs(  long long _X);
+
+  double __cdecl acos(  double _X);
+  double __cdecl asin(  double _X);
+  double __cdecl atan(  double _X);
+  double __cdecl atan2(  double _Y,   double _X);
+
+  double __cdecl cos(  double _X);
+  double __cdecl cosh(  double _X);
+  double __cdecl exp(  double _X);
+   double __cdecl fabs(  double _X);
+  double __cdecl fmod(  double _X,   double _Y);
+  double __cdecl log(  double _X);
+  double __cdecl log10(  double _X);
+  double __cdecl pow(  double _X,   double _Y);
+  double __cdecl sin(  double _X);
+  double __cdecl sinh(  double _X);
+   double __cdecl sqrt(  double _X);
+  double __cdecl tan(  double _X);
+  double __cdecl tanh(  double _X);
+
+   double    __cdecl acosh(  double _X);
+   double    __cdecl asinh(  double _X);
+   double    __cdecl atanh(  double _X);
+    double    __cdecl atof(  char const* _String);
+    double    __cdecl _atof_l(  char const* _String,   _locale_t _Locale);
+   double    __cdecl _cabs(  struct _complex _Complex_value);
+   double    __cdecl cbrt(  double _X);
+   double    __cdecl ceil(  double _X);
+   double    __cdecl _chgsign(  double _X);
+   double    __cdecl copysign(  double _Number,   double _Sign);
+   double    __cdecl _copysign(  double _Number,   double _Sign);
+   double    __cdecl erf(  double _X);
+   double    __cdecl erfc(  double _X);
+   double    __cdecl exp2(  double _X);
+   double    __cdecl expm1(  double _X);
+   double    __cdecl fdim(  double _X,   double _Y);
+   double    __cdecl floor(  double _X);
+   double    __cdecl fma(  double _X,   double _Y,   double _Z);
+   double    __cdecl fmax(  double _X,   double _Y);
+   double    __cdecl fmin(  double _X,   double _Y);
+   double    __cdecl frexp(  double _X,   int* _Y);
+   double    __cdecl hypot(  double _X,   double _Y);
+   double    __cdecl _hypot(  double _X,   double _Y);
+   int       __cdecl ilogb(  double _X);
+   double    __cdecl ldexp(  double _X,   int _Y);
+   double    __cdecl lgamma(  double _X);
+   long long __cdecl llrint(  double _X);
+   long long __cdecl llround(  double _X);
+   double    __cdecl log1p(  double _X);
+   double    __cdecl log2(  double _X);
+   double    __cdecl logb(  double _X);
+   long      __cdecl lrint(  double _X);
+   long      __cdecl lround(  double _X);
+
+int __cdecl _matherr(  struct _exception* _Except);
+
+   double __cdecl modf(  double _X,   double* _Y);
+   double __cdecl nan(  char const*);
+   double __cdecl nearbyint(  double _X);
+   double __cdecl nextafter(  double _X,   double _Y);
+   double __cdecl nexttoward(  double _X,   long double _Y);
+   double __cdecl remainder(  double _X,   double _Y);
+   double __cdecl remquo(  double _X,   double _Y,   int* _Z);
+   double __cdecl rint(  double _X);
+   double __cdecl round(  double _X);
+   double __cdecl scalbln(  double _X,   long _Y);
+   double __cdecl scalbn(  double _X,   int _Y);
+   double __cdecl tgamma(  double _X);
+   double __cdecl trunc(  double _X);
+   double __cdecl _j0(  double _X );
+   double __cdecl _j1(  double _X );
+   double __cdecl _jn(int _X,   double _Y);
+   double __cdecl _y0(  double _X);
+   double __cdecl _y1(  double _X);
+   double __cdecl _yn(  int _X,   double _Y);
+
+   float     __cdecl acoshf(  float _X);
+   float     __cdecl asinhf(  float _X);
+   float     __cdecl atanhf(  float _X);
+   float     __cdecl cbrtf(  float _X);
+   float     __cdecl _chgsignf(  float _X);
+   float     __cdecl copysignf(  float _Number,   float _Sign);
+   float     __cdecl _copysignf(  float _Number,   float _Sign);
+   float     __cdecl erff(  float _X);
+   float     __cdecl erfcf(  float _X);
+   float     __cdecl expm1f(  float _X);
+   float     __cdecl exp2f(  float _X);
+   float     __cdecl fdimf(  float _X,   float _Y);
+   float     __cdecl fmaf(  float _X,   float _Y,   float _Z);
+   float     __cdecl fmaxf(  float _X,   float _Y);
+   float     __cdecl fminf(  float _X,   float _Y);
+   float     __cdecl _hypotf(  float _X,   float _Y);
+   int       __cdecl ilogbf(  float _X);
+   float     __cdecl lgammaf(  float _X);
+   long long __cdecl llrintf(  float _X);
+   long long __cdecl llroundf(  float _X);
+   float     __cdecl log1pf(  float _X);
+   float     __cdecl log2f(  float _X);
+   float     __cdecl logbf(  float _X);
+   long      __cdecl lrintf(  float _X);
+   long      __cdecl lroundf(  float _X);
+   float     __cdecl nanf(  char const*);
+   float     __cdecl nearbyintf(  float _X);
+   float     __cdecl nextafterf(  float _X,   float _Y);
+   float     __cdecl nexttowardf(  float _X,   long double _Y);
+   float     __cdecl remainderf(  float _X,   float _Y);
+   float     __cdecl remquof(  float _X,   float _Y,   int* _Z);
+   float     __cdecl rintf(  float _X);
+   float     __cdecl roundf(  float _X);
+   float     __cdecl scalblnf(  float _X,   long _Y);
+   float     __cdecl scalbnf(  float _X,   int _Y);
+   float     __cdecl tgammaf(  float _X);
+   float     __cdecl truncf(  float _X);
+
+
+
+
+
+#line 576 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+       float __cdecl _logbf(  float _X);
+       float __cdecl _nextafterf(  float _X,   float _Y);
+       int   __cdecl _finitef(  float _X);
+       int   __cdecl _isnanf(  float _X);
+       int   __cdecl _fpclassf(  float _X);
+
+       int   __cdecl _set_FMA3_enable(  int _Flag);
+       int   __cdecl _get_FMA3_enable(void);
+
+
+
+
+
+
+#line 592 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+
+
+       float __cdecl acosf(  float _X);
+       float __cdecl asinf(  float _X);
+       float __cdecl atan2f(  float _Y,   float _X);
+       float __cdecl atanf(  float _X);
+       float __cdecl ceilf(  float _X);
+       float __cdecl cosf(  float _X);
+       float __cdecl coshf(  float _X);
+       float __cdecl expf(  float _X);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 649 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+
+
+#line 655 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+      __inline float __cdecl fabsf(  float _X)
+    {
+        return (float)fabs(_X);
+    }
+
+#line 662 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+       float __cdecl floorf(  float _X);
+       float __cdecl fmodf(  float _X,   float _Y);
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 681 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+  __inline float __cdecl frexpf(  float _X,   int *_Y)
+{
+    return (float)frexp(_X, _Y);
+}
+
+  __inline float __cdecl hypotf(  float _X,   float _Y)
+{
+    return _hypotf(_X, _Y);
+}
+
+  __inline float __cdecl ldexpf(  float _X,   int _Y)
+{
+    return (float)ldexp(_X, _Y);
+}
+
+
+
+       float  __cdecl log10f(  float _X);
+       float  __cdecl logf(  float _X);
+       float  __cdecl modff(  float _X,   float *_Y);
+       float  __cdecl powf(  float _X,   float _Y);
+       float  __cdecl sinf(  float _X);
+       float  __cdecl sinhf(  float _X);
+       float  __cdecl sqrtf(  float _X);
+       float  __cdecl tanf(  float _X);
+       float  __cdecl tanhf(  float _X);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 760 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+   long double __cdecl acoshl(  long double _X);
+
+  __inline long double __cdecl acosl(  long double _X)
+{
+    return acos((double)_X);
+}
+
+   long double __cdecl asinhl(  long double _X);
+
+  __inline long double __cdecl asinl(  long double _X)
+{
+    return asin((double)_X);
+}
+
+  __inline long double __cdecl atan2l(  long double _Y,   long double _X)
+{
+    return atan2((double)_Y, (double)_X);
+}
+
+   long double __cdecl atanhl(  long double _X);
+
+  __inline long double __cdecl atanl(  long double _X)
+{
+    return atan((double)_X);
+}
+
+   long double __cdecl cbrtl(  long double _X);
+
+  __inline long double __cdecl ceill(  long double _X)
+{
+    return ceil((double)_X);
+}
+
+  __inline long double __cdecl _chgsignl(  long double _X)
+{
+    return _chgsign((double)_X);
+}
+
+   long double __cdecl copysignl(  long double _Number,   long double _Sign);
+
+  __inline long double __cdecl _copysignl(  long double _Number,   long double _Sign)
+{
+    return _copysign((double)_Number, (double)_Sign);
+}
+
+  __inline long double __cdecl coshl(  long double _X)
+{
+    return cosh((double)_X);
+}
+
+  __inline long double __cdecl cosl(  long double _X)
+{
+    return cos((double)_X);
+}
+
+   long double __cdecl erfl(  long double _X);
+   long double __cdecl erfcl(  long double _X);
+
+  __inline long double __cdecl expl(  long double _X)
+{
+    return exp((double)_X);
+}
+
+   long double __cdecl exp2l(  long double _X);
+   long double __cdecl expm1l(  long double _X);
+
+  __inline long double __cdecl fabsl(  long double _X)
+{
+    return fabs((double)_X);
+}
+
+   long double __cdecl fdiml(  long double _X,   long double _Y);
+
+  __inline long double __cdecl floorl(  long double _X)
+{
+    return floor((double)_X);
+}
+
+   long double __cdecl fmal(  long double _X,   long double _Y,   long double _Z);
+   long double __cdecl fmaxl(  long double _X,   long double _Y);
+   long double __cdecl fminl(  long double _X,   long double _Y);
+
+  __inline long double __cdecl fmodl(  long double _X,   long double _Y)
+{
+    return fmod((double)_X, (double)_Y);
+}
+
+  __inline long double __cdecl frexpl(  long double _X,   int *_Y)
+{
+    return frexp((double)_X, _Y);
+}
+
+   int __cdecl ilogbl(  long double _X);
+
+  __inline long double __cdecl _hypotl(  long double _X,   long double _Y)
+{
+    return _hypot((double)_X, (double)_Y);
+}
+
+  __inline long double __cdecl hypotl(  long double _X,   long double _Y)
+{
+    return _hypot((double)_X, (double)_Y);
+}
+
+  __inline long double __cdecl ldexpl(  long double _X,   int _Y)
+{
+    return ldexp((double)_X, _Y);
+}
+
+   long double __cdecl lgammal(  long double _X);
+   long long __cdecl llrintl(  long double _X);
+   long long __cdecl llroundl(  long double _X);
+
+  __inline long double __cdecl logl(  long double _X)
+{
+    return log((double)_X);
+}
+
+  __inline long double __cdecl log10l(  long double _X)
+{
+    return log10((double)_X);
+}
+
+   long double __cdecl log1pl(  long double _X);
+   long double __cdecl log2l(  long double _X);
+   long double __cdecl logbl(  long double _X);
+   long __cdecl lrintl(  long double _X);
+   long __cdecl lroundl(  long double _X);
+
+  __inline long double __cdecl modfl(  long double _X,   long double* _Y)
+{
+    double _F, _I;
+    _F = modf((double)_X, &_I);
+    *_Y = _I;
+    return _F;
+}
+
+   long double __cdecl nanl(  char const*);
+   long double __cdecl nearbyintl(  long double _X);
+   long double __cdecl nextafterl(  long double _X,   long double _Y);
+   long double __cdecl nexttowardl(  long double _X,   long double _Y);
+
+  __inline long double __cdecl powl(  long double _X,   long double _Y)
+{
+    return pow((double)_X, (double)_Y);
+}
+
+   long double __cdecl remainderl(  long double _X,   long double _Y);
+   long double __cdecl remquol(  long double _X,   long double _Y,   int* _Z);
+   long double __cdecl rintl(  long double _X);
+   long double __cdecl roundl(  long double _X);
+   long double __cdecl scalblnl(  long double _X,   long _Y);
+   long double __cdecl scalbnl(  long double _X,   int _Y);
+
+  __inline long double __cdecl sinhl(  long double _X)
+{
+    return sinh((double)_X);
+}
+
+  __inline long double __cdecl sinl(  long double _X)
+{
+    return sin((double)_X);
+}
+
+  __inline long double __cdecl sqrtl(  long double _X)
+{
+    return sqrt((double)_X);
+}
+
+  __inline long double __cdecl tanhl(  long double _X)
+{
+    return tanh((double)_X);
+}
+
+  __inline long double __cdecl tanl(  long double _X)
+{
+    return tan((double)_X);
+}
+
+   long double __cdecl tgammal(  long double _X);
+   long double __cdecl truncl(  long double _X);
+
+
+
+
+
+#line 948 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+    
+        
+            extern double HUGE;
+        
+
+#line 967 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+        __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_j0" ". See online help for details."))    double __cdecl j0(  double _X);
+        __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_j1" ". See online help for details."))    double __cdecl j1(  double _X);
+        __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_jn" ". See online help for details."))    double __cdecl jn(  int _X,   double _Y);
+        __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_y0" ". See online help for details."))    double __cdecl y0(  double _X);
+        __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_y1" ". See online help for details."))    double __cdecl y1(  double _X);
+        __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_yn" ". See online help for details."))    double __cdecl yn(  int _X,   double _Y);
+    #line 975 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+#line 976 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+#pragma warning(pop)
+#line 981 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+} __pragma(pack(pop))
+
+#line 986 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 1010 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\math.h"
+
+#line 13 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+#line 14 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+ 
+
+template<class _Ty>
+	  inline _Ty _Pow_int(_Ty _Xx, int _Yx) noexcept
+	{
+	unsigned int _Nx;
+	if (_Yx >= 0)
+		_Nx = static_cast<unsigned int>(_Yx);
+	else
+		_Nx = static_cast<unsigned int>(-_Yx);
+
+	for (_Ty _Zx = static_cast<_Ty>(1); ; _Xx *= _Xx)
+		{
+		if ((_Nx & 1) != 0)
+			_Zx *= _Xx;
+		if ((_Nx >>= 1) == 0)
+			return (_Yx < 0 ? static_cast<_Ty>(1) / _Zx : _Zx);
+		}
+	}
+
+  inline double abs(  double _Xx) noexcept
+	{
+	return (:: fabs(_Xx));
+	}
+
+  inline double pow(  double _Xx,   int _Yx) noexcept
+	{
+	return (_Pow_int(_Xx, _Yx));
+	}
+
+  inline float abs(  float _Xx) noexcept
+	{
+	return (:: fabsf(_Xx));
+	}
+
+  inline float acos(  float _Xx) noexcept
+	{
+	return (:: acosf(_Xx));
+	}
+
+  inline float acosh(  float _Xx) noexcept
+	{
+	return (:: acoshf(_Xx));
+	}
+
+  inline float asin(  float _Xx) noexcept
+	{
+	return (:: asinf(_Xx));
+	}
+
+  inline float asinh(  float _Xx) noexcept
+	{
+	return (:: asinhf(_Xx));
+	}
+
+  inline float atan(  float _Xx) noexcept
+	{
+	return (:: atanf(_Xx));
+	}
+
+  inline float atanh(  float _Xx) noexcept
+	{
+	return (:: atanhf(_Xx));
+	}
+
+  inline float atan2(  float _Yx,   float _Xx) noexcept
+	{
+	return (:: atan2f(_Yx, _Xx));
+	}
+
+  inline float cbrt(  float _Xx) noexcept
+	{
+	return (:: cbrtf(_Xx));
+	}
+
+  inline float ceil(  float _Xx) noexcept
+	{
+	return (:: ceilf(_Xx));
+	}
+
+  inline float copysign(  float _Number,
+	  float _Sign) noexcept
+	{
+	return (:: copysignf(_Number, _Sign));
+	}
+
+  inline float cos(  float _Xx) noexcept
+	{
+	return (:: cosf(_Xx));
+	}
+
+  inline float cosh(  float _Xx) noexcept
+	{
+	return (:: coshf(_Xx));
+	}
+
+  inline float erf(  float _Xx) noexcept
+	{
+	return (:: erff(_Xx));
+	}
+
+  inline float erfc(  float _Xx) noexcept
+	{
+	return (:: erfcf(_Xx));
+	}
+
+  inline float exp(  float _Xx) noexcept
+	{
+	return (:: expf(_Xx));
+	}
+
+  inline float exp2(  float _Xx) noexcept
+	{
+	return (:: exp2f(_Xx));
+	}
+
+  inline float expm1(  float _Xx) noexcept
+	{
+	return (:: expm1f(_Xx));
+	}
+
+  inline float fabs(  float _Xx) noexcept
+	{
+	return (:: fabsf(_Xx));
+	}
+
+  inline float fdim(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: fdimf(_Xx, _Yx));
+	}
+
+  inline float floor(  float _Xx) noexcept
+	{
+	return (:: floorf(_Xx));
+	}
+
+  inline float fma(  float _Xx,   float _Yx,
+	  float _Zx) noexcept
+	{
+	return (:: fmaf(_Xx, _Yx, _Zx));
+	}
+
+  inline float fmax(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: fmaxf(_Xx, _Yx));
+	}
+
+  inline float fmin(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: fminf(_Xx, _Yx));
+	}
+
+  inline float fmod(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: fmodf(_Xx, _Yx));
+	}
+
+  inline float frexp(  float _Xx,   int* _Yx) noexcept
+	{
+	return (:: frexpf(_Xx, _Yx));
+	}
+
+  inline float hypot(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: hypotf(_Xx, _Yx));
+	}
+
+  inline int ilogb(  float _Xx) noexcept
+	{
+	return (:: ilogbf(_Xx));
+	}
+
+  inline float ldexp(  float _Xx,   int _Yx) noexcept
+	{
+	return (:: ldexpf(_Xx, _Yx));
+	}
+
+  inline float lgamma(  float _Xx) noexcept
+	{
+	return (:: lgammaf(_Xx));
+	}
+
+  inline long long llrint(  float _Xx) noexcept
+	{
+	return (:: llrintf(_Xx));
+	}
+
+  inline long long llround(  float _Xx) noexcept
+	{
+	return (:: llroundf(_Xx));
+	}
+
+  inline float log(  float _Xx) noexcept
+	{
+	return (:: logf(_Xx));
+	}
+
+  inline float log10(  float _Xx) noexcept
+	{
+	return (:: log10f(_Xx));
+	}
+
+  inline float log1p(  float _Xx) noexcept
+	{
+	return (:: log1pf(_Xx));
+	}
+
+  inline float log2(  float _Xx) noexcept
+	{
+	return (:: log2f(_Xx));
+	}
+
+  inline float logb(  float _Xx) noexcept
+	{
+	return (:: logbf(_Xx));
+	}
+
+  inline long lrint(  float _Xx) noexcept
+	{
+	return (:: lrintf(_Xx));
+	}
+
+  inline long lround(  float _Xx) noexcept
+	{
+	return (:: lroundf(_Xx));
+	}
+
+  inline float modf(  float _Xx,   float* _Yx) noexcept
+	{
+	return (:: modff(_Xx, _Yx));
+	}
+
+  inline float nearbyint(  float _Xx) noexcept
+	{
+	return (:: nearbyintf(_Xx));
+	}
+
+  inline float nextafter(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: nextafterf(_Xx, _Yx));
+	}
+
+  inline float nexttoward(  float _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: nexttowardf(_Xx, _Yx));
+	}
+
+  inline float pow(  float _Xx,
+	  float _Yx) noexcept
+	{
+	return (:: powf(_Xx, _Yx));
+	}
+
+  inline float pow(  float _Xx,   int _Yx) noexcept
+	{
+	return (_Pow_int(_Xx, _Yx));
+	}
+
+  inline float remainder(  float _Xx,   float _Yx) noexcept
+	{
+	return (:: remainderf(_Xx, _Yx));
+	}
+
+  inline float remquo(  float _Xx,   float _Yx,
+	  int *_Zx) noexcept
+	{
+	return (:: remquof(_Xx, _Yx, _Zx));
+	}
+
+  inline float rint(  float _Xx) noexcept
+	{
+	return (:: rintf(_Xx));
+	}
+
+  inline float round(  float _Xx) noexcept
+	{
+	return (:: roundf(_Xx));
+	}
+
+  inline float scalbln(  float _Xx,   long _Yx) noexcept
+	{
+	return (:: scalblnf(_Xx, _Yx));
+	}
+
+  inline float scalbn(  float _Xx,   int _Yx) noexcept
+	{
+	return (:: scalbnf(_Xx, _Yx));
+	}
+
+  inline float sin(  float _Xx) noexcept
+	{
+	return (:: sinf(_Xx));
+	}
+
+  inline float sinh(  float _Xx) noexcept
+	{
+	return (:: sinhf(_Xx));
+	}
+
+  inline float sqrt(  float _Xx) noexcept
+	{
+	return (:: sqrtf(_Xx));
+	}
+
+  inline float tan(  float _Xx) noexcept
+	{
+	return (:: tanf(_Xx));
+	}
+
+  inline float tanh(  float _Xx) noexcept
+	{
+	return (:: tanhf(_Xx));
+	}
+
+  inline float tgamma(  float _Xx) noexcept
+	{
+	return (:: tgammaf(_Xx));
+	}
+
+  inline float trunc(  float _Xx) noexcept
+	{
+	return (:: truncf(_Xx));
+	}
+
+  inline long double abs(  long double _Xx) noexcept
+	{
+	return (:: fabsl(_Xx));
+	}
+
+  inline long double acos(  long double _Xx) noexcept
+	{
+	return (:: acosl(_Xx));
+	}
+
+  inline long double acosh(  long double _Xx) noexcept
+	{
+	return (:: acoshl(_Xx));
+	}
+
+  inline long double asin(  long double _Xx) noexcept
+	{
+	return (:: asinl(_Xx));
+	}
+
+  inline long double asinh(  long double _Xx) noexcept
+	{
+	return (:: asinhl(_Xx));
+	}
+
+  inline long double atan(  long double _Xx) noexcept
+	{
+	return (:: atanl(_Xx));
+	}
+
+  inline long double atanh(  long double _Xx) noexcept
+	{
+	return (:: atanhl(_Xx));
+	}
+
+  inline long double atan2(  long double _Yx,
+	  long double _Xx) noexcept
+	{
+	return (:: atan2l(_Yx, _Xx));
+	}
+
+  inline long double cbrt(  long double _Xx) noexcept
+	{
+	return (:: cbrtl(_Xx));
+	}
+
+  inline long double ceil(  long double _Xx) noexcept
+	{
+	return (:: ceill(_Xx));
+	}
+
+  inline long double copysign(  long double _Number,
+	  long double _Sign) noexcept
+	{
+	return (:: copysignl(_Number, _Sign));
+	}
+
+  inline long double cos(  long double _Xx) noexcept
+	{
+	return (:: cosl(_Xx));
+	}
+
+  inline long double cosh(  long double _Xx) noexcept
+	{
+	return (:: coshl(_Xx));
+	}
+
+  inline long double erf(  long double _Xx) noexcept
+	{
+	return (:: erfl(_Xx));
+	}
+
+  inline long double erfc(  long double _Xx) noexcept
+	{
+	return (:: erfcl(_Xx));
+	}
+
+  inline long double exp(  long double _Xx) noexcept
+	{
+	return (:: expl(_Xx));
+	}
+
+  inline long double exp2(  long double _Xx) noexcept
+	{
+	return (:: exp2l(_Xx));
+	}
+
+  inline long double expm1(  long double _Xx) noexcept
+	{
+	return (:: expm1l(_Xx));
+	}
+
+  inline long double fabs(  long double _Xx) noexcept
+	{
+	return (:: fabsl(_Xx));
+	}
+
+  inline long double fdim(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: fdiml(_Xx, _Yx));
+	}
+
+  inline long double floor(  long double _Xx) noexcept
+	{
+	return (:: floorl(_Xx));
+	}
+
+  inline long double fma(  long double _Xx,
+	  long double _Yx,   long double _Zx) noexcept
+	{
+	return (:: fmal(_Xx, _Yx, _Zx));
+	}
+
+  inline long double fmax(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: fmaxl(_Xx, _Yx));
+	}
+
+  inline long double fmin(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: fminl(_Xx, _Yx));
+	}
+
+  inline long double fmod(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: fmodl(_Xx, _Yx));
+	}
+
+  inline long double frexp(  long double _Xx,
+	  int* _Yx) noexcept
+	{
+	return (:: frexpl(_Xx, _Yx));
+	}
+
+  inline long double hypot(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: hypotl(_Xx, _Yx));
+	}
+
+  inline int ilogb(  long double _Xx) noexcept
+	{
+	return (:: ilogbl(_Xx));
+	}
+
+  inline long double ldexp(  long double _Xx,
+	  int _Yx) noexcept
+	{
+	return (:: ldexpl(_Xx, _Yx));
+	}
+
+  inline long double lgamma(  long double _Xx) noexcept
+	{
+	return (:: lgammal(_Xx));
+	}
+
+  inline long long llrint(  long double _Xx) noexcept
+	{
+	return (:: llrintl(_Xx));
+	}
+
+  inline long long llround(  long double _Xx) noexcept
+	{
+	return (:: llroundl(_Xx));
+	}
+
+  inline long double log(  long double _Xx) noexcept
+	{
+	return (:: logl(_Xx));
+	}
+
+  inline long double log10(  long double _Xx) noexcept
+	{
+	return (:: log10l(_Xx));
+	}
+
+  inline long double log1p(  long double _Xx) noexcept
+	{
+	return (:: log1pl(_Xx));
+	}
+
+  inline long double log2(  long double _Xx) noexcept
+	{
+	return (:: log2l(_Xx));
+	}
+
+  inline long double logb(  long double _Xx) noexcept
+	{
+	return (:: logbl(_Xx));
+	}
+
+  inline long lrint(  long double _Xx) noexcept
+	{
+	return (:: lrintl(_Xx));
+	}
+
+  inline long lround(  long double _Xx) noexcept
+	{
+	return (:: lroundl(_Xx));
+	}
+
+  inline long double modf(  long double _Xx,
+	  long double* _Yx) noexcept
+	{
+	return (:: modfl(_Xx, _Yx));
+	}
+
+  inline long double nearbyint(  long double _Xx) noexcept
+	{
+	return (:: nearbyintl(_Xx));
+	}
+
+  inline long double nextafter(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: nextafterl(_Xx, _Yx));
+	}
+
+  inline long double nexttoward(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: nexttowardl(_Xx, _Yx));
+	}
+
+  inline long double pow(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: powl(_Xx, _Yx));
+	}
+
+  inline long double pow(  long double _Xx,
+	  int _Yx) noexcept
+	{
+	return (_Pow_int(_Xx, _Yx));
+	}
+
+  inline long double remainder(  long double _Xx,
+	  long double _Yx) noexcept
+	{
+	return (:: remainderl(_Xx, _Yx));
+	}
+
+  inline long double remquo(  long double _Xx,
+	  long double _Yx,   int *_Zx) noexcept
+	{
+	return (:: remquol(_Xx, _Yx, _Zx));
+	}
+
+  inline long double rint(  long double _Xx) noexcept
+	{
+	return (:: rintl(_Xx));
+	}
+
+  inline long double round(  long double _Xx) noexcept
+	{
+	return (:: roundl(_Xx));
+	}
+
+  inline long double scalbln(  long double _Xx,
+	  long _Yx) noexcept
+	{
+	return (:: scalblnl(_Xx, _Yx));
+	}
+
+  inline long double scalbn(  long double _Xx,
+	  int _Yx) noexcept
+	{
+	return (:: scalbnl(_Xx, _Yx));
+	}
+
+  inline long double sin(  long double _Xx) noexcept
+	{
+	return (:: sinl(_Xx));
+	}
+
+  inline long double sinh(  long double _Xx) noexcept
+	{
+	return (:: sinhl(_Xx));
+	}
+
+  inline long double sqrt(  long double _Xx) noexcept
+	{
+	return (:: sqrtl(_Xx));
+	}
+
+  inline long double tan(  long double _Xx) noexcept
+	{
+	return (:: tanl(_Xx));
+	}
+
+  inline long double tanh(  long double _Xx) noexcept
+	{
+	return (:: tanhl(_Xx));
+	}
+
+  inline long double tgamma(  long double _Xx) noexcept
+	{
+	return (:: tgammal(_Xx));
+	}
+
+  inline long double trunc(  long double _Xx) noexcept
+	{
+	return (:: truncl(_Xx));
+	}
+
+ #line 650 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+
+
+
+
+
+ #line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtgmath.h"
+
+
+ 
+#pragma once
+
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtr1common"
+
+#pragma once
+
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cstdlib"
+
+#pragma once
+
+
+
+
+
+
+
+
+
+
+ #line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+#pragma once
+
+
+
+#line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_malloc.h"
+
+
+
+
+
+
+
+
+#pragma once
+
+
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 52 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_malloc.h"
+
+     
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _calloc_base(
+      size_t _Count,
+      size_t _Size
+    );
+
+     
+  __declspec(allocator) __declspec(restrict)
+void* __cdecl calloc(
+       size_t _Count,
+       size_t _Size
+    );
+
+ 
+ int __cdecl _callnewh(
+      size_t _Size
+    );
+
+     
+ __declspec(allocator)
+void* __cdecl _expand(
+                void*  _Block,
+       size_t _Size
+    );
+
+
+void __cdecl _free_base(
+        void* _Block
+    );
+
+
+void __cdecl free(
+        void* _Block
+    );
+
+     
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _malloc_base(
+      size_t _Size
+    );
+
+     
+ __declspec(allocator)  __declspec(restrict)
+void* __cdecl malloc(
+       size_t _Size
+    );
+
+ 
+
+size_t __cdecl _msize(
+      void* _Block
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _realloc_base(
+         void*  _Block,
+                                 size_t _Size
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl realloc(
+        void*  _Block,
+              size_t _Size
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _recalloc(
+        void*  _Block,
+              size_t _Count,
+              size_t _Size
+    );
+
+
+void __cdecl _aligned_free(
+        void* _Block
+    );
+
+     
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _aligned_malloc(
+       size_t _Size,
+                         size_t _Alignment
+    );
+
+     
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _aligned_offset_malloc(
+       size_t _Size,
+                         size_t _Alignment,
+                         size_t _Offset
+    );
+
+ 
+
+size_t __cdecl _aligned_msize(
+      void*  _Block,
+               size_t _Alignment,
+               size_t _Offset
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _aligned_offset_realloc(
+        void*  _Block,
+              size_t _Size,
+                                size_t _Alignment,
+                                size_t _Offset
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _aligned_offset_recalloc(
+        void*  _Block,
+              size_t _Count,
+              size_t _Size,
+                                size_t _Alignment,
+                                size_t _Offset
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _aligned_realloc(
+        void*  _Block,
+              size_t _Size,
+                                size_t _Alignment
+    );
+
+       
+ __declspec(allocator) __declspec(restrict)
+void* __cdecl _aligned_recalloc(
+        void*  _Block,
+              size_t _Count,
+              size_t _Size,
+                                size_t _Alignment
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 211 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_malloc.h"
+
+
+
+} __pragma(pack(pop))
+#line 13 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+#line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_search.h"
+
+
+
+
+
+
+
+
+
+
+#pragma once
+
+
+#line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stddef.h"
+
+
+
+
+
+
+
+#pragma once
+
+
+
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+    namespace std
+    {
+        typedef decltype(__nullptr) nullptr_t;
+    }
+
+    using ::std::nullptr_t;
+#line 25 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stddef.h"
+
+
+
+
+ int* __cdecl _errno(void);
+
+
+ errno_t __cdecl _set_errno(  int _Value);
+ errno_t __cdecl _get_errno(  int* _Value);
+
+
+
+    
+        
+    
+
+#line 42 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stddef.h"
+
+
+#line 45 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stddef.h"
+
+ extern unsigned long  __cdecl __threadid(void);
+
+ extern uintptr_t __cdecl __threadhandle(void);
+
+
+
+} __pragma(pack(pop))
+#line 15 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_search.h"
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+
+     
+     void* __cdecl bsearch_s(
+                                                        void const* _Key,
+          void const* _Base,
+                                                        rsize_t     _NumOfElements,
+                                                        rsize_t     _SizeOfElements,
+          int (__cdecl* _PtFuncCompare)(void*, void const*, void const*),
+                                                        void*       _Context
+        );
+
+     void __cdecl qsort_s(
+          void*   _Base,
+                                                             rsize_t _NumOfElements,
+                                                             rsize_t _SizeOfElements,
+          int (__cdecl* _PtFuncCompare)(void*, void const*, void const*),
+                                                             void*   _Context
+        );
+
+#line 41 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_search.h"
+
+
+
+ 
+ void* __cdecl bsearch(
+                                                    void const* _Key,
+      void const* _Base,
+                                                    size_t      _NumOfElements,
+                                                    size_t      _SizeOfElements,
+      int (__cdecl* _PtFuncCompare)(void const*, void const*)
+    );
+
+ void __cdecl qsort(
+      void*  _Base,
+                                                         size_t _NumOfElements,
+                                                         size_t _SizeOfElements,
+      int (__cdecl* _PtFuncCompare)(void const*, void const*)
+    );
+
+ 
+ void* __cdecl _lfind_s(
+                                                       void const*   _Key,
+      void const*   _Base,
+                                                    unsigned int* _NumOfElements,
+                                                       size_t        _SizeOfElements,
+      int (__cdecl* _PtFuncCompare)(void*, void const*, void const*), 
+                                                       void*         _Context
+    );
+
+ 
+ void* __cdecl _lfind(
+                                                       void const*   _Key,
+      void const*   _Base,
+                                                    unsigned int* _NumOfElements,
+                                                       unsigned int  _SizeOfElements,
+      int (__cdecl* _PtFuncCompare)(void const*, void const*)
+    );
+
+ 
+ void* __cdecl _lsearch_s(
+                                                             void const*   _Key,
+      void*         _Base,
+                                                          unsigned int* _NumOfElements,
+                                                             size_t        _SizeOfElements,
+      int (__cdecl* _PtFuncCompare)(void*, void const*, void const*),
+                                                             void*         _Context
+    );
+
+ 
+ void* __cdecl _lsearch(
+                                                             void const*   _Key,
+      void*         _Base,
+                                                          unsigned int* _NumOfElements,
+                                                             unsigned int  _SizeOfElements,
+      int (__cdecl* _PtFuncCompare)(void const*, void const*)
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 179 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_search.h"
+
+
+
+
+
+      __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_lfind" ". See online help for details."))
+     void* __cdecl lfind(
+                                                           void const*   _Key,
+          void const*   _Base,
+                                                        unsigned int* _NumOfElements,
+                                                           unsigned int  _SizeOfElements,
+          int (__cdecl* _PtFuncCompare)(void const*, void const*)
+        );
+
+      __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_lsearch" ". See online help for details."))
+     void* __cdecl lsearch(
+                                                                void const*   _Key,
+          void*         _Base,
+                                                             unsigned int* _NumOfElements,
+                                                                unsigned int  _SizeOfElements,
+          int (__cdecl* _PtFuncCompare)(void const*, void const*)
+        );
+
+#line 203 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_search.h"
+
+
+
+} __pragma(pack(pop))
+#line 14 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+#line 1 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+
+
+
+
+
+
+
+#pragma once
+
+
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ errno_t __cdecl _itow_s(
+                              int      _Value,
+      wchar_t* _Buffer,
+                              size_t   _BufferCount,
+                              int      _Radix
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _itow_s(  int _Value, wchar_t (&_Buffer)[_Size],   int _Radix) throw() { return _itow_s(_Value, _Buffer, _Size, _Radix); } }
+#line 61 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_itow_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  wchar_t* __cdecl _itow( int _Value,   wchar_t *_Buffer,  int _Radix);
+#line 68 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+ 
+
+ errno_t __cdecl _ltow_s(
+                              long     _Value,
+      wchar_t* _Buffer,
+                              size_t   _BufferCount,
+                              int      _Radix
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _ltow_s(  long _Value, wchar_t (&_Buffer)[_Size],   int _Radix) throw() { return _ltow_s(_Value, _Buffer, _Size, _Radix); } }
+#line 84 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_ltow_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  wchar_t* __cdecl _ltow( long _Value,   wchar_t *_Buffer,  int _Radix);
+#line 91 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+
+ errno_t __cdecl _ultow_s(
+                              unsigned long _Value,
+      wchar_t*      _Buffer,
+                              size_t        _BufferCount,
+                              int           _Radix
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _ultow_s(  unsigned long _Value, wchar_t (&_Buffer)[_Size],   int _Radix) throw() { return _ultow_s(_Value, _Buffer, _Size, _Radix); } }
+#line 106 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_ultow_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  wchar_t* __cdecl _ultow( unsigned long _Value,   wchar_t *_Buffer,  int _Radix);
+#line 113 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+ 
+ double __cdecl wcstod(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr
+    );
+
+ 
+ double __cdecl _wcstod_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                      _locale_t      _Locale
+    );
+
+ 
+ long __cdecl wcstol(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix
+    );
+
+ 
+ long __cdecl _wcstol_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix,
+                      _locale_t      _Locale
+    );
+
+ 
+ long long __cdecl wcstoll(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix
+    );
+
+ 
+ long long __cdecl _wcstoll_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix,
+                      _locale_t      _Locale
+    );
+
+ 
+ unsigned long __cdecl wcstoul(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix
+    );
+
+ 
+ unsigned long __cdecl _wcstoul_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix,
+                      _locale_t      _Locale
+    );
+
+ 
+ unsigned long long __cdecl wcstoull(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix
+    );
+
+ 
+ unsigned long long __cdecl _wcstoull_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix,
+                      _locale_t      _Locale
+    );
+
+ 
+ long double __cdecl wcstold(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr
+    );
+
+ 
+ long double __cdecl _wcstold_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                      _locale_t      _Locale
+    );
+
+ 
+ float __cdecl wcstof(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr
+    );
+
+ 
+ float __cdecl _wcstof_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                      _locale_t      _Locale
+    );
+
+ 
+ double __cdecl _wtof(
+      wchar_t const* _String
+    );
+
+ 
+ double __cdecl _wtof_l(
+        wchar_t const* _String,
+      _locale_t      _Locale
+    );
+
+ 
+ int __cdecl _wtoi(
+      wchar_t const* _String
+    );
+
+ 
+ int __cdecl _wtoi_l(
+        wchar_t const* _String,
+      _locale_t      _Locale
+    );
+
+ 
+ long __cdecl _wtol(
+      wchar_t const* _String
+    );
+
+ 
+ long __cdecl _wtol_l(
+        wchar_t const* _String,
+      _locale_t      _Locale
+    );
+
+ 
+ long long __cdecl _wtoll(
+      wchar_t const* _String
+    );
+
+ 
+ long long __cdecl _wtoll_l(
+        wchar_t const* _String,
+      _locale_t      _Locale
+    );
+
+
+ errno_t __cdecl _i64tow_s(
+                              __int64  _Value,
+      wchar_t* _Buffer,
+                              size_t   _BufferCount,
+                              int      _Radix
+    );
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_i64tow_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ wchar_t* __cdecl _i64tow(
+                        __int64  _Value,
+        wchar_t* _Buffer,
+                        int      _Radix
+    );
+
+
+ errno_t __cdecl _ui64tow_s(
+                              unsigned __int64 _Value,
+      wchar_t*         _Buffer,
+                              size_t           _BufferCount,
+                              int              _Radix
+    );
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_ui64tow_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ wchar_t* __cdecl _ui64tow(
+                        unsigned __int64 _Value,
+        wchar_t*         _Buffer,
+                        int              _Radix
+    );
+
+ 
+ __int64 __cdecl _wtoi64(
+      wchar_t const* _String
+    );
+
+ 
+ __int64 __cdecl _wtoi64_l(
+        wchar_t const* _String,
+      _locale_t      _Locale
+    );
+
+ 
+ __int64 __cdecl _wcstoi64(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix
+    );
+
+ 
+ __int64 __cdecl _wcstoi64_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix,
+                      _locale_t      _Locale
+    );
+
+ 
+ unsigned __int64 __cdecl _wcstoui64(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix
+    );
+
+ 
+ unsigned __int64 __cdecl _wcstoui64_l(
+                        wchar_t const* _String,
+        wchar_t**      _EndPtr,
+                          int            _Radix,
+                      _locale_t      _Locale
+    );
+
+
+
+
+ 
+ 
+ __declspec(allocator) wchar_t* __cdecl _wfullpath(
+      wchar_t*       _Buffer,
+                                wchar_t const* _Path,
+                                  size_t         _BufferCount
+    );
+
+
+
+
+ errno_t __cdecl _wmakepath_s(
+      wchar_t*       _Buffer,
+                              size_t         _BufferCount,
+                        wchar_t const* _Drive,
+                        wchar_t const* _Dir,
+                        wchar_t const* _Filename,
+                        wchar_t const* _Ext
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _wmakepath_s(wchar_t (&_Buffer)[_Size],   wchar_t const* _Drive,   wchar_t const* _Dir,   wchar_t const* _Filename,   wchar_t const* _Ext) throw() { return _wmakepath_s(_Buffer, _Size, _Drive, _Dir, _Filename, _Ext); } }
+#line 359 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_wmakepath_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  void __cdecl _wmakepath(  wchar_t *_Buffer,  wchar_t const* _Drive,  wchar_t const* _Dir,  wchar_t const* _Filename,  wchar_t const* _Ext);
+#line 368 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+ void __cdecl _wperror(
+      wchar_t const* _ErrMsg
+    );
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_wsplitpath_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ void __cdecl _wsplitpath(
+                        wchar_t const* _FullPath,
+        wchar_t*       _Drive,
+        wchar_t*       _Dir,
+        wchar_t*       _Filename,
+        wchar_t*       _Ext
+    );
+
+ errno_t __cdecl _wsplitpath_s(
+                                  wchar_t const* _FullPath,
+         wchar_t*       _Drive,
+                                    size_t         _DriveCount,
+           wchar_t*       _Dir,
+                                    size_t         _DirCount,
+      wchar_t*       _Filename,
+                                    size_t         _FilenameCount,
+           wchar_t*       _Ext,
+                                    size_t         _ExtCount
+    );
+
+extern "C++" { template <size_t _DriveSize, size_t _DirSize, size_t _NameSize, size_t _ExtSize> inline errno_t __cdecl _wsplitpath_s(   wchar_t const* _Path,   wchar_t (&_Drive)[_DriveSize],   wchar_t (&_Dir)[_DirSize],   wchar_t (&_Name)[_NameSize],   wchar_t (&_Ext)[_ExtSize] ) throw() { return _wsplitpath_s(_Path, _Drive, _DriveSize, _Dir, _DirSize, _Name, _NameSize, _Ext, _ExtSize); } }
+#line 398 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+
+
+
+
+    
+    
+
+    
+     errno_t __cdecl _wdupenv_s(
+            wchar_t**      _Buffer,
+                                                                            size_t*        _BufferCount,
+                                                                               wchar_t const* _VarName
+        );
+
+    
+
+      __declspec(deprecated("This function or variable may be unsafe. Consider using " "_wdupenv_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     wchar_t* __cdecl _wgetenv(
+          wchar_t const* _VarName
+        );
+
+     
+    
+     errno_t __cdecl _wgetenv_s(
+                                     size_t*        _RequiredCount,
+          wchar_t*       _Buffer,
+                                      size_t         _BufferCount,
+                                    wchar_t const* _VarName
+        );
+
+    extern "C++" { template <size_t _Size> inline   errno_t __cdecl _wgetenv_s(  size_t* _RequiredCount, wchar_t (&_Buffer)[_Size],   wchar_t const* _VarName) throw() { return _wgetenv_s(_RequiredCount, _Buffer, _Size, _VarName); } }
+#line 436 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+     
+     int __cdecl _wputenv(
+          wchar_t const* _EnvString
+        );
+
+    
+     errno_t __cdecl _wputenv_s(
+          wchar_t const* _Name,
+          wchar_t const* _Value
+        );
+    
+     errno_t __cdecl _wsearchenv_s(
+                                wchar_t const* _Filename,
+                                wchar_t const* _VarName,
+          wchar_t*       _Buffer,
+                                  size_t         _BufferCount
+        );
+    
+    extern "C++" { template <size_t _Size> inline errno_t __cdecl _wsearchenv_s(  wchar_t const* _Filename,   wchar_t const* _VarName, wchar_t (&_ResultPath)[_Size]) throw() { return _wsearchenv_s(_Filename, _VarName, _ResultPath, _Size); } }
+#line 461 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+    
+    __declspec(deprecated("This function or variable may be unsafe. Consider using " "_wsearchenv_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  void __cdecl _wsearchenv( wchar_t const* _Filename,  wchar_t const* _VarName,   wchar_t *_ResultPath);
+#line 468 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+     int __cdecl _wsystem(
+          wchar_t const* _Command
+        );
+
+#line 474 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\corecrt_wstdlib.h"
+
+
+
+} __pragma(pack(pop))
+#line 15 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+
+
+
+
+
+
+
+#pragma once
+
+
+#line 1 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\vcruntime.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 12 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+#line 29 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 71 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+
+
+    
+        
+    
+
+#line 78 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+#line 79 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+
+
+    
+        
+    #line 84 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+#line 85 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\limits.h"
+
+
+
+} __pragma(pack(pop))
+#line 16 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__pragma(pack(push, 8)) extern "C" {
+
+
+
+
+    
+#line 24 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+ void __cdecl _swab(
+        char* _Buf1,
+        char* _Buf2,
+                                                                  int   _SizeInBytes
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+ __declspec(noreturn) void __cdecl exit(  int _Code);
+ __declspec(noreturn) void __cdecl _exit(  int _Code);
+ __declspec(noreturn) void __cdecl _Exit(  int _Code);
+ __declspec(noreturn) void __cdecl quick_exit(  int _Code);
+ __declspec(noreturn) void __cdecl abort(void);
+
+
+
+
+
+ unsigned int __cdecl _set_abort_behavior(
+      unsigned int _Flags,
+      unsigned int _Mask
+    );
+
+
+
+
+    typedef int (__cdecl* _onexit_t)(void);
+
+
+
+#line 73 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+    
+    
+#line 82 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    int       __cdecl atexit(void (__cdecl*)(void));
+    _onexit_t __cdecl _onexit(  _onexit_t _Func);
+#line 142 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+int __cdecl at_quick_exit(void (__cdecl*)(void));
+
+
+
+
+
+
+
+
+
+    
+    typedef void (__cdecl* _purecall_handler)(void);
+
+    
+    typedef void (__cdecl* _invalid_parameter_handler)(
+        wchar_t const*,
+        wchar_t const*,
+        wchar_t const*, 
+        unsigned int,
+        uintptr_t
+        );
+
+    
+     _purecall_handler __cdecl _set_purecall_handler(
+          _purecall_handler _Handler
+        );
+
+     _purecall_handler __cdecl _get_purecall_handler(void);
+
+    
+     _invalid_parameter_handler __cdecl _set_invalid_parameter_handler(
+          _invalid_parameter_handler _Handler
+        );
+
+     _invalid_parameter_handler __cdecl _get_invalid_parameter_handler(void);
+
+     _invalid_parameter_handler __cdecl _set_thread_local_invalid_parameter_handler(
+          _invalid_parameter_handler _Handler
+        );
+
+     _invalid_parameter_handler __cdecl _get_thread_local_invalid_parameter_handler(void);
+#line 185 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+
+
+
+#line 198 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+  int __cdecl _set_error_mode(  int _Mode);
+
+
+
+ int* __cdecl _errno(void);
+
+
+ errno_t __cdecl _set_errno(  int _Value);
+ errno_t __cdecl _get_errno(  int* _Value);
+
+ unsigned long* __cdecl __doserrno(void);
+
+
+ errno_t __cdecl _set_doserrno(  unsigned long _Value);
+ errno_t __cdecl _get_doserrno(  unsigned long * _Value);
+
+
+ __declspec(deprecated("This function or variable may be unsafe. Consider using " "strerror" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details.")) char** __cdecl __sys_errlist(void);
+
+
+ __declspec(deprecated("This function or variable may be unsafe. Consider using " "strerror" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details.")) int * __cdecl __sys_nerr(void);
+
+
+ void __cdecl perror(  char const* _ErrMsg);
+
+
+
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_get_pgmptr" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  char**    __cdecl __p__pgmptr (void);
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_get_wpgmptr" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  wchar_t** __cdecl __p__wpgmptr(void);
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_get_fmode" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  int*      __cdecl __p__fmode  (void);
+
+
+
+
+
+
+    
+    
+    
+#line 248 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+ 
+ errno_t __cdecl _get_pgmptr (  char**    _Value);
+
+ 
+ errno_t __cdecl _get_wpgmptr(  wchar_t** _Value);
+
+ errno_t __cdecl _set_fmode  (               int       _Mode );
+
+ errno_t __cdecl _get_fmode  (              int*      _PMode);
+
+
+
+
+
+
+
+
+typedef struct _div_t
+{
+    int quot;
+    int rem;
+} div_t;
+
+typedef struct _ldiv_t
+{
+    long quot;
+    long rem;
+} ldiv_t;
+
+typedef struct _lldiv_t
+{
+    long long quot;
+    long long rem;
+} lldiv_t;
+
+  int       __cdecl abs   (  int       _Number);
+  long      __cdecl labs  (  long      _Number);
+  long long __cdecl llabs (  long long _Number);
+  __int64   __cdecl _abs64(  __int64   _Number);
+
+  unsigned short   __cdecl _byteswap_ushort(  unsigned short   _Number);
+  unsigned long    __cdecl _byteswap_ulong (  unsigned long    _Number);
+  unsigned __int64 __cdecl _byteswap_uint64(  unsigned __int64 _Number);
+
+   div_t   __cdecl div  (  int       _Numerator,   int       _Denominator);
+   ldiv_t  __cdecl ldiv (  long      _Numerator,   long      _Denominator);
+   lldiv_t __cdecl lldiv(  long long _Numerator,   long long _Denominator);
+
+
+
+#pragma warning (push)
+#pragma warning (disable:6540) 
+
+unsigned int __cdecl _rotl(
+      unsigned int _Value,
+      int          _Shift
+    );
+
+ 
+unsigned long __cdecl _lrotl(
+      unsigned long _Value,
+      int           _Shift
+    );
+
+unsigned __int64 __cdecl _rotl64(
+      unsigned __int64 _Value,
+      int              _Shift
+    );
+
+unsigned int __cdecl _rotr(
+      unsigned int _Value,
+      int          _Shift
+    );
+
+ 
+unsigned long __cdecl _lrotr(
+      unsigned long _Value,
+      int           _Shift
+    );
+
+unsigned __int64 __cdecl _rotr64(
+      unsigned __int64 _Value,
+      int              _Shift
+    );
+
+#pragma warning (pop)
+
+
+
+
+
+
+ void __cdecl srand(  unsigned int _Seed);
+
+   int __cdecl rand(void);
+
+
+
+#line 348 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+extern "C++"
+{
+    inline long abs(long const _X) throw()
+    {
+        return labs(_X);
+    }
+
+    inline long long abs(long long const _X) throw()
+    {
+        return llabs(_X);
+    }
+
+    inline ldiv_t div(long const _A1, long const _A2) throw()
+    {
+        return ldiv(_A1, _A2);
+    }
+
+    inline lldiv_t div(long long const _A1, long long const _A2) throw()
+    {
+        return lldiv(_A1, _A2);
+    }
+}
+#line 375 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+
+    #pragma pack(push, 4)
+    typedef struct
+    {
+        unsigned char ld[10];
+    } _LDOUBLE;
+    #pragma pack(pop)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+#line 405 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+typedef struct
+{
+    double x;
+} _CRT_DOUBLE;
+
+typedef struct
+{
+    float f;
+} _CRT_FLOAT;
+
+
+
+
+
+typedef struct
+{
+    long double x;
+} _LONGDOUBLE;
+
+
+
+#pragma pack(push, 4)
+typedef struct
+{
+    unsigned char ld12[12];
+} _LDBL12;
+#pragma pack(pop)
+
+
+
+
+
+
+
+
+                      double    __cdecl atof   (  char const* _String);
+    int       __cdecl atoi   (  char const* _String);
+                      long      __cdecl atol   (  char const* _String);
+                      long long __cdecl atoll  (  char const* _String);
+                      __int64   __cdecl _atoi64(  char const* _String);
+
+   double    __cdecl _atof_l  (  char const* _String,   _locale_t _Locale);
+   int       __cdecl _atoi_l  (  char const* _String,   _locale_t _Locale);
+   long      __cdecl _atol_l  (  char const* _String,   _locale_t _Locale);
+   long long __cdecl _atoll_l (  char const* _String,   _locale_t _Locale);
+   __int64   __cdecl _atoi64_l(  char const* _String,   _locale_t _Locale);
+
+   int __cdecl _atoflt (  _CRT_FLOAT*  _Result,   char const* _String);
+   int __cdecl _atodbl (  _CRT_DOUBLE* _Result,   char*       _String);
+   int __cdecl _atoldbl(  _LDOUBLE*    _Result,   char*       _String);
+
+ 
+ int __cdecl _atoflt_l(
+         _CRT_FLOAT* _Result,
+        char const* _String,
+      _locale_t   _Locale
+    );
+
+ 
+ int __cdecl _atodbl_l(
+         _CRT_DOUBLE* _Result,
+        char*        _String,
+      _locale_t    _Locale
+    );
+
+
+ 
+ int __cdecl _atoldbl_l(
+         _LDOUBLE* _Result,
+        char*     _String,
+      _locale_t _Locale
+    );
+
+ 
+ float __cdecl strtof(
+                        char const* _String,
+        char**      _EndPtr
+    );
+
+ 
+ float __cdecl _strtof_l(
+                        char const* _String,
+        char**      _EndPtr,
+                      _locale_t   _Locale
+    );
+
+ 
+ double __cdecl strtod(
+                        char const* _String,
+        char**      _EndPtr
+    );
+
+ 
+ double __cdecl _strtod_l(
+                        char const* _String,
+        char**      _EndPtr,
+                      _locale_t   _Locale
+    );
+
+ 
+ long double __cdecl strtold(
+                        char const* _String,
+        char**      _EndPtr
+    );
+
+ 
+ long double __cdecl _strtold_l(
+                        char const* _String,
+        char**      _EndPtr,
+                      _locale_t   _Locale
+    );
+
+ 
+ long __cdecl strtol(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix
+    );
+
+ 
+ long __cdecl _strtol_l(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix,
+                      _locale_t   _Locale
+    );
+
+ 
+ long long __cdecl strtoll(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix
+    );
+
+ 
+ long long __cdecl _strtoll_l(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix,
+                      _locale_t   _Locale
+    );
+
+ 
+ unsigned long __cdecl strtoul(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix
+    );
+
+ 
+ unsigned long __cdecl _strtoul_l(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix,
+                      _locale_t   _Locale
+    );
+
+ 
+ unsigned long long __cdecl strtoull(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix
+    );
+
+ 
+ unsigned long long __cdecl _strtoull_l(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix,
+                      _locale_t   _Locale
+    );
+
+ 
+ __int64 __cdecl _strtoi64(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix
+    );
+
+ 
+ __int64 __cdecl _strtoi64_l(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix,
+                      _locale_t   _Locale
+    );
+
+ 
+ unsigned __int64 __cdecl _strtoui64(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix
+    );
+
+ 
+ unsigned __int64 __cdecl _strtoui64_l(
+                        char const* _String,
+        char**      _EndPtr,
+                          int         _Radix,
+                      _locale_t   _Locale
+    );
+
+
+
+
+
+
+
+
+ 
+
+ errno_t __cdecl _itoa_s(
+                              int    _Value,
+      char*  _Buffer,
+                              size_t _BufferCount,
+                              int    _Radix
+    );
+
+extern "C++" { template <size_t _Size> inline   errno_t __cdecl _itoa_s(  int _Value, char (&_Buffer)[_Size],   int _Radix) throw() { return _itoa_s(_Value, _Buffer, _Size, _Radix); } }
+#line 631 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_itoa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  char* __cdecl _itoa( int _Value,   char *_Buffer,  int _Radix);
+#line 638 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+ 
+
+ errno_t __cdecl _ltoa_s(
+                              long   _Value,
+      char*  _Buffer,
+                              size_t _BufferCount,
+                              int    _Radix
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _ltoa_s(  long _Value, char (&_Buffer)[_Size],   int _Radix) throw() { return _ltoa_s(_Value, _Buffer, _Size, _Radix); } }
+#line 654 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_ltoa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  char* __cdecl _ltoa( long _Value,   char *_Buffer,  int _Radix);
+#line 661 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+ 
+
+ errno_t __cdecl _ultoa_s(
+                              unsigned long _Value,
+      char*         _Buffer,
+                              size_t        _BufferCount,
+                              int           _Radix
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _ultoa_s(  unsigned long _Value, char (&_Buffer)[_Size],   int _Radix) throw() { return _ultoa_s(_Value, _Buffer, _Size, _Radix); } }
+#line 677 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_ultoa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  char* __cdecl _ultoa( unsigned long _Value,   char *_Buffer,  int _Radix);
+#line 684 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+ 
+
+ errno_t __cdecl _i64toa_s(
+                              __int64 _Value,
+      char*   _Buffer,
+                              size_t  _BufferCount,
+                              int     _Radix
+    );
+
+ 
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_i64toa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ char* __cdecl _i64toa(
+                        __int64 _Value,
+        char*   _Buffer,
+                        int     _Radix
+    );
+
+ 
+
+ errno_t __cdecl _ui64toa_s(
+                              unsigned __int64 _Value,
+      char*            _Buffer,
+                              size_t           _BufferCount,
+                              int              _Radix
+    );
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_ui64toa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ char* __cdecl _ui64toa(
+                        unsigned __int64 _Value,
+        char*            _Buffer,
+                        int              _Radix
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ errno_t __cdecl _ecvt_s(
+      char* _Buffer,
+       size_t                       _BufferCount,
+       double                       _Value,
+       int                          _DigitCount,
+      int*                         _PtDec,
+      int*                         _PtSign
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _ecvt_s(char (&_Buffer)[_Size],   double _Value,   int _DigitCount,   int* _PtDec,   int* _PtSign) throw() { return _ecvt_s(_Buffer, _Size, _Value, _DigitCount, _PtDec, _PtSign); } }
+#line 749 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+  __declspec(deprecated("This function or variable may be unsafe. Consider using " "_ecvt_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ char* __cdecl _ecvt(
+       double _Value,
+       int    _DigitCount,
+      int*   _PtDec,
+      int*   _PtSign
+    );
+
+ 
+
+ errno_t __cdecl _fcvt_s(
+      char*  _Buffer,
+                              size_t _BufferCount,
+                              double _Value,
+                              int    _FractionalDigitCount,
+                             int*   _PtDec,
+                             int*   _PtSign
+    );
+
+extern "C++" { template <size_t _Size> inline   errno_t __cdecl _fcvt_s(char (&_Buffer)[_Size],   double _Value,   int _FractionalDigitCount,   int* _PtDec,   int* _PtSign) throw() { return _fcvt_s(_Buffer, _Size, _Value, _FractionalDigitCount, _PtDec, _PtSign); } }
+#line 778 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+ 
+  __declspec(deprecated("This function or variable may be unsafe. Consider using " "_fcvt_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ char* __cdecl _fcvt(
+       double _Value,
+       int    _FractionalDigitCount,
+      int*   _PtDec,
+      int*   _PtSign
+    );
+
+ 
+ errno_t __cdecl _gcvt_s(
+      char*  _Buffer,
+                              size_t _BufferCount,
+                              double _Value,
+                              int    _DigitCount
+    );
+
+extern "C++" { template <size_t _Size> inline   errno_t __cdecl _gcvt_s(char (&_Buffer)[_Size],   double _Value,   int _DigitCount) throw() { return _gcvt_s(_Buffer, _Size, _Value, _DigitCount); } }
+#line 803 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_gcvt_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ char* __cdecl _gcvt(
+                        double _Value,
+                        int    _DigitCount,
+        char*  _Buffer
+    );
+
+
+
+
+
+
+
+
+
+
+
+    
+
+#line 824 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+        
+    #line 826 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+    
+
+
+        
+    #line 832 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+     
+     int __cdecl ___mb_cur_max_func(void);
+
+     
+     int __cdecl ___mb_cur_max_l_func(_locale_t);
+#line 839 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+ 
+ int __cdecl mblen(
+        char const* _Ch,
+                                             size_t      _MaxCount
+    );
+
+  
+ int __cdecl _mblen_l(
+        char const* _Ch,
+                                             size_t      _MaxCount,
+                                         _locale_t   _Locale
+    );
+
+ 
+ 
+ size_t __cdecl _mbstrlen(
+      char const* _String
+    );
+
+ 
+ 
+ size_t __cdecl _mbstrlen_l(
+        char const* _String, 
+      _locale_t   _Locale
+    );
+
+ 
+ 
+ size_t __cdecl _mbstrnlen(
+      char const* _String,
+        size_t      _MaxCount
+    );
+
+ 
+ 
+ size_t __cdecl _mbstrnlen_l(
+        char const* _String,
+          size_t      _MaxCount,
+      _locale_t   _Locale
+    );
+
+ 
+ int __cdecl mbtowc(
+                      wchar_t*    _DstCh,
+      char const* _SrcCh,
+                                      size_t      _SrcSizeInBytes
+    );
+
+ 
+ int __cdecl _mbtowc_l(
+                      wchar_t*    _DstCh,
+      char const* _SrcCh,
+                                      size_t      _SrcSizeInBytes,
+                                  _locale_t   _Locale
+    );
+
+
+ errno_t __cdecl mbstowcs_s(
+                                                      size_t*     _PtNumOfCharConverted,
+      wchar_t*    _DstBuf,
+                                                           size_t      _SizeInWords,
+                                     char const* _SrcBuf,
+                                                           size_t      _MaxCount
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl mbstowcs_s(  size_t* _PtNumOfCharConverted,   wchar_t (&_Dest)[_Size],   char const* _Source,   size_t _MaxCount) throw() { return mbstowcs_s(_PtNumOfCharConverted, _Dest, _Size, _Source, _MaxCount); } }
+#line 914 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "mbstowcs_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  size_t __cdecl mbstowcs( wchar_t *_Dest,  char const* _Source,  size_t _MaxCount);
+#line 921 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+ errno_t __cdecl _mbstowcs_s_l(
+                                                      size_t*     _PtNumOfCharConverted,
+      wchar_t*    _DstBuf,
+                                                           size_t      _SizeInWords,
+                                     char const* _SrcBuf,
+                                                           size_t      _MaxCount,
+                                                       _locale_t   _Locale
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _mbstowcs_s_l(  size_t* _PtNumOfCharConverted,   wchar_t (&_Dest)[_Size],   char const* _Source,   size_t _MaxCount,   _locale_t _Locale) throw() { return _mbstowcs_s_l(_PtNumOfCharConverted, _Dest, _Size, _Source, _MaxCount, _Locale); } }
+#line 940 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_mbstowcs_s_l" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  size_t __cdecl _mbstowcs_l(  wchar_t *_Dest,   char const* _Source,   size_t _MaxCount,   _locale_t _Locale);
+#line 949 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "wctomb_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ int __cdecl wctomb(
+      char*   _MbCh,
+                                wchar_t _WCh
+    );
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_wctomb_s_l" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ int __cdecl _wctomb_l(
+        char*     _MbCh,
+                          wchar_t   _WCh,
+                      _locale_t _Locale
+    );
+
+
+
+    
+     errno_t __cdecl wctomb_s(
+                                                         int*    _SizeConverted,
+          char*   _MbCh,
+                                                              rsize_t _SizeInBytes,
+                                                              wchar_t _WCh
+        );
+
+#line 977 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+ errno_t __cdecl _wctomb_s_l(
+                             int*     _SizeConverted,
+      char*     _MbCh,
+                                  size_t    _SizeInBytes,
+                                  wchar_t   _WCh, 
+                              _locale_t _Locale);
+
+
+ errno_t __cdecl wcstombs_s(
+                                                               size_t*        _PtNumOfCharConverted,
+      char*          _Dst,
+                                                                    size_t         _DstSizeInBytes,
+                                                                  wchar_t const* _Src,
+                                                                    size_t         _MaxCountInBytes
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl wcstombs_s(  size_t* _PtNumOfCharConverted,   char (&_Dest)[_Size],   wchar_t const* _Source,   size_t _MaxCount) throw() { return wcstombs_s(_PtNumOfCharConverted, _Dest, _Size, _Source, _MaxCount); } }
+#line 1002 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "wcstombs_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  size_t __cdecl wcstombs( char *_Dest,  wchar_t const* _Source,  size_t _MaxCount);
+#line 1009 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+ errno_t __cdecl _wcstombs_s_l(
+                                                               size_t*        _PtNumOfCharConverted,
+      char*          _Dst,
+                                                                    size_t         _DstSizeInBytes,
+                                                                  wchar_t const* _Src,
+                                                                    size_t         _MaxCountInBytes,
+                                                                _locale_t      _Locale
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _wcstombs_s_l(  size_t* _PtNumOfCharConverted,   char (&_Dest)[_Size],   wchar_t const* _Source,   size_t _MaxCount,   _locale_t _Locale) throw() { return _wcstombs_s_l(_PtNumOfCharConverted, _Dest, _Size, _Source, _MaxCount, _Locale); } }
+#line 1028 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_wcstombs_s_l" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  size_t __cdecl _wcstombs_l(  char *_Dest,   wchar_t const* _Source,   size_t _MaxCount,   _locale_t _Locale);
+#line 1037 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ __declspec(allocator) char* __cdecl _fullpath(
+      char*       _Buffer,
+                                char const* _Path,
+                                  size_t      _BufferCount
+    );
+
+
+
+
+ errno_t __cdecl _makepath_s(
+      char*       _Buffer,
+                              size_t      _BufferCount,
+                        char const* _Drive,
+                        char const* _Dir,
+                        char const* _Filename,
+                        char const* _Ext
+    );
+
+extern "C++" { template <size_t _Size> inline errno_t __cdecl _makepath_s(char (&_Buffer)[_Size],   char const* _Drive,   char const* _Dir,   char const* _Filename,   char const* _Ext) throw() { return _makepath_s(_Buffer, _Size, _Drive, _Dir, _Filename, _Ext); } }
+#line 1085 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_makepath_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  void __cdecl _makepath(  char *_Buffer,  char const* _Drive,  char const* _Dir,  char const* _Filename,  char const* _Ext);
+#line 1094 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+__declspec(deprecated("This function or variable may be unsafe. Consider using " "_splitpath_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+ void __cdecl _splitpath(
+                        char const* _FullPath,
+        char*       _Drive,
+        char*       _Dir,
+        char*       _Filename,
+        char*       _Ext
+    );
+
+
+ errno_t __cdecl _splitpath_s(
+                                  char const* _FullPath,
+         char*       _Drive,
+                                    size_t      _DriveCount,
+           char*       _Dir,
+                                    size_t      _DirCount,
+      char*       _Filename,
+                                    size_t      _FilenameCount,
+           char*       _Ext,
+                                    size_t      _ExtCount
+    );
+
+extern "C++" { template <size_t _DriveSize, size_t _DirSize, size_t _NameSize, size_t _ExtSize> inline errno_t __cdecl _splitpath_s(   char const* _Dest,   char (&_Drive)[_DriveSize],   char (&_Dir)[_DirSize],   char (&_Name)[_NameSize],   char (&_Ext)[_ExtSize] ) throw() { return _splitpath_s(_Dest, _Drive, _DriveSize, _Dir, _DirSize, _Name, _NameSize, _Ext, _ExtSize); } }
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+     
+     errno_t __cdecl getenv_s(
+                                     size_t*     _RequiredCount,
+          char*       _Buffer,
+                                      rsize_t     _BufferCount,
+                                    char const* _VarName
+        );
+    
+    #line 1140 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+     int*       __cdecl __p___argc (void);
+     char***    __cdecl __p___argv (void);
+     wchar_t*** __cdecl __p___wargv(void);
+
+    
+
+
+
+
+        
+        
+        
+    #line 1157 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+    
+     char***    __cdecl __p__environ (void);
+     wchar_t*** __cdecl __p__wenviron(void);
+
+    
+        
+    #line 1164 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+    
+    
+
+
+
+
+
+        
+        
+    #line 1174 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+    
+    
+
+
+
+      __declspec(deprecated("This function or variable may be unsafe. Consider using " "_dupenv_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details.")) 
+     char* __cdecl getenv(
+          char const* _VarName
+        );
+
+    extern "C++" { template <size_t _Size> inline errno_t __cdecl getenv_s(  size_t* _RequiredCount, char (&_Buffer)[_Size],   char const* _VarName) throw() { return getenv_s(_RequiredCount, _Buffer, _Size, _VarName); } }
+#line 1193 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+    
+
+
+#line 1198 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+    
+     errno_t __cdecl _dupenv_s(
+            char**      _Buffer,
+                                                                            size_t*     _BufferCount,
+                                                                               char const* _VarName
+        );
+
+    
+
+#line 1209 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+     int __cdecl system(
+          char const* _Command
+        );
+
+    
+    
+    #pragma warning (push)
+    #pragma warning (disable:6540)
+
+     
+     int __cdecl _putenv(
+          char const* _EnvString
+        );
+
+    
+     errno_t __cdecl _putenv_s(
+          char const* _Name,
+          char const* _Value
+        );
+
+    #pragma warning (pop)
+
+     errno_t __cdecl _searchenv_s(
+                                char const* _Filename,
+                                char const* _VarName,
+          char*       _Buffer,
+                                  size_t      _BufferCount
+        );
+
+    extern "C++" { template <size_t _Size> inline errno_t __cdecl _searchenv_s(  char const* _Filename,   char const* _VarName, char (&_Buffer)[_Size]) throw() { return _searchenv_s(_Filename, _VarName, _Buffer, _Size); } }
+#line 1245 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+    __declspec(deprecated("This function or variable may be unsafe. Consider using " "_searchenv_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))  void __cdecl _searchenv( char const* _Filename,  char const* _VarName,   char *_Buffer);
+#line 1252 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+    
+    __declspec(deprecated("This function or variable has been superceded by newer library " "or operating system functionality. Consider using " "SetErrorMode" " " "instead. See online help for details."))
+     void __cdecl _seterrormode(
+          int _Mode
+        );
+
+    __declspec(deprecated("This function or variable has been superceded by newer library " "or operating system functionality. Consider using " "Beep" " " "instead. See online help for details."))
+     void __cdecl _beep(
+          unsigned _Frequency,
+          unsigned _Duration
+        );
+
+    __declspec(deprecated("This function or variable has been superceded by newer library " "or operating system functionality. Consider using " "Sleep" " " "instead. See online help for details."))
+     void __cdecl _sleep(
+          unsigned long _Duration
+        );
+
+#line 1271 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+    
+
+    #pragma warning(push)
+    #pragma warning(disable: 4141) 
+
+      __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_ecvt" ". See online help for details.")) __declspec(deprecated("This function or variable may be unsafe. Consider using " "_ecvt_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     char* __cdecl ecvt(
+           double _Value,
+           int    _DigitCount,
+          int*   _PtDec,
+          int*   _PtSign
+        );
+
+      __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_fcvt" ". See online help for details.")) __declspec(deprecated("This function or variable may be unsafe. Consider using " "_fcvt_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     char* __cdecl fcvt(
+           double _Value,
+           int    _FractionalDigitCount,
+          int*   _PtDec,
+          int*   _PtSign
+        );
+
+    __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_gcvt" ". See online help for details.")) __declspec(deprecated("This function or variable may be unsafe. Consider using " "_fcvt_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     char* __cdecl gcvt(
+                            double _Value,
+                            int    _DigitCount,
+            char*  _DstBuf
+        );
+    
+    __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_itoa" ". See online help for details.")) __declspec(deprecated("This function or variable may be unsafe. Consider using " "_itoa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     char* __cdecl itoa(
+                            int   _Value,
+            char* _Buffer,
+                            int   _Radix
+        );
+    
+    __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_ltoa" ". See online help for details.")) __declspec(deprecated("This function or variable may be unsafe. Consider using " "_ltoa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     char* __cdecl ltoa(
+                            long  _Value,
+            char* _Buffer,
+                            int   _Radix
+        );
+
+
+    __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_swab" ". See online help for details."))
+     void __cdecl swab(
+          char* _Buf1,
+          char* _Buf2,
+                                     int   _SizeInBytes
+        );
+
+    __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_ultoa" ". See online help for details.")) __declspec(deprecated("This function or variable may be unsafe. Consider using " "_ultoa_s" " instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. " "See online help for details."))
+     char* __cdecl ultoa(
+                            unsigned long _Value,
+            char*         _Buffer,
+                            int           _Radix
+        );
+
+    
+
+        
+
+          __declspec(deprecated("The POSIX name for this item is deprecated. Instead, use the ISO C " "and C++ conformant name: " "_putenv" ". See online help for details."))
+         int __cdecl putenv(
+              char const* _EnvString
+            );
+
+    #line 1354 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+    #pragma warning(pop)
+
+    _onexit_t __cdecl onexit(  _onexit_t _Func);
+
+#line 1360 "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.10240.0\\ucrt\\stdlib.h"
+
+
+
+} __pragma(pack(pop))
+
+#line 14 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cstdlib"
+#line 15 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cstdlib"
+
+ 
+namespace std {
+using :: size_t; using :: div_t; using :: ldiv_t;
+using :: abort; using :: abs; using :: atexit;
+using :: atof; using :: atoi; using :: atol;
+using :: bsearch; using :: calloc; using :: div;
+using :: exit; using :: free;
+using :: labs; using :: ldiv; using :: malloc;
+using :: mblen; using :: mbstowcs; using :: mbtowc;
+using :: qsort; using :: rand; using :: realloc;
+using :: srand; using :: strtod; using :: strtol;
+using :: strtoul;
+using :: wcstombs; using :: wctomb;
+
+using :: lldiv_t;
+
+ 
+using :: getenv;
+using :: system;
+ #line 36 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cstdlib"
+
+using :: atoll; using :: llabs; using :: lldiv;
+using :: strtof; using :: strtold;
+using :: strtoll; using :: strtoull;
+
+using :: _Exit; using :: at_quick_exit; using :: quick_exit;
+}
+ #line 44 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cstdlib"
+
+#line 46 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cstdlib"
+
+
+
+
+
+#line 7 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtr1common"
+
+ #pragma pack(push,8)
+ #pragma warning(push,3)
+ 
+ 
+
+namespace std {
+	
+struct _Nil
+	{	
+	};
+
+	
+template<class _Ty,
+	_Ty _Val>
+	struct integral_constant
+	{	
+	static constexpr _Ty value = _Val;
+
+	typedef _Ty value_type;
+	typedef integral_constant<_Ty, _Val> type;
+
+	constexpr operator value_type() const noexcept
+		{	
+		return (value);
+		}
+
+	constexpr value_type operator()() const noexcept
+		{	
+		return (value);
+		}
+	};
+
+typedef integral_constant<bool, true> true_type;
+typedef integral_constant<bool, false> false_type;
+
+	
+template<bool _Val>
+	using bool_constant = integral_constant<bool, _Val>;
+
+	
+template<bool _Val>
+	struct _Cat_base
+		: integral_constant<bool, _Val>
+	{	
+	};
+
+	
+template<bool _Test,
+	class _Ty = void>
+	struct enable_if
+	{	
+	};
+
+template<class _Ty>
+	struct enable_if<true, _Ty>
+	{	
+	typedef _Ty type;
+	};
+
+	
+template<bool _Test,
+	class _Ty1,
+	class _Ty2>
+	struct conditional
+	{	
+	typedef _Ty2 type;
+	};
+
+template<class _Ty1,
+	class _Ty2>
+	struct conditional<true, _Ty1, _Ty2>
+	{	
+	typedef _Ty1 type;
+	};
+
+	
+template<class _Ty1,
+	class _Ty2>
+	struct is_same
+		: false_type
+	{	
+	};
+
+template<class _Ty1>
+	struct is_same<_Ty1, _Ty1>
+		: true_type
+	{	
+	};
+
+	
+template<class _Ty>
+	struct remove_const
+	{	
+	typedef _Ty type;
+	};
+
+template<class _Ty>
+	struct remove_const<const _Ty>
+	{	
+	typedef _Ty type;
+	};
+
+	
+template<class _Ty>
+	struct remove_volatile
+	{	
+	typedef _Ty type;
+	};
+
+template<class _Ty>
+	struct remove_volatile<volatile _Ty>
+	{	
+	typedef _Ty type;
+	};
+
+	
+template<class _Ty>
+	struct remove_cv
+	{	
+	typedef typename remove_const<typename remove_volatile<_Ty>::type>::type
+		type;
+	};
+
+	
+template<class _Ty>
+	struct _Is_integral
+		: false_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<bool>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<char>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<unsigned char>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<signed char>
+		: true_type
+	{	
+	};
+
+ 
+template<>
+	struct _Is_integral<wchar_t>
+		: true_type
+	{	
+	};
+ #line 169 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtr1common"
+
+template<>
+	struct _Is_integral<unsigned short>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<signed short>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<unsigned int>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<signed int>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<unsigned long>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<signed long>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<char16_t>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<char32_t>
+		: true_type
+	{	
+	};
+
+ 
+template<>
+	struct _Is_integral<long long>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_integral<unsigned long long>
+		: true_type
+	{	
+	};
+ #line 231 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtr1common"
+
+	
+template<class _Ty>
+	struct is_integral
+		: _Is_integral<typename remove_cv<_Ty>::type>
+	{	
+	};
+
+	
+template<class _Ty>
+	struct _Is_floating_point
+		: false_type
+	{	
+	};
+
+template<>
+	struct _Is_floating_point<float>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_floating_point<double>
+		: true_type
+	{	
+	};
+
+template<>
+	struct _Is_floating_point<long double>
+		: true_type
+	{	
+	};
+
+	
+template<class _Ty>
+	struct is_floating_point
+		: _Is_floating_point<typename remove_cv<_Ty>::type>
+	{	
+	};
+
+	
+template<class _Ty>
+	struct is_arithmetic
+		: _Cat_base<is_integral<_Ty>::value
+			|| is_floating_point<_Ty>::value>
+	{	
+	};
+
+	
+template<class _Ty>
+	struct remove_reference
+	{	
+	typedef _Ty type;
+	};
+
+template<class _Ty>
+	struct remove_reference<_Ty&>
+	{	
+	typedef _Ty type;
+	};
+
+template<class _Ty>
+	struct remove_reference<_Ty&&>
+	{	
+	typedef _Ty type;
+	};
+
+	
+struct _Wrap_int
+	{	
+	_Wrap_int(int)
+		{	
+		}
+	};
+
+template<class _Ty>
+	struct _Identity
+	{	
+	typedef _Ty type;
+	};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+ 
+ #pragma warning(pop)
+ #pragma pack(pop)
+#line 330 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtr1common"
+#line 331 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtr1common"
+
+
+
+
+
+#line 9 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtgmath.h"
+
+ #pragma pack(push,8)
+ #pragma warning(push,3)
+ 
+ 
+
+namespace std {
+template<class _Ty>
+	struct _Promote_to_float
+	{	
+	typedef typename conditional<is_integral<_Ty>::value,
+		double, _Ty>::type type;
+	};
+
+template<class _Ty1,
+	class _Ty2>
+	struct _Common_float_type
+	{	
+	typedef typename _Promote_to_float<_Ty1>::type _Ty1f;
+	typedef typename _Promote_to_float<_Ty2>::type _Ty2f;
+	typedef typename conditional<is_same<_Ty1f, long double>::value
+		|| is_same<_Ty2f, long double>::value, long double,
+		typename conditional<is_same<_Ty1f, double>::value
+			|| is_same<_Ty2f, double>::value, double,
+			float>::type>::type type;
+	};
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+template<class _Ty1,
+	class _Ty2> inline
+	typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value
+		&& ::std:: is_arithmetic<_Ty2>::value,
+		typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type
+	pow(const _Ty1 _Left, const _Ty2 _Right)
+	{	
+	typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type;
+	return (:: pow(type(_Left), type(_Right)));
+	}
+
+
+extern "C"    double __cdecl acos(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type acos(_Ty _Left) { return (:: acos((double)_Left)); }
+extern "C"    double __cdecl asin(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type asin(_Ty _Left) { return (:: asin((double)_Left)); }
+extern "C"    double __cdecl atan(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type atan(_Ty _Left) { return (:: atan((double)_Left)); }
+extern "C"    double __cdecl atan2(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type atan2(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: atan2((type)_Left, (type)_Right)); }
+extern "C"    double __cdecl ceil(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type ceil(_Ty _Left) { return (:: ceil((double)_Left)); }
+extern "C"    double __cdecl cos(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type cos(_Ty _Left) { return (:: cos((double)_Left)); }
+extern "C"    double __cdecl cosh(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type cosh(_Ty _Left) { return (:: cosh((double)_Left)); }
+extern "C"    double __cdecl exp(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type exp(_Ty _Left) { return (:: exp((double)_Left)); }
+
+extern "C"    double __cdecl fabs(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type fabs(_Ty _Left) { return (:: fabs((double)_Left)); }
+
+extern "C"    double __cdecl floor(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type floor(_Ty _Left) { return (:: floor((double)_Left)); }
+extern "C"    double __cdecl fmod(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type fmod(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: fmod((type)_Left, (type)_Right)); }
+extern "C"    double __cdecl frexp(  double,   int *); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type frexp(_Ty _Left,   int * _Arg2) { return (:: frexp((double)_Left, _Arg2)); }
+extern "C"    double __cdecl ldexp(  double,   int); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type ldexp(_Ty _Left,   int _Arg2) { return (:: ldexp((double)_Left, _Arg2)); }
+extern "C"    double __cdecl log(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type log(_Ty _Left) { return (:: log((double)_Left)); }
+extern "C"    double __cdecl log10(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type log10(_Ty _Left) { return (:: log10((double)_Left)); }
+
+
+extern "C"    double __cdecl sin(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type sin(_Ty _Left) { return (:: sin((double)_Left)); }
+extern "C"    double __cdecl sinh(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type sinh(_Ty _Left) { return (:: sinh((double)_Left)); }
+extern "C"    double __cdecl sqrt(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type sqrt(_Ty _Left) { return (:: sqrt((double)_Left)); }
+extern "C"    double __cdecl tan(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type tan(_Ty _Left) { return (:: tan((double)_Left)); }
+extern "C"    double __cdecl tanh(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type tanh(_Ty _Left) { return (:: tanh((double)_Left)); }
+
+		
+
+
+
+
+
+
+
+
+
+		
+
+inline float _Fma(float _Left, float _Middle, float _Right)
+	{	
+	return (:: fmaf(_Left, _Middle, _Right));
+	}
+
+inline double _Fma(double _Left, double _Middle, double _Right)
+	{	
+	return (:: fma(_Left, _Middle, _Right));
+	}
+
+inline long double _Fma(long double _Left, long double _Middle,
+	long double _Right)
+	{	
+	return (:: fmal(_Left, _Middle, _Right));
+	}
+
+template<class _Ty1,
+	class _Ty2,
+	class _Ty3> inline
+	typename ::std:: _Common_float_type<_Ty1,
+		typename ::std:: _Common_float_type<_Ty2, _Ty3>::type>::type
+	fma(_Ty1 _Left, _Ty2 _Middle, _Ty3 _Right)
+	{	
+	typedef typename ::std:: _Common_float_type<_Ty1,
+		typename ::std:: _Common_float_type<_Ty2, _Ty3>::type>::type type;
+	return (_Fma((type)_Left, (type)_Middle, (type)_Right));
+	}
+
+		
+
+inline float _Remquo(float _Left, float _Right, int *_Pquo)
+	{	
+	return (:: remquof(_Left, _Right, _Pquo));
+	}
+
+inline double _Remquo(double _Left, double _Right, int *_Pquo)
+	{	
+	return (:: remquo(_Left, _Right, _Pquo));
+	}
+
+inline long double _Remquo(long double _Left, long double _Right, int *_Pquo)
+	{	
+	return (:: remquol(_Left, _Right, _Pquo));
+	}
+
+template<class _Ty1,
+	class _Ty2> inline
+	typename ::std:: _Common_float_type<_Ty1, _Ty2>::type
+	remquo(_Ty1 _Left, _Ty2 _Right, int *_Pquo)
+	{	
+	typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type;
+	return (_Remquo((type)_Left, (type)_Right, _Pquo));
+	}
+
+extern "C"    double __cdecl acosh(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type acosh(_Ty _Left) { return (:: acosh((double)_Left)); }
+extern "C"    double __cdecl asinh(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type asinh(_Ty _Left) { return (:: asinh((double)_Left)); }
+extern "C"    double __cdecl atanh(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type atanh(_Ty _Left) { return (:: atanh((double)_Left)); }
+extern "C"    double __cdecl cbrt(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type cbrt(_Ty _Left) { return (:: cbrt((double)_Left)); }
+extern "C"    double __cdecl copysign(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type copysign(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: copysign((type)_Left, (type)_Right)); }
+extern "C"    double __cdecl erf(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type erf(_Ty _Left) { return (:: erf((double)_Left)); }
+extern "C"    double __cdecl erfc(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type erfc(_Ty _Left) { return (:: erfc((double)_Left)); }
+extern "C"    double __cdecl expm1(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type expm1(_Ty _Left) { return (:: expm1((double)_Left)); }
+extern "C"    double __cdecl exp2(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type exp2(_Ty _Left) { return (:: exp2((double)_Left)); }
+extern "C"    double __cdecl fdim(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type fdim(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: fdim((type)_Left, (type)_Right)); }
+
+extern "C"    double __cdecl fmax(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type fmax(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: fmax((type)_Left, (type)_Right)); }
+extern "C"    double __cdecl fmin(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type fmin(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: fmin((type)_Left, (type)_Right)); }
+extern "C"    double __cdecl hypot(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type hypot(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: hypot((type)_Left, (type)_Right)); }
+extern "C"    int __cdecl ilogb(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, int>::type ilogb(_Ty _Left) { return (:: ilogb((double)_Left)); }
+extern "C"    double __cdecl lgamma(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type lgamma(_Ty _Left) { return (:: lgamma((double)_Left)); }
+extern "C"    long long __cdecl llrint(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, long long>::type llrint(_Ty _Left) { return (:: llrint((double)_Left)); }
+extern "C"    long long __cdecl llround(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, long long>::type llround(_Ty _Left) { return (:: llround((double)_Left)); }
+extern "C"    double __cdecl log1p(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type log1p(_Ty _Left) { return (:: log1p((double)_Left)); }
+extern "C"    double __cdecl log2(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type log2(_Ty _Left) { return (:: log2((double)_Left)); }
+extern "C"    double __cdecl logb(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type logb(_Ty _Left) { return (:: logb((double)_Left)); }
+extern "C"    long __cdecl lrint(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, long>::type lrint(_Ty _Left) { return (:: lrint((double)_Left)); }
+extern "C"    long __cdecl lround(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, long>::type lround(_Ty _Left) { return (:: lround((double)_Left)); }
+extern "C"    double __cdecl nearbyint(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type nearbyint(_Ty _Left) { return (:: nearbyint((double)_Left)); }
+extern "C"    double __cdecl nextafter(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type nextafter(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: nextafter((type)_Left, (type)_Right)); }
+extern "C"    double __cdecl nexttoward(  double,   long double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type nexttoward(_Ty _Left,   long double _Arg2) { return (:: nexttoward((double)_Left, _Arg2)); }
+extern "C"    double __cdecl remainder(   double,   double); template<class _Ty1, class _Ty2> inline typename ::std:: enable_if< ::std:: is_arithmetic<_Ty1>::value && ::std:: is_arithmetic<_Ty2>::value, typename ::std:: _Common_float_type<_Ty1, _Ty2>::type>::type remainder(_Ty1 _Left, _Ty2 _Right) { typedef typename ::std:: _Common_float_type<_Ty1, _Ty2>::type type; return (:: remainder((type)_Left, (type)_Right)); }
+
+extern "C"    double __cdecl rint(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type rint(_Ty _Left) { return (:: rint((double)_Left)); }
+extern "C"    double __cdecl round(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type round(_Ty _Left) { return (:: round((double)_Left)); }
+extern "C"    double __cdecl scalbln(  double,   long); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type scalbln(_Ty _Left,   long _Arg2) { return (:: scalbln((double)_Left, _Arg2)); }
+extern "C"    double __cdecl scalbn(  double,   int); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type scalbn(_Ty _Left,   int _Arg2) { return (:: scalbn((double)_Left, _Arg2)); }
+extern "C"    double __cdecl tgamma(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type tgamma(_Ty _Left) { return (:: tgamma((double)_Left)); }
+extern "C"    double __cdecl trunc(  double); template<class _Ty> inline typename ::std:: enable_if< ::std:: is_integral<_Ty>::value, double>::type trunc(_Ty _Left) { return (:: trunc((double)_Left)); }
+
+ 
+ #pragma warning(pop)
+ #pragma pack(pop)
+#line 218 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtgmath.h"
+#line 219 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtgmath.h"
+ #line 220 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\xtgmath.h"
+
+
+
+
+
+#line 657 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+#line 658 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+ 
+namespace std {
+using :: abs; using :: acos; using :: asin;
+using :: atan; using :: atan2; using :: ceil;
+using :: cos; using :: cosh; using :: exp;
+using :: fabs; using :: floor; using :: fmod;
+using :: frexp; using :: ldexp; using :: log;
+using :: log10; using :: modf; using :: pow;
+using :: sin; using :: sinh; using :: sqrt;
+using :: tan; using :: tanh;
+
+using :: acosf; using :: asinf;
+using :: atanf; using :: atan2f; using :: ceilf;
+using :: cosf; using :: coshf; using :: expf;
+using :: fabsf; using :: floorf; using :: fmodf;
+using :: frexpf; using :: ldexpf; using :: logf;
+using :: log10f; using :: modff; using :: powf;
+using :: sinf; using :: sinhf; using :: sqrtf;
+using :: tanf; using :: tanhf;
+
+using :: acosl; using :: asinl;
+using :: atanl; using :: atan2l; using :: ceill;
+using :: cosl; using :: coshl; using :: expl;
+using :: fabsl; using :: floorl; using :: fmodl;
+using :: frexpl; using :: ldexpl; using :: logl;
+using :: log10l; using :: modfl; using :: powl;
+using :: sinl; using :: sinhl; using :: sqrtl;
+using :: tanl; using :: tanhl;
+
+using :: float_t; using :: double_t;
+
+using :: acosh; using :: asinh; using :: atanh;
+using :: cbrt; using :: erf; using :: erfc;
+using :: expm1; using :: exp2;
+using :: hypot; using :: ilogb; using :: lgamma;
+using :: log1p; using :: log2; using :: logb;
+using :: llrint; using :: lrint; using :: nearbyint;
+using :: rint; using :: llround; using :: lround;
+using :: fdim; using :: fma; using :: fmax; using :: fmin;
+using :: round; using :: trunc;
+using :: remainder; using :: remquo;
+using :: copysign; using :: nan; using :: nextafter;
+using :: scalbn; using :: scalbln;
+using :: nexttoward; using :: tgamma;
+
+using :: acoshf; using :: asinhf; using :: atanhf;
+using :: cbrtf; using :: erff; using :: erfcf;
+using :: expm1f; using :: exp2f;
+using :: hypotf; using :: ilogbf; using :: lgammaf;
+using :: log1pf; using :: log2f; using :: logbf;
+using :: llrintf; using :: lrintf; using :: nearbyintf;
+using :: rintf; using :: llroundf; using :: lroundf;
+using :: fdimf; using :: fmaf; using :: fmaxf; using :: fminf;
+using :: roundf; using :: truncf;
+using :: remainderf; using :: remquof;
+using :: copysignf; using :: nanf;
+using :: nextafterf; using :: scalbnf; using :: scalblnf;
+using :: nexttowardf; using :: tgammaf;
+
+using :: acoshl; using :: asinhl; using :: atanhl;
+using :: cbrtl; using :: erfl; using :: erfcl;
+using :: expm1l; using :: exp2l;
+using :: hypotl; using :: ilogbl; using :: lgammal;
+using :: log1pl; using :: log2l; using :: logbl;
+using :: llrintl; using :: lrintl; using :: nearbyintl;
+using :: rintl; using :: llroundl; using :: lroundl;
+using :: fdiml; using :: fmal; using :: fmaxl; using :: fminl;
+using :: roundl; using :: truncl;
+using :: remainderl; using :: remquol;
+using :: copysignl; using :: nanl;
+using :: nextafterl; using :: scalbnl; using :: scalblnl;
+using :: nexttowardl; using :: tgammal;
+
+using :: fpclassify; using :: signbit;
+using :: isfinite; using :: isinf;
+using :: isnan; using :: isnormal;
+using :: isgreater; using :: isgreaterequal;
+using :: isless; using :: islessequal;
+using :: islessgreater; using :: isunordered;
+}
+ #line 740 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+#line 742 "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\INCLUDE\\cmath"
+
+
+
+
+
+#line 5 "c:\\jamie\\game-engine\\engine\\Math\\Matrix2D.h"
+
+
+
+namespace Math
+{
+	struct Matrix2D
+	{
+		float r0c0;
+		float r0c1;
+		float r1c0;
+		float r1c1;
+		inline explicit Matrix2D(
+			float r0c0 = 1, float r0c1 = 0, 
+			float r1c0 = 0, float r1c1 = 1);
+		inline static Matrix2D rotate(float angleInRadians);
+	};
+
+	inline Vector2D operator*(
+		const Matrix2D& matrix,
+		const Vector2D& vector);
+
+#line 1 "c:\\jamie\\game-engine\\engine\\math\\Matrix2D.inl"
+
+Matrix2D::Matrix2D(
+	float r0c0, float r0c1,
+	float r1c0, float r1c1) :
+	r0c0(r0c0), r0c1(r0c1),
+	r1c0(r1c0), r1c1(r1c1)
+{
+}
+
+Matrix2D Matrix2D::rotate(float angleInRadians)
+{
+	float cosResult = cos(angleInRadians);
+	float sinResult = sin(angleInRadians);
+	return Matrix2D
+		(cosResult, -sinResult,
+		sinResult, cosResult);
+}
+
+
+Vector2D operator*(
+	const Matrix2D& matrix,
+	const Vector2D& vector)
+{
+	return Vector2D(
+		matrix.r0c0*vector.x+matrix.r0c1*vector.y,
+		matrix.r1c0*vector.x+matrix.r1c1*vector.y);
+}
+#line 27 "c:\\jamie\\game-engine\\engine\\Math\\Matrix2D.h"
+}
+#line 29 "c:\\jamie\\game-engine\\engine\\Math\\Matrix2D.h"
+#line 2 "Delme.cpp"

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="TempCpp.cpp" />
     <ClCompile Include="Timing\Clock.cpp" />
+    <ClCompile Include="Delme.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Vector2D.inl" />
