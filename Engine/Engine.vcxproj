@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Delme.cpp" />
-    <ClCompile Include="TempCpp.cpp" />
     <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
