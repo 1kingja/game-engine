@@ -55,7 +55,7 @@ void MyGlWindow::paintGL()
 	Vector2D transformedVerts[NUM_VERTS];
 	Matrix2D op=Matrix2D::rotate(shipOrientation);
 	for (unsigned int i = 0; i < NUM_VERTS;i++)
-		transformedVerts[i] = op * verts[i];
+		transformedVerts[i] = shipPosition+( op * verts[i]);
 	
 	glBufferSubData(GL_ARRAY_BUFFER, 0, 
 		sizeof(transformedVerts),
@@ -94,7 +94,7 @@ void MyGlWindow::rotateShip()
 
 void MyGlWindow::updateVelocity()
 {
-	/*const float ACCELERATION = 0.3f * clock.timeElapsedLastFrame();
+	const float ACCELERATION = 0.3f * clock.timeElapsedLastFrame();
 	if (GetAsyncKeyState(VK_UP))
-		shipVelocity.y += ACCELERATION;*/
+		shipVelocity.y += ACCELERATION;
 }
