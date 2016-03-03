@@ -95,6 +95,9 @@ void MyGlWindow::rotateShip()
 void MyGlWindow::updateVelocity()
 {
 	const float ACCELERATION = 0.3f * clock.timeElapsedLastFrame();
+
+	Vector2D directionToAccelerate(-sin(shipOrientation),cos(shipOrientation));
+
 	if (GetAsyncKeyState(VK_UP))
-		shipVelocity.y += ACCELERATION;
+		shipVelocity += directionToAccelerate * ACCELERATION;
 }
