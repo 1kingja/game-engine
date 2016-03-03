@@ -14,7 +14,7 @@ namespace
 {
 	Vector2D verts[] =
 	{
-		Vector2D(+0.0f, +0.1f),
+		Vector2D(+0.0f, +0.14142135623f),
 		Vector2D(-0.1f, -0.1f),
 		Vector2D(+0.1f, -0.1f),
 	};
