@@ -3,10 +3,10 @@ namespace Timing
 {
 	bool Clock::initialize()
 	{
-		bool b = QueryPerformanceFrequency(&timeFrequency);
+		bool b = QueryPerformanceFrequency(&timeFrequency) != 0;
 		if ( ! b)
 			return false;
-		return QueryPerformanceCounter(&timeLastFrame);
+		return QueryPerformanceCounter(&timeLastFrame) != 0;
 	}
 	bool Clock::shutdown() { return true; }
 

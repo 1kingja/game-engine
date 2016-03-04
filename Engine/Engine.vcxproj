@@ -15,6 +15,7 @@
     <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Math\Constants.h" />
     <ClInclude Include="Math\Matrix2D.h" />
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="Timing\Clock.h" />
@@ -70,6 +71,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
