@@ -13,5 +13,7 @@
     <ClInclude Include="Timing\Clock.h" />
     <ClInclude Include="Math\Matrix2D.h" />
     <ClInclude Include="Math\Constants.h" />
+    <ClInclude Include="Math\Matrix3D.h" />
+    <ClInclude Include="Math\Vector3D.h" />
   </ItemGroup>
 </Project>

@@ -3,24 +3,24 @@
 #include <cassert>
 #include <Qt\qdebug.h>
 #include <QtGui\QKeyEvent>
-#include <Math\Vector2D.h>
+#include <Math\Vector3D.h>
+#include <Math\Matrix3D.h>
 #include <Timing\Clock.h>
-#include <Math\Matrix2D.h>
-using Math::Vector2D;
-using Math::Matrix2D;
+using Math::Vector3D;
+using Math::Matrix3D;
 using Timing::Clock;
 
 namespace 
 {
-	Vector2D verts[] =
+	Vector3D verts[] =
 	{
-		Vector2D(+0.0f, +0.14142135623f),
-		Vector2D(-0.1f, -0.1f),
-		Vector2D(+0.1f, -0.1f),
+		Vector3D(+0.0f, +0.14142135623f),
+		Vector3D(-0.1f, -0.1f),
+		Vector3D(+0.1f, -0.1f),
 	};
 	const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
-	Vector2D shipPosition;
-	Vector2D shipVelocity;
+	Vector3D shipPosition;
+	Vector3D shipVelocity;
 	float shipOrientation = 0.0f;
 	Clock clock;
 }
@@ -44,7 +44,7 @@ void MyGlWindow::initializeGL()
 void MyGlWindow::paintGL()
 {
 	int minSize = min(width(), height());
-	Vector2D viewportLocation;
+	Vector3D viewportLocation;
 	viewportLocation.x = width() / 2 - minSize / 2;
 	viewportLocation.y = height() / 2 - minSize / 2;
 	glViewport(viewportLocation.x, viewportLocation.y, minSize, minSize);
@@ -52,8 +52,8 @@ void MyGlWindow::paintGL()
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE,0,0);
 
-	Vector2D transformedVerts[NUM_VERTS];
-	Matrix2D op=Matrix2D::rotate(shipOrientation);
+	Vector3D transformedVerts[NUM_VERTS];
+	Matrix3D op=Matrix3D::rotate(shipOrientation);
 	for (unsigned int i = 0; i < NUM_VERTS;i++)
 		transformedVerts[i] = op * verts[i];
 	
@@ -96,7 +96,7 @@ void MyGlWindow::updateVelocity()
 {
 	const float ACCELERATION = 0.3f * clock.timeElapsedLastFrame();
 
-	Vector2D directionToAccelerate(-sin(shipOrientation),cos(shipOrientation));
+	Vector3D directionToAccelerate(-sin(shipOrientation),cos(shipOrientation));
 
 	if (GetAsyncKeyState(VK_UP))
 		shipVelocity += directionToAccelerate * ACCELERATION;

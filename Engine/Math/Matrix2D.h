@@ -2,8 +2,6 @@
 #define ENGINE_MATRIX_2D_h
 #include "Math\Vector2D.h"
 #include <cmath>
-//float sin(float);
-//float cos(float);
 
 namespace Math
 {
