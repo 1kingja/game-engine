@@ -1,5 +1,4 @@
 #define _USE_MATH_DEFINES
-#include <cmath>
 #include <gtest\gtest.h>
 #include <Math\Matrix2D.h>
 #include "HelperFunctions.h"

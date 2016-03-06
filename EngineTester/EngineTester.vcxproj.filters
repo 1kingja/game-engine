@@ -10,6 +10,9 @@
     <ClCompile Include="Matrix2DTests.cpp">
       <Filter>MathTests</Filter>
     </ClCompile>
+    <ClCompile Include="Vector3DTests.cpp">
+      <Filter>MathTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelperFunctions.h" />

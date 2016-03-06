@@ -158,6 +158,7 @@ copy "$(ProjectDir)..\Engine\$(Configuration)\Engine.dll" "$(OutDir)"</Command>
     <ClCompile Include="Matrix2DTests.cpp" />
     <ClCompile Include="MyMain.cpp" />
     <ClCompile Include="Vector2DTests.cpp" />
+    <ClCompile Include="Vector3DTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelperFunctions.h" />
