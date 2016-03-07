@@ -13,6 +13,11 @@ namespace Math
 			float y = 0.0f, 
 			float z = 0.0f) : x(x), y(y),z(z) {}
 	};
+	
+	inline Vector3D operator*(float scalar, const Vector3D& vector);
+	inline Vector3D operator*(const Vector3D& vector, float scalar);
+
+#include "Vector3D.inl"
 }
 
 #endif

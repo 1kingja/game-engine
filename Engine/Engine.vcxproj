@@ -24,6 +24,7 @@
   <ItemGroup>
     <None Include="Math\Matrix2D.inl" />
     <None Include="Math\Vector2D.inl" />
+    <None Include="Math\Vector3D.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1DC1D019-941D-4226-B878-BAD7E60EB818}</ProjectGuid>
