@@ -13,6 +13,9 @@
     <ClCompile Include="Vector3DTests.cpp">
       <Filter>MathTests</Filter>
     </ClCompile>
+    <ClCompile Include="Matrix3DTests.cpp">
+      <Filter>MathTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelperFunctions.h" />
