@@ -9,5 +9,9 @@ Matrix3D::Matrix3D(
 
 Vector3D  operator*(const Matrix3D& matrix, const Vector3D& right)
 {
-	return Vector3D();
+	return Vector3D(
+		matrix.r0c0 * right.x + matrix.r0c1 * right.y + matrix.r0c2 * right.z,
+		matrix.r1c0 * right.x + matrix.r1c1 * right.y + matrix.r1c2 * right.z,
+		matrix.r2c0 * right.x + matrix.r2c1 * right.y + matrix.r2c2 * right.z
+		);
 }

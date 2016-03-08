@@ -1,6 +1,8 @@
 #include <gtest\gtest.h>
 #include <Math\Matrix3D.h>
+#include <Math\Vector3D.h>
 using Math::Matrix3D;
+using Math::Vector3D;
 
 TEST(Matrix3D, Construction)
 {
@@ -32,5 +34,17 @@ TEST(Matrix3D, Construction)
 
 TEST(Matrix3D, MatrixVectorMultiply)
 {
+	Matrix3D op(
+		1, 2, 3,
+		4, 5, 6,
+		7, 8, 9);
 
+	Vector3D victim(1,
+					2,
+					3);
+
+	Vector3D victimPrime = op * victim;
+	EXPECT_FLOAT_EQ(victimPrime.x, 14);
+	EXPECT_FLOAT_EQ(victimPrime.y, 32);
+	EXPECT_FLOAT_EQ(victimPrime.z, 50);
 }

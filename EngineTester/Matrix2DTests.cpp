@@ -13,6 +13,14 @@ TEST(Matrix2D, Construction)
 	EXPECT_FLOAT_EQ(identity.r0c1, 0.0f);
 	EXPECT_FLOAT_EQ(identity.r1c0, 0.0f);
 	EXPECT_FLOAT_EQ(identity.r1c1, 1.0f);
+
+	Matrix2D victim(
+		1 ,2,
+		3, 4);
+	EXPECT_FLOAT_EQ(victim.r0c0, 1);
+	EXPECT_FLOAT_EQ(victim.r0c1, 2);
+	EXPECT_FLOAT_EQ(victim.r1c0, 3);
+	EXPECT_FLOAT_EQ(victim.r1c1, 4);
 }
 
 TEST(Matrix2D, Rotation)
