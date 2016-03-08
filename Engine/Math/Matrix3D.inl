@@ -7,6 +7,16 @@ Matrix3D::Matrix3D(
 		r1c0(r1c0), r1c1(r1c1), r1c2(r1c2),
 		r2c0(r2c0), r2c1(r2c1), r2c2(r2c2) {}
 
+Matrix3D Matrix3D::rotateZ(float angleInRadians) 
+{
+	float cosResult = cos(angleInRadians);
+	float sinResult = sin(angleInRadians);
+	return Matrix3D(	
+		cosResult, -sinResult,	0,
+		sinResult, cosResult,	0,
+				0,			0,	1);
+}
+
 Vector3D  operator*(const Matrix3D& matrix, const Vector3D& right)
 {
 	return Vector3D(

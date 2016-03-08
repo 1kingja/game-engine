@@ -22,6 +22,6 @@ Vector2D operator*(
 	const Vector2D& vector)
 {
 	return Vector2D(
-		matrix.r0c0*vector.x+matrix.r0c1*vector.y,
-		matrix.r1c0*vector.x+matrix.r1c1*vector.y);
+		matrix.r0c0 * vector.x+matrix.r0c1 * vector.y,
+		matrix.r1c0 * vector.x+matrix.r1c1 * vector.y);
 }
