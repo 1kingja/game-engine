@@ -15,6 +15,7 @@ namespace Math
 			float r1c0 = 0, float r1c1 = 1, float r1c2 = 0,
 			float r2c0 = 0, float r2c1 = 0, float r2c2 = 1);
 		inline static Matrix3D rotateZ(float angleInRadians);
+		inline static Matrix3D translate(float x, float y);
 	};
 
 	inline Vector3D  operator*(const Matrix3D& matrix, const Vector3D& right);

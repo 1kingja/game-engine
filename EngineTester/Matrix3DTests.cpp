@@ -116,6 +116,16 @@ TEST(Matrix3D, Rotation)
 	EXPECT_FLOAT_EQ(op.r2c2, 1);
 }
 
+TEST(Matrix3D, Translation)
+{
+	Matrix3D translator = Matrix3D::translate(4, 8);
+	Vector3D victim(-3, 8);
+	Vector3D victimPrime = translator * victim;
+	EXPECT_FLOAT_EQ(victimPrime.x, 1);
+	EXPECT_FLOAT_EQ(victimPrime.y, 16);
+	EXPECT_FLOAT_EQ(victimPrime.z, );
+}
+
 TEST(Matrix3D, MatrixVectorMultiply)
 {
 	Matrix3D op(
