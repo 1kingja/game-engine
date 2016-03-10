@@ -118,12 +118,19 @@ TEST(Matrix3D, Rotation)
 
 TEST(Matrix3D, Translation)
 {
-	Matrix3D translator = Matrix3D::translate(4, 8);
-	Vector3D victim(-3, 8);
+	//Matrix3D translator = Matrix3D::translate(4, 8);
+	//Vector3D victim(-3, 8);
+	//Vector3D victimPrime = translator * victim;
+	//EXPECT_FLOAT_EQ(victimPrime.x, 1);
+	//EXPECT_FLOAT_EQ(victimPrime.y, 16);
+	//EXPECT_FLOAT_EQ(victimPrime.z, 0);
+
+	Matrix3D translator = Matrix3D::translate(1, 0);
+	Vector3D victim(0, 3);
 	Vector3D victimPrime = translator * victim;
 	EXPECT_FLOAT_EQ(victimPrime.x, 1);
-	EXPECT_FLOAT_EQ(victimPrime.y, 16);
-	EXPECT_FLOAT_EQ(victimPrime.z, );
+	EXPECT_FLOAT_EQ(victimPrime.y, 3);
+	EXPECT_FLOAT_EQ(victimPrime.z, 0);
 }
 
 TEST(Matrix3D, MatrixVectorMultiply)

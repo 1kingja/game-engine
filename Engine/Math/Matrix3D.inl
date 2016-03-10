@@ -19,7 +19,9 @@ Matrix3D Matrix3D::rotateZ(float angleInRadians)
 
 Matrix3D Matrix3D::translate(float x, float y)
 {
-	return Matrix3D();
+	return Matrix3D(1, 0, x,
+					0, 1, y,
+					0, 0, 1);
 }
 
 Vector3D  operator*(const Matrix3D& matrix, const Vector3D& right)
