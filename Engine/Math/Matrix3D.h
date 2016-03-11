@@ -19,6 +19,7 @@ namespace Math
 	};
 
 	inline Vector3D  operator*(const Matrix3D& matrix, const Vector3D& right);
+	inline Matrix3D  operator*(const Matrix3D& left, const Matrix3D& right);
 
 #include "Matrix3D.inl"
 }

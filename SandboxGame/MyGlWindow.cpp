@@ -53,9 +53,10 @@ void MyGlWindow::paintGL()
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,0,0);
 
 	Vector3D transformedVerts[NUM_VERTS];
-	Matrix3D op = 
-		Matrix3D::translate(shipPosition.x, shipPosition.y) * 
-		Matrix3D::rotateZ(shipOrientation);
+	Matrix3D translator = Matrix3D::translate(shipPosition.x, shipPosition.y);
+	Matrix3D rotator = Matrix3D::rotateZ(shipOrientation);
+
+	Matrix3D op = translator * rotator;
 	for (unsigned int i = 0; i < NUM_VERTS;i++)
 		transformedVerts[i] = op * verts[i];
 	
