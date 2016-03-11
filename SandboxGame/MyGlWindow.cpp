@@ -14,9 +14,9 @@ namespace
 {
 	Vector3D verts[] =
 	{
-		Vector3D(+0.0f, +0.14142135623f),
-		Vector3D(-0.1f, -0.1f),
-		Vector3D(+0.1f, -0.1f),
+		Vector3D(+0.0f, +0.14142135623f, 1),
+		Vector3D(-0.1f, -0.1f, 1),
+		Vector3D(+0.1f, -0.1f, 1),
 	};
 	const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
 	Vector3D shipPosition;
