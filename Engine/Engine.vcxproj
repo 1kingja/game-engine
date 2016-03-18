@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DebugTools\Profiling\Profiler.cpp" />
     <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -19,6 +20,7 @@
     <ClInclude Include="Math\Matrix3D.h" />
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="Math\Vector3D.h" />
+    <ClInclude Include="DebugTools\Profiling\Profiler.h" />
     <ClInclude Include="Timing\Clock.h" />
   </ItemGroup>
   <ItemGroup>
