@@ -1,7 +1,7 @@
 #include <gtest\gtest.h>
 #include <DebugTools\Profiling\Profiler.h>
 
-TEST(Profiler, randomLetters)
+TEST(Profiler, mashedPotatoes)
 {
 	Profiler profiler;
 	profiler.initalize();
