@@ -1,6 +1,11 @@
 #include "Profiler.h"
 
-void Profiler::addEntry(const char* category, float time)
+void Profiler::initalize(const char* fileName)
+{
+	this->fileName = fileName;
+}
+
+void Profiler::shutdown()
 {
 
 }
@@ -10,12 +15,7 @@ void Profiler::newFrame()
 
 }
 
-void Profiler::shutdown()
-{
-
-}
-
-void Profiler::initalize(const char* fileName)
+void Profiler::addEntry(const char* category, float time)
 {
 
 }

@@ -20,7 +20,7 @@ string getNextToken(ifstream& theFile)
 }
 
 
-TEST(Profiler, mashedPotatoes)
+TEST(Profiler, SampleProfiles)
 {
 	Profiler profiler;
 	const char* profileFileName = "profiles.csv";
