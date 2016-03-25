@@ -4,8 +4,10 @@
 class __declspec(dllexport) Profiler
 {
 	const char* fileName;
-	const unsigned int MAX_FRAME_SAMPLES = 500;
-	const unsigned int MAX_PROFILE_CATAGORIES = 20;
+	static const unsigned int MAX_FRAME_SAMPLES = 500;
+	static const unsigned int MAX_PROFILE_CATAGORIES = 20;
+	unsigned int frameIndex;
+	unsigned int categoryIndex;
 	struct ProfileCatagory
 	{
 		const char* name;
