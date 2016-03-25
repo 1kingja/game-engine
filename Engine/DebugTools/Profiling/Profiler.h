@@ -8,7 +8,8 @@ class __declspec(dllexport) Profiler
 	static const unsigned int MAX_PROFILE_CATAGORIES = 20;
 	unsigned int frameIndex;
 	unsigned int categoryIndex;
-	struct ProfileCatagory
+	unsigned int numUsedCategories;
+	struct ProfileCategory
 	{
 		const char* name;
 		float samples[MAX_FRAME_SAMPLES];
