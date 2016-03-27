@@ -22,18 +22,26 @@ string getNextToken(ifstream& theFile)
 
 TEST(Profiler, SampleProfiles)
 {
+	char* categories[]=
+	{
+		"Catagory1",
+		"Catagory2",
+		"Catagory3"
+	};
+	const unsigned int NUM_CATEGORIES = sizeof(categories)/sizeof(*categories);
+
 	Profiler profiler;
 	const char* profileFileName = "profiles.csv";
 	profiler.initalize(profileFileName);
 
-	const unsigned int NUM_ENTRIES = 15;
+	const unsigned int NUM_FRAMES = 5;
 
-	for (float i = 0; i < NUM_ENTRIES; i++)
+	float sampleNumber = 0;
+	for (float frame = 0; frame < NUM_FRAMES; frame++)
 	{
 		profiler.newFrame();
-		profiler.addEntry("Category1", i);
-		profiler.addEntry("Category2", i);
-		profiler.addEntry("Category3", i);
+		for (unsigned int cat = 0; cat < NUM_CATEGORIES;cat++)
+		profiler.addEntry(categories[cat], sampleNumber++);
 	}
 	profiler.shutdown();
 
@@ -42,7 +50,7 @@ TEST(Profiler, SampleProfiles)
 	EXPECT_EQ(getNextToken(input), "Catagory1");
 	EXPECT_EQ(getNextToken(input), "Catagory2");
 	EXPECT_EQ(getNextToken(input), "Catagory3");
-	for (unsigned int i = 0; i < NUM_ENTRIES; i++)
+	for (unsigned int i = 0; i < (NUM_FRAMES*NUM_CATEGORIES); i++)
 	{
 		string buf = getNextToken(input);
 		EXPECT_EQ(atoi(buf.c_str()), i);
