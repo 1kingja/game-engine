@@ -12,7 +12,7 @@ string getNextToken(ifstream& theFile)
 	while (theFile.good())
 	{
 		theFile >> c;
-		if (c == ',' || c=='\n' )
+		if (c == ',' || c == '\n' )
 			break;
 		ret += c;
 	}

@@ -14,11 +14,11 @@ void Profiler::shutdown()
 {
 	std::ofstream outStream(fileName, std::ios::trunc);
 
-	//Write category headers
+	// Write category headers
 	for (unsigned int i = 0; i < numUsedCategories; i++)
 	{
 		outStream << categories[i].name;
-		outStream << ((i + 1) < numUsedCategories) ? ',' : '\n';
+		outStream << getDelimiter(i);
 	}
 
 	for (unsigned int frame = 0; frame < frameIndex;frame++)
@@ -26,7 +26,7 @@ void Profiler::shutdown()
 		for (unsigned int cat = 0; cat < numUsedCategories;cat++)
 		{
 			outStream << categories[cat].samples[frame];
-			outStream << ((cat + 1) < numUsedCategories) ? ',' : '\n';
+			outStream << getDelimiter(cat);
 		}
 	}
 
@@ -34,7 +34,7 @@ void Profiler::shutdown()
 
 void Profiler::newFrame()
 {
-	if (frameIndex != -1)
+	if (frameIndex > 0)
 		assert(categoryIndex == numUsedCategories);
 	frameIndex++;
 	categoryIndex = 0;
@@ -44,7 +44,7 @@ void Profiler::addEntry(const char* category, float time)
 {
 	assert(categoryIndex < MAX_PROFILE_CATAGORIES);
 	assert(frameIndex < MAX_FRAME_SAMPLES);
-	ProfileCategory& pc = categories[categoryIndex++];
+	ProfileCategory& pc = categories[categoryIndex];
 	if (frameIndex == 0) 
 	{
 		pc.name = category;
@@ -57,4 +57,9 @@ void Profiler::addEntry(const char* category, float time)
 	}
 	categoryIndex++;
 	pc.samples[frameIndex] = time;
+}
+
+char Profiler::getDelimiter(unsigned int index) const
+{
+	return ((index + 1) < numUsedCategories) ? ',' : '\n';
 }
