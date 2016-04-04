@@ -11,6 +11,7 @@ string getNextToken(ifstream& theFile)
 	string ret;
 	while (theFile.good())
 	{
+		theFile >> std::noskipws;
 		theFile >> c;
 		if (c == ',' || c == '\n' )
 			break;
