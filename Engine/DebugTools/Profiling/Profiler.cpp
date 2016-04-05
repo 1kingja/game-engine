@@ -21,7 +21,12 @@ void Profiler::shutdown()
 		outStream << getDelimiter(i);
 	}
 
-	for (unsigned int frame = 0; frame < frameIndex;frame++)
+	//Account for last frame if they added entries
+	unsigned int numActualFrames = frameIndex;
+	if(categoryIndex == numUsedCategories) 
+		numActualFrames++;
+
+	for (unsigned int frame = 0; frame < numActualFrames;frame++)
 	{
 		for (unsigned int cat = 0; cat < numUsedCategories;cat++)
 		{
