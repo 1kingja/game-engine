@@ -42,13 +42,13 @@ void Profiler::newFrame()
 	if (frameIndex > 0)
 		assert(categoryIndex == numUsedCategories);
 	frameIndex++;
+	assert(frameIndex < MAX_FRAME_SAMPLES);
 	categoryIndex = 0;
 }
 
 void Profiler::addEntry(const char* category, float time)
 {
 	assert(categoryIndex < MAX_PROFILE_CATAGORIES);
-	assert(frameIndex < MAX_FRAME_SAMPLES);
 	ProfileCategory& pc = categories[categoryIndex];
 	if (frameIndex == 0) 
 	{
