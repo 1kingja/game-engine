@@ -46,6 +46,15 @@ void writeSamples()
 	}
 }
 
+bool isAtEndOfFile(ifstream& input)
+{
+	if (! input.good())
+		return false;
+	char bitBucket;
+	input >> bitBucket;
+	return ! input.good();
+}
+
 void checkSamples()
 {
 	ifstream input(PROFILE_FILE_NAME);
@@ -58,6 +67,7 @@ void checkSamples()
 		string buf = getNextToken(input);
 		EXPECT_EQ(atoi(buf.c_str()), i);
 	}
+	EXPECT_TRUE(isAtEndOfFile(input));
 }
 
 TEST(Profiler, SampleProfiles)
