@@ -4,7 +4,6 @@
 class __declspec(dllexport) Profiler
 {
 	const char* fileName;
-	static const unsigned int MAX_FRAME_SAMPLES = 1000;
 	static const unsigned int MAX_PROFILE_CATAGORIES = 20;
 	unsigned int frameIndex;
 	unsigned int categoryIndex;
@@ -16,6 +15,7 @@ class __declspec(dllexport) Profiler
 	} categories[MAX_PROFILE_CATAGORIES];
 	char getDelimiter(unsigned int index) const;
 public:
+	static const unsigned int MAX_FRAME_SAMPLES = 1000;
 	void initalize(const char* fileName);
 	void shutdown();
 	void newFrame();
