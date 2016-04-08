@@ -78,48 +78,33 @@ namespace
 
 	TEST(Profiler, SmallAmountOfFrames)
 	{
-		profiler.initalize(PROFILE_FILE_NAME);
-		const unsigned int NUM_FRAMES_THIS_TEST = 5;
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		profiler.shutdown();
-		checkFrames(NUM_FRAMES_THIS_TEST);
+		runTestsOnFrames(5);
 	}
 
 	TEST(Profile, LargeAmuntOfFramesNonCircular)
 	{
 		const unsigned int NUM_FRAMES_THIS_TEST = 
 			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES * .8);
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		checkFrames(NUM_FRAMES_THIS_TEST);
+		runTestsOnFrames(NUM_FRAMES_THIS_TEST);
 	}
 
 	TEST(Profile, ArrayBoundaries)
 	{
-		const unsigned int NUM_FRAMES_THIS_TEST = Profiler::MAX_FRAME_SAMPLES;
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		checkFrames(NUM_FRAMES_THIS_TEST);
-
-		/*const unsigned int NUM_FRAMES_THIS_TEST = Profiler::MAX_FRAME_SAMPLES + 1;
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		checkFrames(NUM_FRAMES_THIS_TEST);
-
-		const unsigned int NUM_FRAMES_THIS_TEST = Profiler::MAX_FRAME_SAMPLES + 2;
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		checkFrames(NUM_FRAMES_THIS_TEST);*/
+		runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES);
+		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 1);
+		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 2);
 	}
 
 	TEST(Profile, CirculatingOnePlusSum)
 	{
-		/*const unsigned int NUM_FRAMES_THIS_TEST = Profiler::MAX_FRAME_SAMPLES * 1.5;
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		checkFrames(NUM_FRAMES_THIS_TEST);*/
+		const unsigned int NUM_FRAMES_THIS_TEST =
+			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES * 1.5);
+		runTestsOnFrames(NUM_FRAMES_THIS_TEST);
 	}
 
 	TEST(Profile, GoAroundSeveralTimes)
 	{
-		/*const unsigned int NUM_FRAMES_THIS_TEST = Profiler::MAX_FRAME_SAMPLES * 3.141592134234;
-		writeFrames(NUM_FRAMES_THIS_TEST);
-		checkFrames(NUM_FRAMES_THIS_TEST);*/
+		//checkFrames(Profiler::MAX_FRAME_SAMPLES * 3.141592134234);
 	}
 
 	TEST(Profiler, ExcludeIncompleteFrames)
