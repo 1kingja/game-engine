@@ -90,7 +90,7 @@ namespace
 
 	TEST(Profile, ArrayBoundaries)
 	{
-		runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES);
+		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES);
 		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 1);
 		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 2);
 	}
@@ -98,7 +98,7 @@ namespace
 	TEST(Profile, CirculatingOnePlusSum)
 	{
 		const unsigned int NUM_FRAMES_THIS_TEST =
-			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES * 1.5);
+			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES + 2);
 		runTestsOnFrames(NUM_FRAMES_THIS_TEST);
 	}
 

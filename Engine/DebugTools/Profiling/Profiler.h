@@ -4,7 +4,7 @@
 class __declspec(dllexport) Profiler
 {
 public:
-	static const unsigned int MAX_FRAME_SAMPLES = 1000;
+	static const unsigned int MAX_FRAME_SAMPLES = 5;
 private:
 	const char* fileName;
 	static const unsigned int MAX_PROFILE_CATAGORIES = 20;

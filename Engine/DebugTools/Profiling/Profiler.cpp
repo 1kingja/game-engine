@@ -42,7 +42,6 @@ void Profiler::newFrame()
 	if (frameIndex > 0)
 		assert(categoryIndex == numUsedCategories);
 	frameIndex++;
-	assert(frameIndex < MAX_FRAME_SAMPLES);
 	categoryIndex = 0;
 }
 
@@ -61,7 +60,7 @@ void Profiler::addEntry(const char* category, float time)
 		assert(categoryIndex < numUsedCategories);
 	}
 	categoryIndex++;
-	pc.samples[frameIndex] = time;
+	pc.samples[frameIndex % MAX_FRAME_SAMPLES] = time;
 }
 
 char Profiler::getDelimiter(unsigned int index) const
