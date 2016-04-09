@@ -57,13 +57,18 @@ namespace
 	{
 		ifstream input(PROFILE_FILE_NAME);
 
-		EXPECT_EQ(getNextToken(input), "Catagory1");
-		EXPECT_EQ(getNextToken(input), "Catagory2");
-		EXPECT_EQ(getNextToken(input), "Catagory3");
-		for (unsigned int i = 0; i < (numFrames*NUM_CATEGORIES); i++)
+		for (unsigned int i = 0; i < NUM_CATEGORIES; i++) 
+			EXPECT_EQ(getNextToken(input), categories[i]);
+
+		unsigned int profileNumber = 0;
+		if (numFrames >= Profiler::MAX_FRAME_SAMPLES)
+			profileNumber = (numFrames - Profiler::MAX_FRAME_SAMPLES)*NUM_CATEGORIES;
+
+
+		for (unsigned int i = 0; i < (numFrames * NUM_CATEGORIES); i++)
 		{
 			string buf = getNextToken(input);
-			EXPECT_EQ(atoi(buf.c_str()), i);
+			EXPECT_EQ(atoi(buf.c_str()), profileNumber++);
 		}
 		EXPECT_TRUE(isAtEndOfFile(input));
 	}
@@ -98,7 +103,7 @@ namespace
 	TEST(Profile, CirculatingOnePlusSum)
 	{
 		const unsigned int NUM_FRAMES_THIS_TEST =
-			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES + 2);
+			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES + 3);
 		runTestsOnFrames(NUM_FRAMES_THIS_TEST);
 	}
 
