@@ -16,7 +16,10 @@ private:
 		const char* name;
 		float samples[MAX_FRAME_SAMPLES];
 	} categories[MAX_PROFILE_CATAGORIES];
+	void writeData() const;
+	void writeFrame(unsigned int frameNumber) const;
 	char getDelimiter(unsigned int index) const;
+	bool wrapped() const;
 public:
 	void initalize(const char* fileName);
 	void shutdown();
