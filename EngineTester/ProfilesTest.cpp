@@ -97,9 +97,9 @@ namespace
 
 	TEST(Profile, ArrayBoundaries)
 	{
-		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES);
-		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 1);
-		//runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 2);
+		runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES);
+		runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 1);
+		runTestsOnFrames(Profiler::MAX_FRAME_SAMPLES + 2);
 	}
 
 	TEST(Profile, CirculatingOnePlusSum)
@@ -111,7 +111,9 @@ namespace
 
 	TEST(Profile, GoAroundSeveralTimes)
 	{
-		//checkFrames(Profiler::MAX_FRAME_SAMPLES * 3.141592134234);
+		const unsigned int NUM_FRAMES_THIS_TEST =
+			static_cast<unsigned int>(Profiler::MAX_FRAME_SAMPLES * 3.141592134234);
+		runTestsOnFrames(NUM_FRAMES_THIS_TEST);
 	}
 
 	TEST(Profiler, ExcludeIncompleteFrames)
