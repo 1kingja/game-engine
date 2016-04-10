@@ -62,8 +62,10 @@ namespace
 
 		unsigned int profileNumber = 0;
 		if (numFrames >= Profiler::MAX_FRAME_SAMPLES)
+		{
 			profileNumber = (numFrames - Profiler::MAX_FRAME_SAMPLES)*NUM_CATEGORIES;
-
+			numFrames = Profiler::MAX_FRAME_SAMPLES;
+		}
 
 		for (unsigned int i = 0; i < (numFrames * NUM_CATEGORIES); i++)
 		{

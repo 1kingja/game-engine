@@ -2,6 +2,8 @@
 #include <cassert>
 #include <fstream>
 
+static std::ofstream outStream;
+
 void Profiler::initalize(const char* fileName)
 {
 	this->fileName = fileName;
@@ -53,7 +55,7 @@ bool Profiler::wrapped() const
 
 void Profiler::writeData() const
 {
-	std::ofstream outStream(fileName, std::ios::trunc);
+	outStream.open(fileName, std::ios::trunc);
 
 	// Write category headers
 	for (unsigned int i = 0; i < numUsedCategories; i++)
@@ -90,13 +92,14 @@ void Profiler::writeData() const
 		while (startIndex < endIndex)
 			writeFrame(startIndex++);
 	}
+	outStream.close();
 }
 
 void Profiler::writeFrame(unsigned int frameNumber) const
 {
 	for (unsigned int cat = 0; cat < numUsedCategories; cat++)
 	{
-		outStream << categories[cat].samples[startIndex];
+		outStream << categories[cat].samples[frameNumber];
 		outStream << getDelimiter(cat);
 	}
 }
