@@ -116,24 +116,29 @@ namespace
 		runTestsOnFrames(NUM_FRAMES_THIS_TEST);
 	}
 
-	TEST(Profiler, ExcludeIncompleteFrames)
+	void writeIncompleteFrames(unsigned int numFrames)
 	{
 		profiler.initalize(PROFILE_FILE_NAME);
-		const unsigned int NUM_FRAMES_THIS_TEST = 5;
-		writeFrames(NUM_FRAMES_THIS_TEST);
+		writeFrames(numFrames);
 		profiler.newFrame();
-		profiler.addEntry(categories[0], 15);
+		profiler.addEntry(categories[0], 99);
 		profiler.shutdown();
-		checkFrames(NUM_FRAMES_THIS_TEST);
+		checkFrames(numFrames);
 
 		profiler.initalize(PROFILE_FILE_NAME);
-		writeFrames(NUM_FRAMES_THIS_TEST);
+		writeFrames(numFrames);
 		profiler.newFrame();
-		profiler.addEntry(categories[0], 15);
-		profiler.addEntry(categories[1], 16);
+		profiler.addEntry(categories[0], 99);
+		profiler.addEntry(categories[1], 100);
 		profiler.shutdown();
 
-		checkFrames(NUM_FRAMES_THIS_TEST);
+		checkFrames(numFrames);
+	}
+
+	TEST(Profiler, ExcludeIncompleteFrames)
+	{
+		writeIncompleteFrames(Profiler::MAX_FRAME_SAMPLES - 2); //Not wrap
+		writeIncompleteFrames(Profiler::MAX_FRAME_SAMPLES + 2); //Wrap
 	}
 
 }
