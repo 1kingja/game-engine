@@ -64,13 +64,6 @@ void Profiler::writeData() const
 		outStream << getDelimiter(i);
 	}
 
-	//Account for last frame if they added entries
-	unsigned int numActualFrames = frameIndex;
-	if (categoryIndex == numUsedCategories)
-		numActualFrames++;
-
-
-
 	unsigned int endIndex;
 	unsigned int startIndex;
 
@@ -83,16 +76,25 @@ void Profiler::writeData() const
 			writeFrame(startIndex);
 			startIndex = (startIndex + 1) % MAX_FRAME_SAMPLES;
 		}
+		if(currentFrameComplete())
 		writeFrame(startIndex);
 	}
 	else
 	{
+		unsigned int numActualFrames = frameIndex;
+		if (currentFrameComplete())
+			numActualFrames++;
 		startIndex = 0;
 		endIndex = numActualFrames;
 		while (startIndex < endIndex)
 			writeFrame(startIndex++);
 	}
 	outStream.close();
+}
+
+bool Profiler::currentFrameComplete() const
+{
+	return categoryIndex == numUsedCategories;
 }
 
 void Profiler::writeFrame(unsigned int frameNumber) const

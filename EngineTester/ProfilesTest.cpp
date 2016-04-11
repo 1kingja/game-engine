@@ -53,7 +53,7 @@ namespace
 		}
 	}
 
-	void checkFrames(unsigned int numFrames)
+	void checkFrames(unsigned int numFrames, bool excludeLastFrame = false)
 	{
 		ifstream input(PROFILE_FILE_NAME);
 
@@ -65,6 +65,11 @@ namespace
 		{
 			profileNumber = (numFrames - Profiler::MAX_FRAME_SAMPLES)*NUM_CATEGORIES;
 			numFrames = Profiler::MAX_FRAME_SAMPLES;
+		}
+		if(excludeLastFrame)
+		{
+			profileNumber += NUM_CATEGORIES;
+			numFrames--;
 		}
 
 		for (unsigned int i = 0; i < (numFrames * NUM_CATEGORIES); i++)
@@ -118,12 +123,13 @@ namespace
 
 	void writeIncompleteFrames(unsigned int numFrames)
 	{
+		bool wrapped = numFrames >=Profiler::MAX_FRAME_SAMPLES;
 		profiler.initalize(PROFILE_FILE_NAME);
 		writeFrames(numFrames);
 		profiler.newFrame();
 		profiler.addEntry(categories[0], 99);
 		profiler.shutdown();
-		checkFrames(numFrames);
+		checkFrames(numFrames, wrapped);
 
 		profiler.initalize(PROFILE_FILE_NAME);
 		writeFrames(numFrames);
@@ -131,8 +137,7 @@ namespace
 		profiler.addEntry(categories[0], 99);
 		profiler.addEntry(categories[1], 100);
 		profiler.shutdown();
-
-		checkFrames(numFrames);
+		checkFrames(numFrames, wrapped);
 	}
 
 	TEST(Profiler, ExcludeIncompleteFrames)
