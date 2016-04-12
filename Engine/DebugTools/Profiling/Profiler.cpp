@@ -1,3 +1,4 @@
+#ifdef PROFILING_ON
 #include "Profiler.h"
 #include <cassert>
 #include <fstream>
@@ -105,3 +106,5 @@ void Profiler::writeFrame(unsigned int frameNumber) const
 		outStream << getDelimiter(cat);
 	}
 }
+
+#endif

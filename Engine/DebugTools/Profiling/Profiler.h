@@ -6,6 +6,7 @@ class __declspec(dllexport) Profiler
 public:
 	static const unsigned int MAX_FRAME_SAMPLES = 1000;
 private:
+#if PROFILING_ON
 	const char* fileName;
 	static const unsigned int MAX_PROFILE_CATAGORIES = 20;
 	unsigned int frameIndex;
@@ -21,11 +22,19 @@ private:
 	char getDelimiter(unsigned int index) const;
 	bool currentFrameComplete() const;
 	bool wrapped() const;
+#endif
 public:
+#if PROFILING_ON
 	void initalize(const char* fileName);
 	void shutdown();
 	void newFrame();
 	void addEntry(const char* category, float time);
+#else
+	void initalize(const char* fileName) {}
+	void shutdown() {}
+	void newFrame() {}
+	void addEntry(const char* category, float time) {}
+#endif
 };
 
 #endif
