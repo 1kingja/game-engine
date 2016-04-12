@@ -5,7 +5,13 @@ class __declspec(dllexport) Profiler
 {
 public:
 	static const unsigned int MAX_FRAME_SAMPLES = 1000;
+	static Profiler& getInstance();
 private:
+	Profiler() {}
+	Profiler(const Profiler&);
+	Profiler& operator=(const Profiler&);
+	static Profiler theInstance;
+
 #if PROFILING_ON
 	const char* fileName;
 	static const unsigned int MAX_PROFILE_CATAGORIES = 20;
@@ -36,5 +42,7 @@ public:
 	void addEntry(const char* category, float time) {}
 #endif
 };
+
+#define profiler Profiler::getInstance()
 
 #endif

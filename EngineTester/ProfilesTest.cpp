@@ -7,8 +7,6 @@ using std::string;
 
 namespace
 {
-	Profiler profiler;
-
 	char* categories[] =
 	{
 		"Catagory1",

@@ -1,5 +1,13 @@
-#ifdef PROFILING_ON
 #include "Profiler.h"
+
+Profiler Profiler::theInstance;
+
+Profiler& Profiler::getInstance()
+{
+	return theInstance;
+}
+
+#ifdef PROFILING_ON
 #include <cassert>
 #include <fstream>
 
