@@ -4,6 +4,7 @@
 #include <fstream>
 using std::ifstream;
 using std::string;
+using Profiling::Profiler;
 
 namespace
 {

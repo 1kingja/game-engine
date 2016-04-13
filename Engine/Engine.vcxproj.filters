@@ -18,5 +18,6 @@
     <ClInclude Include="Math\Matrix3D.h" />
     <ClInclude Include="Math\Vector3D.h" />
     <ClInclude Include="DebugTools\Profiling\Profiler.h" />
+    <ClInclude Include="Misc\TypeDefs.h" />
   </ItemGroup>
 </Project>
