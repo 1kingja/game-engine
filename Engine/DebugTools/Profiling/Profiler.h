@@ -1,10 +1,12 @@
 #ifndef DEBUG_PROFILER_H
 #define DEBUG_PROFILER_H
+#include <Misc\TypeDefs.h>
+
 
 class __declspec(dllexport) Profiler
 {
 public:
-	static const unsigned int MAX_FRAME_SAMPLES = 1000;
+	static const uint MAX_FRAME_SAMPLES = 1000;
 	static Profiler& getInstance();
 private:
 	Profiler() {}
@@ -14,18 +16,18 @@ private:
 
 #if PROFILING_ON
 	const char* fileName;
-	static const unsigned int MAX_PROFILE_CATAGORIES = 20;
-	unsigned int frameIndex;
-	unsigned int categoryIndex;
-	unsigned int numUsedCategories;
+	static const uint MAX_PROFILE_CATAGORIES = 20;
+	uint frameIndex;
+	uint categoryIndex;
+	uint numUsedCategories;
 	struct ProfileCategory
 	{
 		const char* name;
 		float samples[MAX_FRAME_SAMPLES];
 	} categories[MAX_PROFILE_CATAGORIES];
 	void writeData() const;
-	void writeFrame(unsigned int frameNumber) const;
-	char getDelimiter(unsigned int index) const;
+	void writeFrame(uint frameNumber) const;
+	char getDelimiter(uint index) const;
 	bool currentFrameComplete() const;
 	bool wrapped() const;
 #endif

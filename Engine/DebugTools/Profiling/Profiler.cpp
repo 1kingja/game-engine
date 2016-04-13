@@ -52,7 +52,7 @@ void Profiler::addEntry(const char* category, float time)
 	pc.samples[frameIndex % MAX_FRAME_SAMPLES] = time;
 }
 
-char Profiler::getDelimiter(unsigned int index) const
+char Profiler::getDelimiter(uint index) const
 {
 	return ((index + 1) < numUsedCategories) ? ',' : '\n';
 }
@@ -67,14 +67,14 @@ void Profiler::writeData() const
 	outStream.open(fileName, std::ios::trunc);
 
 	// Write category headers
-	for (unsigned int i = 0; i < numUsedCategories; i++)
+	for (uint i = 0; i < numUsedCategories; i++)
 	{
 		outStream << categories[i].name;
 		outStream << getDelimiter(i);
 	}
 
-	unsigned int endIndex;
-	unsigned int startIndex;
+	uint endIndex;
+	uint startIndex;
 
 	if (wrapped())
 	{
@@ -90,7 +90,7 @@ void Profiler::writeData() const
 	}
 	else
 	{
-		unsigned int numActualFrames = frameIndex;
+		uint numActualFrames = frameIndex;
 		if (currentFrameComplete())
 			numActualFrames++;
 		startIndex = 0;
@@ -106,9 +106,9 @@ bool Profiler::currentFrameComplete() const
 	return categoryIndex == numUsedCategories;
 }
 
-void Profiler::writeFrame(unsigned int frameNumber) const
+void Profiler::writeFrame(uint frameNumber) const
 {
-	for (unsigned int cat = 0; cat < numUsedCategories; cat++)
+	for (uint cat = 0; cat < numUsedCategories; cat++)
 	{
 		outStream << categories[cat].samples[frameNumber];
 		outStream << getDelimiter(cat);

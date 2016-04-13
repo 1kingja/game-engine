@@ -21,6 +21,7 @@
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="Math\Vector3D.h" />
     <ClInclude Include="DebugTools\Profiling\Profiler.h" />
+    <ClInclude Include="Misc\TypeDefs.h" />
     <ClInclude Include="Timing\Clock.h" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +78,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>PROFILING_ON;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(Projectdir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
