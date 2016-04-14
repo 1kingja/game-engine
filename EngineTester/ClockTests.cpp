@@ -16,17 +16,18 @@ TEST(Clock, Initialize)
 TEST(Clock, FrameTimeMeasuring)
 {
 	Clock clock;
+#define OVERNIGHT_TESTS
 #ifdef OVERNIGHT_TESTS
 	EXPECT_TRUE(clock.initialize());
 	QTest::qSleep(1000);
-	clock.newFrame();
-	float timedTime = clock.timeElapsedLastFrame();
+	clock.lap();
+	float timedTime = clock.lastLapTime();
 	EXPECT_TRUE(0.9f < timedTime);
 	EXPECT_TRUE(timedTime < 1.1f);							
-	clock.newFrame();										
+	clock.lap();										
 	QTest::qSleep(500);
-	clock.newFrame();					
-	timedTime = clock.timeElapsedLastFrame();				
+	clock.lap();					
+	timedTime = clock.lastLapTime();
 	EXPECT_TRUE(0.4f < timedTime);
 	EXPECT_TRUE(timedTime < 0.6f);
 
@@ -37,16 +38,15 @@ TEST(Clock, FrameTimeMeasuring)
 		std::cout << ".";
 		int thisTestTimeMiliseconds = rand() % 10000;
 		float thisTestTimeSeconds = thisTestTimeMiliseconds / 1000.0f;
-		clock.newFrame();
+		clock.lap();
 		QTest::qSleep(thisTestTimeMiliseconds);
-		clock.newFrame();
-		float elapsedSeconds = clock.timeElapsedLastFrame();
+		clock.lap();
+		float elapsedSeconds = clock.lastLapTime();
 		EXPECT_TRUE((thisTestTimeSeconds - THRESHOLD) < elapsedSeconds);
 		EXPECT_TRUE(elapsedSeconds < (thisTestTimeSeconds + THRESHOLD));
 	}
 #endif
 
-	clock.newFrame();
-	clock.timeElapsedLastFrame();
+	clock.lap();
 	EXPECT_TRUE(clock.shutdown());
 }

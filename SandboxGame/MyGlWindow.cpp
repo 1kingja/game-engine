@@ -57,8 +57,13 @@ void MyGlWindow::paintGL()
 	Matrix3D translator = Matrix3D::translate(shipPosition.x, shipPosition.y);
 	Matrix3D rotator = Matrix3D::rotateZ(shipOrientation);
 
+	Clock clock;
+	clock.initialize();
+	clock.start();
 	Matrix3D op = translator * rotator;
-	//profiler.addEntry("Matrix multiply",12309124912);
+	clock.stop();
+	profiler.addEntry("Matrix multiply",clock.lastLapTime());
+	clock.shutdown();
 
 	for (unsigned int i = 0; i < NUM_VERTS;i++)
 		transformedVerts[i] = op * verts[i];
@@ -72,10 +77,10 @@ void MyGlWindow::paintGL()
 
 void MyGlWindow::myUpdate()
 {
-	clock.newFrame();
+	clock.lap();
 	rotateShip();
 	updateVelocity();
-	shipPosition += shipVelocity * clock.timeElapsedLastFrame();
+	shipPosition += shipVelocity * clock.lastLapTime();
 	repaint();
 }
 
@@ -106,7 +111,7 @@ void MyGlWindow::rotateShip()
 
 void MyGlWindow::updateVelocity()
 {
-	const float ACCELERATION = 0.3f * clock.timeElapsedLastFrame();
+	const float ACCELERATION = 0.3f * clock.lastLapTime();
 
 	Vector3D directionToAccelerate(-sin(shipOrientation),cos(shipOrientation));
 
