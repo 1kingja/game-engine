@@ -6,6 +6,7 @@
 #include <Math\Vector3D.h>
 #include <Math\Matrix3D.h>
 #include <Timing\Clock.h>
+#include <DebugTools\Profiling\Profiler.h>
 using Math::Vector3D;
 using Math::Matrix3D;
 using Timing::Clock;
@@ -57,6 +58,8 @@ void MyGlWindow::paintGL()
 	Matrix3D rotator = Matrix3D::rotateZ(shipOrientation);
 
 	Matrix3D op = translator * rotator;
+	//profiler.addEntry("Matrix multiply",12309124912);
+
 	for (unsigned int i = 0; i < NUM_VERTS;i++)
 		transformedVerts[i] = op * verts[i];
 	
@@ -78,12 +81,18 @@ void MyGlWindow::myUpdate()
 
 bool MyGlWindow::initialize()
 {
-	return clock.initialize();
+	bool ret = true;
+	profiler.initalize("profiles.csv");
+	ret &= clock.initialize();
+	return ret;
 }
 
 bool MyGlWindow::shutdown()
 {
-	return clock.shutdown();
+	bool ret = true;
+	profiler.shutdown();
+	ret &= clock.shutdown();
+	return ret;
 }
 
 void MyGlWindow::rotateShip()
