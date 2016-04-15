@@ -1,0 +1,18 @@
+#include "Profile.h"
+#include "DebugTools\Profiling\Profiler.h"
+
+namespace Profiling
+{
+	Profile::Profile(const char* category) : 
+		category(category)
+	{
+		clock.initialize();
+		clock.start();
+	}
+
+	Profile::~Profile()
+	{
+		clock.stop();
+		profiler.addEntry("Matrix multiply", clock.lastLapTime());
+	}
+}

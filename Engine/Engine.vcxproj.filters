@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="Timing\Clock.cpp" />
     <ClCompile Include="DebugTools\Profiling\Profiler.cpp" />
+    <ClCompile Include="DebugTools\Profiling\Profile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Vector2D.inl" />
@@ -19,5 +20,6 @@
     <ClInclude Include="Math\Vector3D.h" />
     <ClInclude Include="DebugTools\Profiling\Profiler.h" />
     <ClInclude Include="Misc\TypeDefs.h" />
+    <ClInclude Include="DebugTools\Profiling\Profile.h" />
   </ItemGroup>
 </Project>

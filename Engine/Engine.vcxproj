@@ -11,10 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DebugTools\Profiling\Profile.cpp" />
     <ClCompile Include="DebugTools\Profiling\Profiler.cpp" />
     <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DebugTools\Profiling\Profile.h" />
     <ClInclude Include="Math\Constants.h" />
     <ClInclude Include="Math\Matrix2D.h" />
     <ClInclude Include="Math\Matrix3D.h" />

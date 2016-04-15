@@ -15,8 +15,8 @@ namespace Timing
 		bool shutdown();
 		void start();
 		void stop();
-		void lap(); //newFrame()
-		float lastLapTime() const; //timeElapsedLastFrame()
+		void lap();
+		float lastLapTime() const; 
 	};
 }
 

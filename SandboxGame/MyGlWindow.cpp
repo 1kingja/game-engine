@@ -5,8 +5,9 @@
 #include <QtGui\QKeyEvent>
 #include <Math\Vector3D.h>
 #include <Math\Matrix3D.h>
-#include <Timing\Clock.h>
+#include <DebugTools\Profiling\Profile.h>
 #include <DebugTools\Profiling\Profiler.h>
+#include <Timing\Clock.h>
 using Math::Vector3D;
 using Math::Matrix3D;
 using Timing::Clock;
@@ -57,17 +58,16 @@ void MyGlWindow::paintGL()
 	Matrix3D translator = Matrix3D::translate(shipPosition.x, shipPosition.y);
 	Matrix3D rotator = Matrix3D::rotateZ(shipOrientation);
 
-	Clock clock;
-	clock.initialize();
-	clock.start();
-	Matrix3D op = translator * rotator;
-	clock.stop();
-	profiler.addEntry("Matrix multiply",clock.lastLapTime());
-	clock.shutdown();
-
-	for (unsigned int i = 0; i < NUM_VERTS;i++)
-		transformedVerts[i] = op * verts[i];
-	
+	Matrix3D op;
+	{
+		Profiling::Profile p("Matrix Multiplication");
+		op = translator * rotator;
+	}
+	{
+		//Profile("Vector Transformation");
+		for (unsigned int i = 0; i < NUM_VERTS; i++)
+			transformedVerts[i] = op * verts[i];
+	}
 	glBufferSubData(GL_ARRAY_BUFFER, 0, 
 		sizeof(transformedVerts),
 		transformedVerts);

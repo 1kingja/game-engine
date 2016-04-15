@@ -27,13 +27,13 @@ namespace Timing
 	}
 
 
-	void Clock::lap() //newFrame()
+	void Clock::lap() 
 	{
 		stop();
 		start();
 	}
 
-	float Clock::lastLapTime() const //timeElapsedLastFrame()
+	float Clock::lastLapTime() const
 	{
 		return deltaTime;
 	}
