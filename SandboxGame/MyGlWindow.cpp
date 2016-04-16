@@ -60,11 +60,12 @@ void MyGlWindow::paintGL()
 
 	Matrix3D op;
 	{
-		Profiling::Profile p("Matrix Multiplication");
+		PROFILE("Matrix Multiplication");
 		op = translator * rotator;
 	}
+
 	{
-		//Profile("Vector Transformation");
+		PROFILE("Vector Transformation");
 		for (unsigned int i = 0; i < NUM_VERTS; i++)
 			transformedVerts[i] = op * verts[i];
 	}
@@ -78,6 +79,7 @@ void MyGlWindow::paintGL()
 void MyGlWindow::myUpdate()
 {
 	clock.lap();
+	profiler.newFrame();
 	rotateShip();
 	updateVelocity();
 	shipPosition += shipVelocity * clock.lastLapTime();

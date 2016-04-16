@@ -22,7 +22,10 @@ namespace Profiling
 #endif // PROFILING_ON
 	};
 }
-
+#if PROFILING_ON
 #define PROFILE(category) Profiling::Profile p(category);
+#else
+#define PROFILE(category)
+#endif
 
 #endif 

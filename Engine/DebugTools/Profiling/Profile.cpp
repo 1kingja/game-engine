@@ -14,7 +14,7 @@ namespace Profiling
 	Profile::~Profile()
 	{
 		clock.stop();
-		profiler.addEntry("Matrix multiply", clock.lastLapTime());
+		profiler.addEntry(category, clock.lastLapTime());
 	}
 }
 #endif

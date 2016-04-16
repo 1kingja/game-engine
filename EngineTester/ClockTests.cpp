@@ -16,7 +16,7 @@ TEST(Clock, Initialize)
 TEST(Clock, FrameTimeMeasuring)
 {
 	Clock clock;
-#define OVERNIGHT_TESTS
+//#define OVERNIGHT_TESTS
 #ifdef OVERNIGHT_TESTS
 	EXPECT_TRUE(clock.initialize());
 	QTest::qSleep(1000);

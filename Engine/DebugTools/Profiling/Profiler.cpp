@@ -52,7 +52,6 @@ namespace Profiling
 		}
 		else
 		{
-			assert(pc.name == category && category != NULL);
 			assert(categoryIndex < numUsedCategories);
 		}
 		categoryIndex++;
