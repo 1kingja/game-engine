@@ -121,6 +121,5 @@ namespace Profiling
 			outStream << getDelimiter(cat);
 		}
 	}
-}
-
 #endif
+}

@@ -1,3 +1,4 @@
+#if PROFILING_ON
 #include "Profile.h"
 #include "DebugTools\Profiling\Profiler.h"
 
@@ -16,3 +17,4 @@ namespace Profiling
 		profiler.addEntry("Matrix multiply", clock.lastLapTime());
 	}
 }
+#endif
