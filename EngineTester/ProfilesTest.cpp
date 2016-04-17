@@ -145,4 +145,18 @@ namespace
 		writeIncompleteFrames(Profiler::MAX_FRAME_SAMPLES + 2); //Wrap
 	}
 
+	TEST(Profiler, AddingDuplicateCategoriesInOneFrame)
+	{
+		profiler.initalize(PROFILE_FILE_NAME);
+		profiler.newFrame();
+		profiler.addEntry("My First Category", 1);
+		profiler.addEntry("My Second Category", 2);
+		bool status;
+		profiler.checkStatus(&status);
+		EXPECT_TRUE(status);
+		profiler.addEntry("My First Category", 2);
+		profiler.checkStatus(&status);
+		EXPECT_TRUE( ! status);
+		profiler.shutdown();
+	}
 }

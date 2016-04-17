@@ -23,6 +23,7 @@ namespace Profiling
 	void Profiler::initalize(const char* fileName)
 	{
 		this->fileName = fileName;
+		status = true;
 		frameIndex = -1;
 		categoryIndex = 0;
 		numUsedCategories = 0;
@@ -35,6 +36,7 @@ namespace Profiling
 
 	void Profiler::newFrame()
 	{
+		assert(status);
 		if (frameIndex > 0)
 			assert(categoryIndex == numUsedCategories);
 		frameIndex++;
@@ -49,6 +51,7 @@ namespace Profiling
 		{
 			pc.name = category;
 			numUsedCategories++;
+			checkforDuplicateCategory(category);
 		}
 		else
 		{
@@ -120,5 +123,17 @@ namespace Profiling
 			outStream << getDelimiter(cat);
 		}
 	}
+
+	void Profiler::checkStatus(bool* status) const
+	{
+		*status = this->status;
+	}
+
+	void Profiler::checkforDuplicateCategory(const char* category)
+	{
+		for (uint i = 0; i < categoryIndex; i++)
+			status &= (strcmp(categories[i].name, category) != 0);
+	}
+
 #endif
 }

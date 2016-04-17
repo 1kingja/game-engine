@@ -16,6 +16,7 @@ namespace Profiling
 		static Profiler theInstance;
 #if PROFILING_ON
 		const char* fileName;
+		bool status;
 		static const je::uint MAX_PROFILE_CATAGORIES = 20;
 		je::uint frameIndex;
 		je::uint categoryIndex;
@@ -30,6 +31,7 @@ namespace Profiling
 		char getDelimiter(je::uint index) const;
 		bool currentFrameComplete() const;
 		bool wrapped() const;
+		void checkforDuplicateCategory(const char* category);
 #endif
 	public:
 #if PROFILING_ON
@@ -37,11 +39,13 @@ namespace Profiling
 		void shutdown();
 		void newFrame();
 		void addEntry(const char* category, float time);
+		void checkStatus(bool* status) const;
 #else
 		void initalize(const char* fileName) {}
 		void shutdown() {}
 		void newFrame() {}
 		void addEntry(const char* category, float time) {}
+		void checkStatus(bool* status) const {}
 #endif
 	};
 
