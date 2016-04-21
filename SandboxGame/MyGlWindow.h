@@ -18,7 +18,10 @@ private slots:
 	void myUpdate();
 	void updateVelocity();
 	void rotateShip();
-
+private:
+	void update();
+	void draw();
+	void doGl();
 public:
 	bool initialize();
 	bool shutdown();
