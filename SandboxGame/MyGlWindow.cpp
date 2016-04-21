@@ -45,6 +45,14 @@ void MyGlWindow::initializeGL()
 
 void MyGlWindow::paintGL()
 {
+	//Update
+	clock.lap();
+	profiler.newFrame();
+	rotateShip();
+	updateVelocity();
+	shipPosition += shipVelocity * clock.lastLapTime();
+
+	//Paint
 	int minSize = min(width(), height());
 	Vector3D viewportLocation;
 	viewportLocation.x = width() / 2 - minSize / 2;
@@ -78,11 +86,6 @@ void MyGlWindow::paintGL()
 
 void MyGlWindow::myUpdate()
 {
-	clock.lap();
-	profiler.newFrame();
-	rotateShip();
-	updateVelocity();
-	shipPosition += shipVelocity * clock.lastLapTime();
 	repaint();
 }
 
