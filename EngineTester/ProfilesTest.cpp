@@ -14,6 +14,7 @@ namespace
 		"Catagory2",
 		"Catagory3"
 	};
+
 	const char* const PROFILE_FILE_NAME = "profiles.csv";
 	const unsigned int NUM_CATEGORIES = sizeof(categories) / sizeof(*categories);
 
