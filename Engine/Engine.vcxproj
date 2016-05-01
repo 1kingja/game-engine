@@ -19,6 +19,7 @@
     <ClInclude Include="DebugTools\Profiling\Profile.h" />
     <ClInclude Include="Math\Constants.h" />
     <ClInclude Include="Math\Matrix2D.h" />
+    <ClInclude Include="Math\Matrix2DH.h" />
     <ClInclude Include="Math\Matrix3D.h" />
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="Math\Vector3D.h" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Matrix2D.inl" />
+    <None Include="Math\Matrix2DH.inl" />
     <None Include="Math\Matrix3D.inl" />
     <None Include="Math\Vector2D.inl" />
     <None Include="Math\Vector3D.inl" />

@@ -205,11 +205,11 @@ TEST(Matrix3D, MatrixMatrtixMultiply)
 	Matrix2DH theMatrix(1, 2, 3,
 						4, 5, 6);
 	Matrix3D result = theMatrix * theMatrix;
-	EXPECT_FLOAT_EQ(result.r0c0, 30);
-	EXPECT_FLOAT_EQ(result.r0c1, 36);
-	EXPECT_FLOAT_EQ(result.r0c2, 42);
+	EXPECT_FLOAT_EQ(result.r0c0, 9);
+	EXPECT_FLOAT_EQ(result.r0c1, 12);
+	EXPECT_FLOAT_EQ(result.r0c2, 18);
 
-	EXPECT_FLOAT_EQ(result.r1c0, 66);
-	EXPECT_FLOAT_EQ(result.r1c1, 81);
-	EXPECT_FLOAT_EQ(result.r1c2, 96);
+	EXPECT_FLOAT_EQ(result.r1c0, 24);
+	EXPECT_FLOAT_EQ(result.r1c1, 33);
+	EXPECT_FLOAT_EQ(result.r1c2, 48);
 }
