@@ -31,15 +31,11 @@ Vector3D  operator*(const Matrix2DH& matrix, const Vector3D& right)
 Matrix2DH operator*(const Matrix2DH& left, const Matrix2DH& right)
 {
 	return Matrix2DH(
-		left.r0c0 * right.r0c0 + left.r0c1 * right.r1c0 + left.r0c2 * right.r2c0,
-		left.r0c0 * right.r0c1 + left.r0c1 * right.r1c1 + left.r0c2 * right.r2c1,
-		left.r0c0 * right.r0c2 + left.r0c1 * right.r1c2 + left.r0c2 * right.r2c2,
+		left.r0c0 * right.r0c0 + left.r0c1 * right.r1c0,
+		left.r0c0 * right.r0c1 + left.r0c1 * right.r1c1,
+		left.r0c0 * right.r0c2 + left.r0c1 * right.r1c2 + left.r0c2,
 
-		left.r1c0 * right.r0c0 + left.r1c1 * right.r1c0 + left.r1c2 * right.r2c0,
-		left.r1c0 * right.r0c1 + left.r1c1 * right.r1c1 + left.r1c2 * right.r2c1,
-		left.r1c0 * right.r0c2 + left.r1c1 * right.r1c2 + left.r1c2 * right.r2c2,
-
-		left.r2c0 * right.r0c0 + left.r2c1 * right.r1c0 + left.r2c2 * right.r2c0,
-		left.r2c0 * right.r0c1 + left.r2c1 * right.r1c1 + left.r2c2 * right.r2c1,
-		left.r2c0 * right.r0c2 + left.r2c1 * right.r1c2 + left.r2c2 * right.r2c2);
+		left.r1c0 * right.r0c0 + left.r1c1 * right.r1c0,
+		left.r1c0 * right.r0c1 + left.r1c1 * right.r1c1,
+		left.r1c0 * right.r0c2 + left.r1c1 * right.r1c2 + left.r1c2);
 }

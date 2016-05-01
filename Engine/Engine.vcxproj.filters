@@ -10,6 +10,7 @@
     <None Include="Math\Matrix2D.inl" />
     <None Include="Math\Vector3D.inl" />
     <None Include="Math\Matrix3D.inl" />
+    <None Include="Math\Matrix2DH.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\Vector2D.h" />
@@ -21,5 +22,6 @@
     <ClInclude Include="DebugTools\Profiling\Profiler.h" />
     <ClInclude Include="Misc\TypeDefs.h" />
     <ClInclude Include="DebugTools\Profiling\Profile.h" />
+    <ClInclude Include="Math\Matrix2DH.h" />
   </ItemGroup>
 </Project>

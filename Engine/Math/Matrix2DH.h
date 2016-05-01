@@ -1,5 +1,5 @@
-#ifndef ENGINE_MATRIX_2DH_h
-#define ENGINE_MATRIX_2DH_h
+#ifndef ENGINE_MATRIX_2DH_H
+#define ENGINE_MATRIX_2DH_H
 #include "Vector3D.h"
 #include <cmath>
 
