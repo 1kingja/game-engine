@@ -4,12 +4,12 @@
 #include <Qt\qdebug.h>
 #include <QtGui\QKeyEvent>
 #include <Math\Vector3D.h>
-#include <Math\Matrix3D.h>
+#include <Math\Matrix2DH.h>
 #include <DebugTools\Profiling\Profile.h>
 #include <DebugTools\Profiling\Profiler.h>
 #include <Timing\Clock.h>
 using Math::Vector3D;
-using Math::Matrix3D;
+using Math::Matrix2DH;
 using Timing::Clock;
 
 namespace 
@@ -78,10 +78,10 @@ void MyGlWindow::doGl()
 
 void MyGlWindow::draw() 
 {
-	Matrix3D translator = Matrix3D::translate(shipPosition.x, shipPosition.y);
-	Matrix3D rotator = Matrix3D::rotateZ(shipOrientation);
+	Matrix2DH translator = Matrix2DH::translate(shipPosition.x, shipPosition.y);
+	Matrix2DH rotator = Matrix2DH::rotateZ(shipOrientation);
 
-	Matrix3D op;
+	Matrix2DH op;
 	{
 		PROFILE("Matrix Multiplication");
 		op = translator * rotator;
