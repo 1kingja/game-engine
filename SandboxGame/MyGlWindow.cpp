@@ -56,11 +56,7 @@ void MyGlWindow::update()
 void MyGlWindow::doGl()
 {
 	// Setup viewport
-	int minSize = min(width(), height());
-	Vector3D viewportLocation;
-	viewportLocation.x = width() / 2 - minSize / 2;
-	viewportLocation.y = height() / 2 - minSize / 2;
-	glViewport(viewportLocation.x, viewportLocation.y, minSize, minSize);
+	glViewport(0, 0, width(), height());
 
 	// Setup data pointers
 	glClear(GL_COLOR_BUFFER_BIT);
