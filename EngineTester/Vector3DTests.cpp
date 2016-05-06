@@ -88,3 +88,20 @@ TEST(Vector3D, Magnitude)
 	float magnitude = ourVector.magnitude();
 	EXPECT_FLOAT_EQ(magnitude, 7.0710678118654752440084436210485f);
 }
+
+TEST(Vector3D, Normalization)
+{
+	Vector3D vec(1.0f, 2.0f, 3.0f);
+	Vector3D normalized = vec.normalized();
+	EXPECT_FLOAT_EQ(normalized.magnitude(), 1.0f);
+	EXPECT_FLOAT_EQ(normalized.x, 0.26726124191242438468455348087975f);
+	EXPECT_FLOAT_EQ(normalized.y, 0.53452248382484876936910696175951f);
+	EXPECT_FLOAT_EQ(normalized.z, 0.80178372573727315405366044263926f);
+
+	vec = Vector3D(-2.8f, 8.4f, -3.14f);
+	normalized = vec.normalized();
+	EXPECT_FLOAT_EQ(normalized.magnitude(), 1.0f);
+	EXPECT_FLOAT_EQ(normalized.x, -0.2980417151042440347087515078823f);
+	EXPECT_FLOAT_EQ(normalized.y, 0.89412514531273210412625452364691f);
+	EXPECT_FLOAT_EQ(normalized.z, -0.3342324947954736674948141909823f);
+}

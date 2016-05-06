@@ -16,6 +16,12 @@ float Vector3D::magnitude() const
 	return sqrt(x * x + y * y + z * z);
 }
 
+Vector3D Vector3D::normalized() const
+{
+	float inverseMagnitude = 1.0f / magnitude();
+	return inverseMagnitude * (*this);
+}
+
 Vector3D Vector3D::perpCwXy() const
 {
 	return Vector3D(y, -x);
