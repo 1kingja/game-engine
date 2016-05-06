@@ -77,7 +77,7 @@ void MyGlWindow::update()
 	profiler.newFrame();
 	rotateShip();
 	updateVelocity();
-	checkBoundaries();
+	handleBoundaries();
 	shipPosition += shipVelocity * clock.lastLapTime();
 }
 
@@ -174,7 +174,19 @@ void MyGlWindow::updateVelocity()
 		shipVelocity += directionToAccelerate * ACCELERATION;
 }
 
-void MyGlWindow::checkBoundaries()
+void MyGlWindow::handleBoundaries()
 {
+	bool anyCollisions = false;
+	for (uint i = 0; i < NUM_BOUNDARY_VERTS; i++)
+	{
+		const Vector3D& first = boundaryVerts[i];
+		const Vector3D& second = boundaryVerts[(i + 1) % NUM_BOUNDARY_VERTS];
 
+		Vector3D wall = second - first;
+		Vector3D normal = wall.perpCcwXy();
+		Vector3D respectiveShipPosition = shipPosition - first;
+		float dotResult = normal.dot(respectiveShipPosition);
+		anyCollisions |= (dotResult < 0);
+	}
+	qDebug() << anyCollisions;
 }
