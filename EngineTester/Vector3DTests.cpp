@@ -62,3 +62,14 @@ TEST(Vector3D, Subtraction)
 	EXPECT_FLOAT_EQ(result.y, -2);
 	EXPECT_FLOAT_EQ(result.z, -4);
 }
+
+TEST(Vector3D, Perpendicularity)
+{
+	Vector3D meVector(4, 2);
+	Vector3D perpCw = meVector.perpCwXy();
+	Vector3D perpCcw = meVector.perpCcwXy();
+	EXPECT_FLOAT_EQ(perpCw.x, 2);
+	EXPECT_FLOAT_EQ(perpCw.y, -4);
+	EXPECT_FLOAT_EQ(perpCcw.x, -2);
+	EXPECT_FLOAT_EQ(perpCcw.y, 4);
+}
