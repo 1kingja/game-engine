@@ -76,11 +76,18 @@ void MyGlWindow::draw()
 {
 	Matrix2DH translator = Matrix2DH::translate(shipPosition.x, shipPosition.y);
 	Matrix2DH rotator = Matrix2DH::rotateZ(shipOrientation);
+	float aspectRatio = static_cast<float>(width() / height());
+	Matrix2DH scale;
+
+	if (aspectRatio > 1)
+		scale = Matrix2DH::scale(1 / aspectRatio, 1);
+	else
+		scale = Matrix2DH::scale(1, aspectRatio);
 
 	Matrix2DH op;
 	{
 		PROFILE("Matrix Multiplication");
-		op = translator * rotator;
+		op = translator * scale * rotator;
 	}
 
 	{
