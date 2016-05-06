@@ -81,3 +81,10 @@ TEST(Vector3D, DotProduct)
 	float result = first.dot(second);
 	EXPECT_FLOAT_EQ(result, 32);
 }
+
+TEST(Vector3D, Magnitude)
+{
+	Vector3D ourVector(3, 4, 5);
+	float magnitude = ourVector.magnitude();
+	EXPECT_FLOAT_EQ(magnitude, 7.0710678118654752440084436210485f);
+}

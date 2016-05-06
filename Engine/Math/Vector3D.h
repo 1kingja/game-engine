@@ -1,5 +1,6 @@
 #ifndef ENGINE_VECTOR_3D_H
 #define ENGINE_VECTOR_3D_H
+#include <cmath>
 
 namespace Math
 {
@@ -14,6 +15,7 @@ namespace Math
 			float z = 0.0f) : x(x), y(y),z(z) {}
 		inline Vector3D& operator +=(const Vector3D& right);
 		inline float dot(const Vector3D& other) const;
+		inline float magnitude() const;
 		inline Vector3D perpCwXy() const;
 		inline Vector3D perpCcwXy() const;
 	};
