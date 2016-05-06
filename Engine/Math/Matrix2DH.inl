@@ -20,6 +20,12 @@ Matrix2DH Matrix2DH::translate(float x, float y)
 					0, 1, y);
 }
 
+Matrix2DH Matrix2DH::scale(float x, float y)
+{
+	return Matrix2DH(x, 0, 0,
+					0, y, 0);
+}
+
 Vector3D  operator*(const Matrix2DH& matrix, const Vector3D& right)
 {
 	return Vector3D(
