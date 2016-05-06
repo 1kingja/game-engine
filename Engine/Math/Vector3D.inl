@@ -6,6 +6,11 @@ Vector3D& Vector3D::operator +=(const Vector3D& right)
 	return *this;
 }
 
+float Vector3D::dot(const Vector3D& other) const
+{
+	return x * other.x + y * other.y + z * other.z;
+}
+
 Vector3D Vector3D::perpCwXy() const
 {
 	return Vector3D(y, -x);

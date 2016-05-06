@@ -73,3 +73,11 @@ TEST(Vector3D, Perpendicularity)
 	EXPECT_FLOAT_EQ(perpCcw.x, -2);
 	EXPECT_FLOAT_EQ(perpCcw.y, 4);
 }
+
+TEST(Vector3D, DotProduct)
+{
+	Vector3D first(1, 2, 3);
+	Vector3D second(4, 5, 6);
+	float result = first.dot(second);
+	EXPECT_FLOAT_EQ(result, 32);
+}

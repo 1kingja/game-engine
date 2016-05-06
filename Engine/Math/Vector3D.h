@@ -13,6 +13,7 @@ namespace Math
 			float y = 0.0f, 
 			float z = 0.0f) : x(x), y(y),z(z) {}
 		inline Vector3D& operator +=(const Vector3D& right);
+		inline float dot(const Vector3D& other) const;
 		inline Vector3D perpCwXy() const;
 		inline Vector3D perpCcwXy() const;
 	};
