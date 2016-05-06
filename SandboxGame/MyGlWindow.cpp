@@ -31,6 +31,8 @@ namespace
 
 	const unsigned int NUM_SHIP_VERTS = sizeof(shipVerts) / sizeof(*shipVerts);
 	const unsigned int NUM_BOUNDARY_VERTS = sizeof(boundaryVerts) / sizeof(*boundaryVerts);
+	GLuint shipVertexBufferID;
+	GLuint boundaryVertexBuffersID;
 	Vector3D transformedVerts[NUM_SHIP_VERTS];
 	Vector3D shipPosition;
 	Vector3D shipVelocity;
@@ -43,11 +45,16 @@ void MyGlWindow::initializeGL()
 	GLenum errCode = glewInit();
 	assert(errCode == 0);
 
-	glGenBuffers(1, &vertexBufferID);
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+	glGenBuffers(1, &shipVertexBufferID);
+	glBindBuffer(GL_ARRAY_BUFFER, shipVertexBufferID);
 	
 	glBufferData(GL_ARRAY_BUFFER, sizeof(shipVerts),
 		NULL,GL_DYNAMIC_DRAW);
+
+	glGenBuffers(1, &boundaryVertexBuffersID);
+	glBindBuffer(GL_ARRAY_BUFFER, boundaryVertexBuffersID);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(boundaryVerts), 
+		boundaryVerts, GL_STATIC_DRAW);
 
 	connect(&myTimer, SIGNAL(timeout()),
 		this,SLOT(myUpdate()));
