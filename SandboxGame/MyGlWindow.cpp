@@ -78,6 +78,8 @@ void MyGlWindow::doGl()
 
 	// Setup data pointers
 	glClear(GL_COLOR_BUFFER_BIT);
+
+	glBindBuffer(GL_ARRAY_BUFFER, shipVertexBufferID);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
