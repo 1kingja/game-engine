@@ -48,3 +48,17 @@ TEST(Vector3D, AssignmentPlusEquals)
 	EXPECT_FLOAT_EQ(another.y, -1233.5678f);
 	EXPECT_FLOAT_EQ(another.z, 888.666f);
 }
+
+TEST(Vector3D, Subtraction)
+{
+	Vector3D first(8, 3, 9);
+	Vector3D second(7, 1, 5);
+	Vector3D result = first - second;
+	EXPECT_FLOAT_EQ(result.x, 1);
+	EXPECT_FLOAT_EQ(result.y, 2);
+	EXPECT_FLOAT_EQ(result.z, 4);
+	result = second - first;
+	EXPECT_FLOAT_EQ(result.x, -1);
+	EXPECT_FLOAT_EQ(result.y, -2);
+	EXPECT_FLOAT_EQ(result.z, -4);
+}

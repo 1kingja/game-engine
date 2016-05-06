@@ -15,6 +15,7 @@ namespace Math
 		inline Vector3D& operator +=(const Vector3D& right);
 	};
 	inline Vector3D operator+(const Vector3D& left, const Vector3D& right);
+	inline Vector3D operator-(const Vector3D& left, const Vector3D& right);
 	inline Vector3D operator*(float scalar, const Vector3D& vector);
 	inline Vector3D operator*(const Vector3D& vector, float scalar);
 
