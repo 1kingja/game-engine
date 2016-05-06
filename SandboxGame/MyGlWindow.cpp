@@ -147,8 +147,20 @@ void MyGlWindow::updateVelocity()
 
 void MyGlWindow::checkBoundaries()
 {
-	if (shipPosition.x < -1 || shipPosition.x > 1)
-		shipVelocity.x *= -1;
-	if (shipPosition.y < -1 || shipPosition.y > 1)
-		shipVelocity.y *= -1;
+	/*const int EDGE_POSITION = 1;
+	 Bouncing
+	if (shipPosition.x < -EDGE_POSITION || shipPosition.x > EDGE_POSITION)
+		shipVelocity.x *= -EDGE_POSITION;
+	if (shipPosition.y < -EDGE_POSITION || shipPosition.y > EDGE_POSITION)
+		shipVelocity.y *= -EDGE_POSITION;
+
+	 Wrapping
+	if (shipPosition.y > EDGE_POSITION)
+		shipPosition.y = -EDGE_POSITION;
+	if (shipPosition.y < -EDGE_POSITION)
+		shipPosition.y = EDGE_POSITION;
+	if (shipPosition.x > EDGE_POSITION)
+		shipPosition.x = -EDGE_POSITION;
+	if (shipPosition.x < -EDGE_POSITION)
+		shipPosition.x = EDGE_POSITION;*/
 }
