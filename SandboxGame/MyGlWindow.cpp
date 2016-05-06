@@ -14,14 +14,24 @@ using Timing::Clock;
 
 namespace 
 {
-	Vector3D verts[] =
+	Vector3D shipVerts[] =
 	{
 		Vector3D(+0.0f, +0.14142135623f, 1),
 		Vector3D(-0.1f, -0.1f, 1),
 		Vector3D(+0.1f, -0.1f, 1),
 	};
-	const unsigned int NUM_VERTS = sizeof(verts) / sizeof(*verts);
-	Vector3D transformedVerts[NUM_VERTS];
+
+	Vector3D boundaryVerts[] =
+	{
+		Vector3D(+0.0f, +1.0f, +0.0f),
+		Vector3D(-1.0f, +0.0f, +0.0f),
+		Vector3D(-1.0f, +0.0f, +0.0f),
+		Vector3D(+0.0f, +0.0f, +0.0f),
+	};
+
+	const unsigned int NUM_SHIP_VERTS = sizeof(shipVerts) / sizeof(*shipVerts);
+	const unsigned int NUM_BOUNDARY_VERTS = sizeof(boundaryVerts) / sizeof(*boundaryVerts);
+	Vector3D transformedVerts[NUM_SHIP_VERTS];
 	Vector3D shipPosition;
 	Vector3D shipVelocity;
 	float shipOrientation = 0.0f;
@@ -36,7 +46,7 @@ void MyGlWindow::initializeGL()
 	glGenBuffers(1, &vertexBufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
 	
-	glBufferData(GL_ARRAY_BUFFER, sizeof(verts),
+	glBufferData(GL_ARRAY_BUFFER, sizeof(shipVerts),
 		NULL,GL_DYNAMIC_DRAW);
 
 	connect(&myTimer, SIGNAL(timeout()),
@@ -93,8 +103,8 @@ void MyGlWindow::draw()
 
 	{
 		PROFILE("Vector Transformation");
-		for (unsigned int i = 0; i < NUM_VERTS; i++)
-			transformedVerts[i] = op * verts[i];
+		for (unsigned int i = 0; i < NUM_SHIP_VERTS; i++)
+			transformedVerts[i] = op * shipVerts[i];
 	}
 	doGl();
 }
@@ -147,20 +157,5 @@ void MyGlWindow::updateVelocity()
 
 void MyGlWindow::checkBoundaries()
 {
-	/*const int EDGE_POSITION = 1;
-	 Bouncing
-	if (shipPosition.x < -EDGE_POSITION || shipPosition.x > EDGE_POSITION)
-		shipVelocity.x *= -EDGE_POSITION;
-	if (shipPosition.y < -EDGE_POSITION || shipPosition.y > EDGE_POSITION)
-		shipVelocity.y *= -EDGE_POSITION;
 
-	 Wrapping
-	if (shipPosition.y > EDGE_POSITION)
-		shipPosition.y = -EDGE_POSITION;
-	if (shipPosition.y < -EDGE_POSITION)
-		shipPosition.y = EDGE_POSITION;
-	if (shipPosition.x > EDGE_POSITION)
-		shipPosition.x = -EDGE_POSITION;
-	if (shipPosition.x < -EDGE_POSITION)
-		shipPosition.x = EDGE_POSITION;*/
 }
