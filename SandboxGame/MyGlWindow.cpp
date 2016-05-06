@@ -16,8 +16,13 @@ namespace
 {
 	Vector3D shipVerts[] =
 	{
+		Vector3D(1.0f, 0.5f, 0.0f),
 		Vector3D(+0.0f, +0.14142135623f, 1),
+
+		Vector3D(1.0f, 0.5f, 0),
 		Vector3D(-0.1f, -0.1f, 1),
+
+		Vector3D(1.0f, 0.5f, 0),
 		Vector3D(+0.1f, -0.1f, 1),
 	};
 
@@ -81,10 +86,11 @@ void MyGlWindow::doGl()
 
 	glBindBuffer(GL_ARRAY_BUFFER, shipVertexBufferID);
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
 
 	// Send data to OpenGl
-	glBufferSubData(GL_ARRAY_BUFFER, 0,
+	glBufferSubData(
+		GL_ARRAY_BUFFER, 0,
 		sizeof(transformedVerts),
 		transformedVerts);
 
