@@ -16,13 +16,8 @@ namespace
 {
 	Vector3D shipVerts[] =
 	{
-		Vector3D(1.0f, 0.5f, 0.0f),
 		Vector3D(+0.0f, +0.14142135623f, 1),
-
-		Vector3D(1.0f, 0.5f, 0),
 		Vector3D(-0.1f, -0.1f, 1),
-
-		Vector3D(1.0f, 0.5f, 0),
 		Vector3D(+0.1f, -0.1f, 1),
 	};
 
@@ -31,7 +26,11 @@ namespace
 		Vector3D(+0.0f, +1.0f, +0.0f),
 		Vector3D(-1.0f, +0.0f, +0.0f),
 		Vector3D(-1.0f, +0.0f, +0.0f),
-		Vector3D(+0.0f, +0.0f, +0.0f),
+		Vector3D(+0.0f, -1.0f, +0.0f),
+		Vector3D(+0.0f, -1.0f, +0.0f),
+		Vector3D(+1.0f, +0.0f, +0.0f),
+		Vector3D(+1.0f, +0.0f, +0.0f),
+		Vector3D(+0.0f, +1.0f, +0.0f),
 	};
 
 	const unsigned int NUM_SHIP_VERTS = sizeof(shipVerts) / sizeof(*shipVerts);
@@ -49,6 +48,8 @@ void MyGlWindow::initializeGL()
 {
 	GLenum errCode = glewInit();
 	assert(errCode == 0);
+
+	glEnableVertexAttribArray(0);
 
 	glGenBuffers(1, &shipVertexBufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, shipVertexBufferID);
@@ -85,17 +86,16 @@ void MyGlWindow::doGl()
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glBindBuffer(GL_ARRAY_BUFFER, shipVertexBufferID);
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-
-	// Send data to OpenGl
 	glBufferSubData(
 		GL_ARRAY_BUFFER, 0,
 		sizeof(transformedVerts),
 		transformedVerts);
-
-	// Draw
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
+
+	glBindBuffer(GL_ARRAY_BUFFER, boundaryVertexBuffersID);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+	glDrawArrays(GL_LINES, 0, 8);
 }
 
 void MyGlWindow::draw() 
