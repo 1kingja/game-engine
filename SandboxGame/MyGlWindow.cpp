@@ -50,6 +50,7 @@ void MyGlWindow::update()
 	profiler.newFrame();
 	rotateShip();
 	updateVelocity();
+	checkBoundaries();
 	shipPosition += shipVelocity * clock.lastLapTime();
 }
 
@@ -142,4 +143,12 @@ void MyGlWindow::updateVelocity()
 
 	if (GetAsyncKeyState(VK_UP))
 		shipVelocity += directionToAccelerate * ACCELERATION;
+}
+
+void MyGlWindow::checkBoundaries()
+{
+	if (shipPosition.x < -1 || shipPosition.x > 1)
+		shipVelocity.x *= -1;
+	if (shipPosition.y < -1 || shipPosition.y > 1)
+		shipVelocity.y *= -1;
 }
