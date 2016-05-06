@@ -25,18 +25,17 @@ namespace
 	{
 		Vector3D(+0.0f, +1.0f, +0.0f),
 		Vector3D(-1.0f, +0.0f, +0.0f),
-		Vector3D(-1.0f, +0.0f, +0.0f),
-		Vector3D(+0.0f, -1.0f, +0.0f),
 		Vector3D(+0.0f, -1.0f, +0.0f),
 		Vector3D(+1.0f, +0.0f, +0.0f),
-		Vector3D(+1.0f, +0.0f, +0.0f),
-		Vector3D(+0.0f, +1.0f, +0.0f),
 	};
+
+	GLushort boundaryIndices[] = { 0, 1, 1, 2, 2, 3, 3, 0 };
 
 	const unsigned int NUM_SHIP_VERTS = sizeof(shipVerts) / sizeof(*shipVerts);
 	const unsigned int NUM_BOUNDARY_VERTS = sizeof(boundaryVerts) / sizeof(*boundaryVerts);
 	GLuint shipVertexBufferID;
 	GLuint boundaryVertexBuffersID;
+	GLuint boundaryIndexBufferID;
 	Vector3D transformedVerts[NUM_SHIP_VERTS];
 	Vector3D shipPosition;
 	Vector3D shipVelocity;
@@ -61,6 +60,11 @@ void MyGlWindow::initializeGL()
 	glBindBuffer(GL_ARRAY_BUFFER, boundaryVertexBuffersID);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(boundaryVerts), 
 		boundaryVerts, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &boundaryIndexBufferID);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, boundaryIndexBufferID);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(boundaryIndices),
+		boundaryIndices, GL_STATIC_DRAW);
 
 	connect(&myTimer, SIGNAL(timeout()),
 		this,SLOT(myUpdate()));
@@ -95,7 +99,7 @@ void MyGlWindow::doGl()
 
 	glBindBuffer(GL_ARRAY_BUFFER, boundaryVertexBuffersID);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-	glDrawArrays(GL_LINES, 0, 8);
+	glDrawElements(GL_LINES, 8, GL_UNSIGNED_SHORT, 0);
 }
 
 void MyGlWindow::draw() 
