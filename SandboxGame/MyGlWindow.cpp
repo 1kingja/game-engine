@@ -38,6 +38,7 @@ namespace
 	GLuint boundaryIndexBufferID;
 	Vector3D transformedVerts[NUM_SHIP_VERTS];
 	Vector3D shipPosition;
+	Vector3D oldShipPosition;
 	Vector3D shipVelocity;
 	float shipOrientation = 0.0f;
 	Clock clock;
@@ -77,8 +78,9 @@ void MyGlWindow::update()
 	profiler.newFrame();
 	rotateShip();
 	updateVelocity();
-	handleBoundaries();
+	oldShipPosition = shipPosition;
 	shipPosition += shipVelocity * clock.lastLapTime();
+	handleBoundaries();
 }
 
 void MyGlWindow::doGl()
@@ -189,6 +191,7 @@ void MyGlWindow::handleBoundaries()
 		if(dotResult < 0)
 		{
 			shipVelocity = shipVelocity -2 * shipVelocity.dot(normal) * normal;
+			shipPosition = oldShipPosition;
 		}
 	}
 }
