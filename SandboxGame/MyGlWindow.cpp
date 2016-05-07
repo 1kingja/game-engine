@@ -176,17 +176,19 @@ void MyGlWindow::updateVelocity()
 
 void MyGlWindow::handleBoundaries()
 {
-	bool anyCollisions = false;
 	for (uint i = 0; i < NUM_BOUNDARY_VERTS; i++)
 	{
 		const Vector3D& first = boundaryVerts[i];
 		const Vector3D& second = boundaryVerts[(i + 1) % NUM_BOUNDARY_VERTS];
 
 		Vector3D wall = second - first;
-		Vector3D normal = wall.perpCcwXy();
+		Vector3D normal = wall.perpCcwXy().normalized();
 		Vector3D respectiveShipPosition = shipPosition - first;
 		float dotResult = normal.dot(respectiveShipPosition);
-		anyCollisions |= (dotResult < 0);
+
+		if(dotResult < 0)
+		{
+			shipVelocity = shipVelocity -2 * shipVelocity.dot(normal) * normal;
+		}
 	}
-	qDebug() << anyCollisions;
 }
