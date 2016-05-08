@@ -1,6 +1,8 @@
 #include <gtest\gtest.h>
 #include <Math\Vector3D.h>
+#include <Misc\TypeDefs.h>
 using Math::Vector3D;
+using je::uint;
 
 TEST(Vector3D, Constructor)
 {
@@ -115,6 +117,18 @@ TEST(Vector3D, Normalization)
 	EXPECT_FLOAT_EQ(normalized.z, -0.3342324947954736674948141909823f);
 }
 
+void testProjectionAlgorithms(
+	const Vector3D& source,
+	const Vector3D& target)
+{
+	Vector3D targetNormalized = target.normalized();
+	Vector3D oldResult = source.dot(targetNormalized) * targetNormalized;
+	Vector3D newResult = source.projectOnto(target);
+	EXPECT_FLOAT_EQ(oldResult.x, newResult.x);
+	EXPECT_FLOAT_EQ(oldResult.y, newResult.y);
+	EXPECT_FLOAT_EQ(oldResult.z, newResult.z);
+}
+
 TEST(Vector3D, projectOnto)
 {
 	Vector3D source(2, 4);
@@ -124,13 +138,19 @@ TEST(Vector3D, projectOnto)
 	EXPECT_FLOAT_EQ(result.y, 0.0f);
 	EXPECT_FLOAT_EQ(result.z, 0.0f);
 
-	source = Vector3D(1.0f, 2.0f, 3.0f);
-	target = Vector3D(4.8f, 9.1f, 5.6f);
-	Vector3D targetNormalized = target.normalized();
+	Vector3D vectors[] =
+	{
+	Vector3D(1.0f, 2.0f, 3.0f),
+	Vector3D(4.8f, 9.1f, 5.6f),
+	Vector3D(0.0f, 5.0f, 0.0f),
+	Vector3D(-3.2f, -4.9f, 6.7f),
+	Vector3D(2.4f, 3.1f, -99.6f),
 
-	Vector3D oldResult = source.dot(targetNormalized) * targetNormalized;
-	Vector3D newResult = source.projectOnto(target);
-	EXPECT_FLOAT_EQ(oldResult.x, newResult.x);
-	EXPECT_FLOAT_EQ(oldResult.y, newResult.y);
-	EXPECT_FLOAT_EQ(oldResult.z, newResult.z);
+	};
+	const uint NUM_VECTORS = sizeof(vectors) / sizeof(*vectors);
+	for(uint i = 0; i < NUM_VECTORS - 1; i++)
+	{
+		testProjectionAlgorithms(vectors[i], vectors[i + 1]);
+		testProjectionAlgorithms(vectors[i + 1], vectors[i]);
+	}
 }
