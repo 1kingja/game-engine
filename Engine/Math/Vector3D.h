@@ -20,6 +20,7 @@ namespace Math
 		inline Vector3D normalized() const;
 		inline Vector3D perpCwXy() const;
 		inline Vector3D perpCcwXy() const;
+		inline Vector3D projectOnto(const Vector3D& target) const;
 	};
 	inline Vector3D operator+(const Vector3D& left, const Vector3D& right);
 	inline Vector3D operator-(const Vector3D& left, const Vector3D& right);

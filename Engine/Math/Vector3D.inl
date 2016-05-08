@@ -36,6 +36,11 @@ Vector3D Vector3D::perpCcwXy() const
 	return Vector3D(-y, x);
 }
 
+Vector3D Vector3D::projectOnto(const Vector3D& target) const
+{
+	return (this->dot(target) / target.magnitudeSquared()) * target;
+}
+
 Vector3D operator+(const Vector3D& left, const Vector3D& right)
 {
 	return Vector3D(

@@ -114,3 +114,23 @@ TEST(Vector3D, Normalization)
 	EXPECT_FLOAT_EQ(normalized.y, 0.89412514531273210412625452364691f);
 	EXPECT_FLOAT_EQ(normalized.z, -0.3342324947954736674948141909823f);
 }
+
+TEST(Vector3D, projectOnto)
+{
+	Vector3D source(2, 4);
+	Vector3D target(1, 0);
+	Vector3D result = source.projectOnto(target);
+	EXPECT_FLOAT_EQ(result.x, 2.0f);
+	EXPECT_FLOAT_EQ(result.y, 0.0f);
+	EXPECT_FLOAT_EQ(result.z, 0.0f);
+
+	source = Vector3D(1.0f, 2.0f, 3.0f);
+	target = Vector3D(4.8f, 9.1f, 5.6f);
+	Vector3D targetNormalized = target.normalized();
+
+	Vector3D oldResult = source.dot(targetNormalized) * targetNormalized;
+	Vector3D newResult = source.projectOnto(target);
+	EXPECT_FLOAT_EQ(oldResult.x, newResult.x);
+	EXPECT_FLOAT_EQ(oldResult.y, newResult.y);
+	EXPECT_FLOAT_EQ(oldResult.z, newResult.z);
+}
