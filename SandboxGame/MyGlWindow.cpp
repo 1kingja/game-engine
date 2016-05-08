@@ -184,13 +184,13 @@ void MyGlWindow::handleBoundaries()
 		const Vector3D& second = boundaryVerts[(i + 1) % NUM_BOUNDARY_VERTS];
 
 		Vector3D wall = second - first;
-		Vector3D normal = wall.perpCcwXy().normalized();
+		Vector3D normal = wall.perpCcwXy();
 		Vector3D respectiveShipPosition = shipPosition - first;
 		float dotResult = normal.dot(respectiveShipPosition);
 
 		if(dotResult < 0)
 		{
-			shipVelocity = shipVelocity -2 * shipVelocity.dot(normal) * normal;
+			shipVelocity = shipVelocity -2 * shipVelocity.projectOnto(normal);
 			shipPosition = oldShipPosition;
 		}
 	}
