@@ -89,6 +89,15 @@ TEST(Vector3D, Magnitude)
 	EXPECT_FLOAT_EQ(magnitude, 7.0710678118654752440084436210485f);
 }
 
+TEST(Vector3D, MagnitudeSquared)
+{
+	Vector3D ourVector(3, 4, 5);
+	EXPECT_FLOAT_EQ(ourVector.magnitudeSquared(), 50.0f);
+
+	Vector3D ourVector2(0, 6, 0);
+	EXPECT_FLOAT_EQ(ourVector2.magnitudeSquared(), 36.0f);
+}
+
 TEST(Vector3D, Normalization)
 {
 	Vector3D vec(1.0f, 2.0f, 3.0f);

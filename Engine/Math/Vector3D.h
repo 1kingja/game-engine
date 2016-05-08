@@ -16,6 +16,7 @@ namespace Math
 		inline Vector3D& operator +=(const Vector3D& right);
 		inline float dot(const Vector3D& other) const;
 		inline float magnitude() const;
+		inline float magnitudeSquared() const;
 		inline Vector3D normalized() const;
 		inline Vector3D perpCwXy() const;
 		inline Vector3D perpCcwXy() const;

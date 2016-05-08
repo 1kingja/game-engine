@@ -13,7 +13,12 @@ float Vector3D::dot(const Vector3D& other) const
 
 float Vector3D::magnitude() const
 {
-	return sqrt(x * x + y * y + z * z);
+	return sqrt(magnitudeSquared());
+}
+
+float Vector3D::magnitudeSquared() const
+{
+	return this->dot(*this);
 }
 
 Vector3D Vector3D::normalized() const
