@@ -1,4 +1,5 @@
 #include <gtest\gtest.h>
+#include <Math\Constants.h>
 #include <Math\Vector3D.h>
 #include <Misc\TypeDefs.h>
 using Math::Vector3D;
@@ -153,4 +154,10 @@ TEST(Vector3D, projectOnto)
 		testProjectionAlgorithms(vectors[i], vectors[i + 1]);
 		testProjectionAlgorithms(vectors[i + 1], vectors[i]);
 	}
+
+	Vector3D a(0.5f, sqrt(3.0f) / 2);
+	Vector3D b(sqrt(3.0f) / 2.0f, 0.5f);
+	float dotResult = a.dot(b);
+	EXPECT_FLOAT_EQ(dotResult, cos(Math::PI / 6.0f));
+
 }
