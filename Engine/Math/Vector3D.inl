@@ -69,3 +69,8 @@ Vector3D operator*(const Vector3D& vector, float scalar)
 {
 	return scalar * vector;
 }
+
+ Vector3D lerp(float alpha, const Vector3D& source, const Vector3D& target)
+ {
+	 return (1.0f - alpha) * source + alpha * target;
+ }

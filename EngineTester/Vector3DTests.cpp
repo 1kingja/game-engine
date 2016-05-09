@@ -161,3 +161,20 @@ TEST(Vector3D, projectOnto)
 	EXPECT_FLOAT_EQ(dotResult, cos(Math::PI / 6.0f));
 
 }
+
+TEST(Vector3D, lerp)
+{
+	Vector3D source(4.7f, 9.2f, 7.1f);
+	Vector3D target(7.4f, 2.9f, 1.7f);
+	Vector3D difference = target - source; 
+	float alpha = 0.0f;
+	while(alpha <= 1.0f)
+	{
+		Vector3D lerpResult1 = lerp(alpha, source, target);
+		Vector3D lerpResult2 = source + alpha * difference;
+		EXPECT_FLOAT_EQ(lerpResult1.x, lerpResult2.x);
+		EXPECT_FLOAT_EQ(lerpResult1.y, lerpResult2.y);
+		EXPECT_FLOAT_EQ(lerpResult1.z, lerpResult2.z);
+		alpha += 0.01f;
+	}
+}
