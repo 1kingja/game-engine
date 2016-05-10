@@ -31,6 +31,19 @@ namespace
 
 	GLushort boundaryIndices[] = { 0, 1, 1, 2, 2, 3, 3, 0 };
 
+	Vector3D lerpPoints[] =
+	{
+		Vector3D(+0.5f, 0.5f, +0.0f),
+		Vector3D(-0.5f, 0.5f, +0.0f),
+		Vector3D(-0.5f, -0.5f, +0.0f),
+		Vector3D(+0.5f, -0.5f, +0.0f),
+	};
+	const uint NUM_LERP_POINTS = sizeof(lerpPoints) / sizeof(*lerpPoints);
+	uint sourceLerpPoint;
+	uint destinationLerpPoint;
+	float lerpAlpha;
+	Vector3D currentLerperPosition;
+
 	const unsigned int NUM_SHIP_VERTS = sizeof(shipVerts) / sizeof(*shipVerts);
 	const unsigned int NUM_BOUNDARY_VERTS = sizeof(boundaryVerts) / sizeof(*boundaryVerts);
 	GLuint shipVertexBufferID;
@@ -81,6 +94,7 @@ void MyGlWindow::update()
 	oldShipPosition = shipPosition;
 	shipPosition += shipVelocity * clock.lastLapTime();
 	handleBoundaries();
+	lerpTheLerper();
 }
 
 void MyGlWindow::doGl()
@@ -102,6 +116,25 @@ void MyGlWindow::doGl()
 	glBindBuffer(GL_ARRAY_BUFFER, boundaryVertexBuffersID);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glDrawElements(GL_LINES, 8, GL_UNSIGNED_SHORT, 0);
+}
+
+void MyGlWindow::lerpTheLerper()
+{
+	lerpAlpha += clock.lastLapTime();
+	if(lerpAlpha >= 1.0f)
+	{
+		lerpAlpha = 0.0f;
+		targetNextLerpPoint();
+	}
+	const Vector3D& source = lerpPoints[sourceLerpPoint];
+	const Vector3D& destination = lerpPoints[destinationLerpPoint];
+	currentLerperPosition = lerp(lerpAlpha, source, destination);
+}
+
+void MyGlWindow::targetNextLerpPoint()
+{
+	sourceLerpPoint = destinationLerpPoint;
+	destinationLerpPoint = (destinationLerpPoint + 1) % NUM_LERP_POINTS;
 }
 
 void MyGlWindow::draw() 
@@ -146,6 +179,8 @@ bool MyGlWindow::initialize()
 	bool ret = true;
 	profiler.initalize("profiles.csv");
 	ret &= clock.initialize();
+	destinationLerpPoint = 1;
+	targetNextLerpPoint();
 	return ret;
 }
 

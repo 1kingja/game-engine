@@ -22,6 +22,8 @@ private:
 	void update();
 	void draw();
 	void doGl();
+	void lerpTheLerper();
+	void targetNextLerpPoint();
 public:
 	bool initialize();
 	bool shutdown();
