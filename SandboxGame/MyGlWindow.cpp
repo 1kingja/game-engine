@@ -103,8 +103,6 @@ void MyGlWindow::doGl()
 	glViewport(0, 0, width(), height());
 
 	// Setup data pointers
-	glClear(GL_COLOR_BUFFER_BIT);
-
 	glBindBuffer(GL_ARRAY_BUFFER, shipVertexBufferID);
 	glBufferSubData(
 		GL_ARRAY_BUFFER, 0,
@@ -149,17 +147,15 @@ void MyGlWindow::draw()
 	else
 		scale = Matrix2DH::scale(1, aspectRatio);
 
-	Matrix2DH op;
-	{
-		PROFILE("Matrix Multiplication");
-		op = translator * scale * rotator;
-	}
-
-	{
-		PROFILE("Vector Transformation");
-		for (unsigned int i = 0; i < NUM_SHIP_VERTS; i++)
-			transformedVerts[i] = op * shipVerts[i];
-	}
+	Matrix2DH op = translator * scale * rotator;
+	for (unsigned int i = 0; i < NUM_SHIP_VERTS; i++)
+		transformedVerts[i] = op * shipVerts[i];
+	glClear(GL_COLOR_BUFFER_BIT);
+	doGl();
+	translator = Matrix2DH::translate(currentLerperPosition.x, currentLerperPosition.y);
+	op = translator * scale * rotator;
+	for (unsigned int i = 0; i < NUM_SHIP_VERTS; i++)
+		transformedVerts[i] = op * shipVerts[i];
 	doGl();
 }
 
@@ -179,8 +175,16 @@ bool MyGlWindow::initialize()
 	bool ret = true;
 	profiler.initalize("profiles.csv");
 	ret &= clock.initialize();
-	destinationLerpPoint = 1;
-	targetNextLerpPoint();
+	if (NUM_LERP_POINTS > 1)
+	{
+		lerpAlpha = 0.0f;
+		destinationLerpPoint = 1;
+		targetNextLerpPoint();
+	}
+	else
+	{
+		ret = false;
+	}
 	return ret;
 }
 

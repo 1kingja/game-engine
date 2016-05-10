@@ -15,10 +15,10 @@ protected:
 	void paintGL();
 private slots:
 	void myUpdate();
+private:
 	void updateVelocity();
 	void handleBoundaries();
 	void rotateShip();
-private:
 	void update();
 	void draw();
 	void doGl();
