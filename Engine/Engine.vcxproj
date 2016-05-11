@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="DebugTools\Profiling\Profile.cpp" />
     <ClCompile Include="DebugTools\Profiling\Profiler.cpp" />
+    <ClCompile Include="Rendering\Renderer.cpp" />
     <ClCompile Include="Timing\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -25,6 +26,9 @@
     <ClInclude Include="Math\Vector3D.h" />
     <ClInclude Include="DebugTools\Profiling\Profiler.h" />
     <ClInclude Include="Misc\TypeDefs.h" />
+    <ClInclude Include="Rendering\Renderer.h" />
+    <ClInclude Include="Rendering\Geometry.h" />
+    <ClInclude Include="Rendering\Renderable.h" />
     <ClInclude Include="Timing\Clock.h" />
   </ItemGroup>
   <ItemGroup>

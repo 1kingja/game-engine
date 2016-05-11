@@ -4,6 +4,7 @@
     <ClCompile Include="Timing\Clock.cpp" />
     <ClCompile Include="DebugTools\Profiling\Profiler.cpp" />
     <ClCompile Include="DebugTools\Profiling\Profile.cpp" />
+    <ClCompile Include="Rendering\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\Vector2D.inl" />
@@ -23,5 +24,8 @@
     <ClInclude Include="Misc\TypeDefs.h" />
     <ClInclude Include="DebugTools\Profiling\Profile.h" />
     <ClInclude Include="Math\Matrix2DH.h" />
+    <ClInclude Include="Rendering\Geometry.h" />
+    <ClInclude Include="Rendering\Renderable.h" />
+    <ClInclude Include="Rendering\Renderer.h" />
   </ItemGroup>
 </Project>
