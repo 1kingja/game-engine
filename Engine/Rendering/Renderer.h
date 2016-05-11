@@ -1,10 +1,12 @@
 #ifndef ENGINE_RENDERER_H
 #define ENGINE_RENDERER_H
 
-class Renderer
+namespace Rendering
 {
-public:
+	class Renderer
+	{
+	public:
 
-};
-
+	};
+}
 #endif

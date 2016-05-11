@@ -1,10 +1,16 @@
 #ifndef	MY_GAME_H
 #define	MY_GAME_H
+#include <Rendering\Renderer.h>
+namespace Rendering { class Renderable; }
 
-class myGame
+
+class MyGame
 {
+	Rendering::Renderer renderer;
+	Rendering::Renderable* shipInstance;
+	Rendering::Renderable* lerpInstance;
 public:
-	myGame();
-	~myGame();
+	bool initalize();
+	void update();
 };
 #endif
