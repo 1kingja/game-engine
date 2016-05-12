@@ -6,7 +6,6 @@ using Math::Vector3D;
 
 namespace Rendering
 {
-
 	bool Renderer::initialize()
 	{
 		numGeometries = 0;
