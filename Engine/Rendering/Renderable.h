@@ -7,7 +7,9 @@ namespace Rendering
 	class Geomerty;
 	class Renderable
 	{
+		friend class Renderer;
 		const Geomerty* what;
+	public:
 		Math::Matrix2DH where;
 	};
 }

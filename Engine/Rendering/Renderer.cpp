@@ -28,6 +28,9 @@ namespace Rendering
 
 		glBufferData(GL_ARRAY_BUFFER, MAX_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, MAX_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	}
 
 	bool Renderer::shutdown()
@@ -41,7 +44,7 @@ namespace Rendering
 
 	Geometry* Renderer::addGeometry(
 		Math::Vector3D* vertices, uint numVerts,
-		ushort* indices, uint numIndices)
+		ushort* indices, uint numIndices, GLenum renderModes)
 	{
 		assert(numGeometries != NUM_MAX_GEOMETRIES);
 		Geometry& g = geometries[numGeometries++];
@@ -49,6 +52,7 @@ namespace Rendering
 		g.numVerts = numVerts;
 		g.indices = indices;
 		g.numIndices = numIndices;
+		g.renderMode = renderModes;
 		return &g;
 	}
 
@@ -83,6 +87,16 @@ namespace Rendering
 			// Indices
 			glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0,
 				sizeof(ushort) * r.what->numIndices, r.what->indices);
+
+			//Vertices
+			for(uint j =0; j < r.what->numVerts; j++)
+			{
+				transformedVerts[j] = r.where * r.what->vertices[j];
+				glBufferSubData(GL_ARRAY_BUFFER, 0, 
+					sizeof(Vector3D) * r.what->numVerts, transformedVerts);
+				glDrawElements(r.what->renderMode, r.what->numIndices, 
+					GL_UNSIGNED_SHORT, 0);
+			}
 		}
 	}
 

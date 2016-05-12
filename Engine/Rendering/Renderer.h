@@ -29,7 +29,8 @@ namespace Rendering
 		bool shutdown();
 		Geometry* addGeometry(
 			Math::Vector3D* vertices, uint numVerts,
-			ushort* indices, uint numIndices);
+			ushort* indices, uint numIndices,
+			GLenum renderModes);
 		Renderable* addRenderable(Geometry* geometry);
 		void rendererScene();
 	};
