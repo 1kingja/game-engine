@@ -1,7 +1,6 @@
 #include "Renderer.h"
 #include <cassert>
 
-
 namespace Rendering
 {
 
