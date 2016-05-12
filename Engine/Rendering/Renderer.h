@@ -18,7 +18,8 @@ namespace Rendering
 		uint numRenderables;
 		static const uint MAX_BUFFER_SIZE = 1024;
 		GLuint vertexBufferID;
-		GLuint indexBufferID
+		GLuint indexBufferID;
+		static const uint MAX_VERTS = 10;
 	protected:
 		void initializeGL();
 		void paintEvent();

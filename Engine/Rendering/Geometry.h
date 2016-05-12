@@ -10,7 +10,7 @@ namespace Rendering
 		const Math::Vector3D* vertices;
 		uint numVerts;
 		const ushort* indices;
-		uint numIndices
+		uint numIndices;
 	};
 }
 #endif

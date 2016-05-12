@@ -1,6 +1,8 @@
 #include <GL\glew.h>
 #include "Renderer.h"
 #include <cassert>
+#include <Math\Vector3D.h>
+using Math::Vector3D;
 
 namespace Rendering
 {
@@ -16,6 +18,7 @@ namespace Rendering
 	{
 		GLenum status = glewInit();
 		assert(status == 0);
+		glClearColor(0, 0, 0, 1);
 
 		glGenBuffers(1, &vertexBufferID);
 		glGenBuffers(1, &indexBufferID);
@@ -69,7 +72,18 @@ namespace Rendering
 
 	void Renderer::paintGL()
 	{
+		glClear(GL_COLOR_BUFFER_BIT);
 
+		Vector3D transformedVerts[MAX_VERTS];
+
+		for(uint i=0; i < numRenderables; i++)
+		{
+			const Renderable& r = renderables[i];
+
+			// Indices
+			glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0,
+				sizeof(ushort) * r.what->numIndices, r.what->indices);
+		}
 	}
 
 }
