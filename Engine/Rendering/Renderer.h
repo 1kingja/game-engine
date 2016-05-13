@@ -4,7 +4,7 @@
 #include <Misc\TypeDefs.h>
 #include <Rendering\Geometry.h>
 #include <Rendering\Renderable.h>
-namespace Math { class Vector3D; }
+namespace Math { struct Vector3D; }
 
 namespace Rendering
 {

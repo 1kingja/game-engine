@@ -4,7 +4,6 @@
 #include <cassert>
 #include <fstream>
 #endif //PROFILING_ON
-using je::uint;
 
 namespace Profiling
 {

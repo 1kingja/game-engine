@@ -1,7 +1,7 @@
 #ifndef ENGINE_GEOMETRY_H
 #define ENGINE_GEOMETRY_H
 #include <Misc\TypeDefs.h>
-namespace Math { class Vector3D; }
+namespace Math { struct Vector3D; }
 
 namespace Rendering
 {

@@ -3,7 +3,7 @@
 #include <Math\Vector3D.h>
 #include <Misc\TypeDefs.h>
 using Math::Vector3D;
-using je::uint;
+using uint;
 
 TEST(Vector3D, Constructor)
 {

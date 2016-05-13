@@ -8,6 +8,8 @@ namespace Rendering
 {
 	bool Renderer::initialize()
 	{
+		vertexBufferID = -1;
+		indexBufferID = -1;
 		numGeometries = 0;
 		numRenderables = 0;
 		return true;
@@ -81,7 +83,7 @@ namespace Rendering
 
 		for(uint i=0; i < numRenderables; i++)
 		{
-			const Renderable& r = renderables[i];
+			 const Renderable& r = renderables[i];
 
 			// Indices
 			glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0,

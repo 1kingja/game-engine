@@ -66,7 +66,7 @@ void evaluateLastRow(const T& op)
 {
 	if(typeid(T) == typeid(Matrix3D))
 	{
-		const je::uint NUM_ELEMENTS_IN_FIRST_TWO_ROWS = 6;
+		const uint NUM_ELEMENTS_IN_FIRST_TWO_ROWS = 6;
 		const float* p = reinterpret_cast<const float*>(&op);
 		p += NUM_ELEMENTS_IN_FIRST_TWO_ROWS;
 		EXPECT_FLOAT_EQ(*p++, 0);

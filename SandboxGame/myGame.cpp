@@ -3,16 +3,17 @@
 
 bool MyGame::initalize()
 {
-	Geometry* shipGeometry =
+	/*Geometry* shipGeometry =
 		renderer.addGeometry(
 			shipVerts, numShipVerts,
 			shipIndices, numShipIndices);
 	shipInstance = renderer.addRenderable(shipGeometry);
-	lerpInstance = renderer.addRenderable(shipGeometry);
+	lerpInstance = renderer.addRenderable(shipGeometry);*/
+	return true;
 }
 
 void MyGame::update()
 {
-	shipInstance->where = Matrix2DH::translate(shipPosition); 
-	lerpInstance->where = Matrix2DH::translate(lerperPosition);
+	/*shipInstance->where = Matrix2DH::translate(shipPosition); 
+	lerpInstance->where = Matrix2DH::translate(lerperPosition);*/
 }
